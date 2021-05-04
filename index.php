@@ -21,14 +21,62 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 <meta name="robots" content="noindex, follow">
+
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  width: 90%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #aa0468;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
 </head>
 <body>
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
+			<div class="container">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="images/logo1.png" alt="IMG">
+
+ 						<div class="overlay">
+    					<div class="text">TREAT <br> YOUR <br> SELF!!</div>
+  						</div>
+					</div>
 				</div>
 
 				<form class="login100-form validate-form">
