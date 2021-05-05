@@ -67,13 +67,11 @@
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
 							SIGN UP
 						</span>
-						<div class="container2">
 						<ul class="progressbar">
 				        <li class="active">Step 1</li>
-				        <li>Step 2</li>
+				        <li class="active">Step 2</li>
 				        <li>Step 3</li>
 				      	</ul>
-				      	</div>
 				      	<br>
 						<div class="name-details" style="display: flex">
 							<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan">
