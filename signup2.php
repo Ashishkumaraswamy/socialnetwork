@@ -71,8 +71,8 @@
 						<div class="container2">
       						<ul class="progressbar">
         					<li class="active">Step 1</li>
-        					<li>Step 2</li>
-        					<li>Step 3</li>
+        					<li class="active">Step 2</li>
+        					<li class="active">Step 3</li>
      						</ul>
    						 </div>
 
