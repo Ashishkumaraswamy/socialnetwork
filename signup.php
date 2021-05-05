@@ -22,102 +22,101 @@
 <meta name="robots" content="noindex, follow">
 
 <style>
-.container {
-  position: relative;
-  width: 50%;
+ .box {
+  background: white;
+  margin: auto;
+  padding: 20px 50px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
+.box:hover {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation-name: example;
+  animation-duration: 0.25s;
+  border-left: 8px solid red;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  width: 90%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #aa0468;
+@keyframes example {
+    0%   {border-left: 2px solid #ffffff;}
+    25%  {border-left: 3px solid #ffe6e6;}
+    50%  {border-left: 4px solid #ff8080;}
+    100% {border-left: 5px solid #ff0000;}
 }
-
-.container:hover .overlay {
-  opacity: 1;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+  }
 </style>
 </head>
 <body>
 
+	
+
 	<div class="limiter">
 		<div class="container-signup100">
-			<div class="wrap-signup100">
-				<form class="signup100-form validate-form">
-					<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center">
-						SIGN UP
-					</span>
-					<div class="name-details" style="display: flex">
-						<div class ="wrap-input100">
-							<div class="field input">
-							<input class ="input100" type="text" name="firstname" placeholder="First Name"/>
-							<span class="focus-input100"></span>	
-							</div>
-						</div>
-						<div class="wrap-input100">
-							<div class="field input">
-							<input class="input100" type="text" name="lastname" placeholder="Last Name"/>
-							<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
+			
+				<div class="box">
+					<form class="signup100-form validate-form">
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
+			
 
-					<div class="container-signup100-form-btn">
-						<button class="signup100-form-btn">
+						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center">
 							SIGN UP
-						</button>
-					</div>
+						</span>
+						<div class="name-details" style="display: flex">
+							<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan">
+								<input class="input100" type="text" name="firstname" placeholder="First name">
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</span>
+							</div>
+							<p>&nbsp</p>
 
-					<div class="text-center p-t-20 p-b-70">
-						<p>Already have an account?
-						<a class="txt2" href="index.php">
-							Log in
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-						</p>
-					</div>
-				</form>
-			</div>
+							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<input class="input100" type="text" name="lastname" placeholder="Last name">
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>	
+
+
+						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+							<input class="input100" type="text" name="email" placeholder="Email">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div class="wrap-input100 validate-input" data-validate = "Password is required">
+							<input class="input100" type="password" name="pass" placeholder="Password">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div class="container-signup100-form-btn">
+							<button class="signup100-form-btn">
+								SIGN UP
+							</button>
+						</div>
+
+						<div class="text-center p-t-20 p-b-70">
+							<p>Already have an account?
+							<a class="txt2" href="index.php">
+								Log in
+								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							</a>
+							</p>
+						</div>
+					</form>
+				</div>
+
+		
 		</div>
 	</div>
 
@@ -146,6 +145,7 @@
 
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+
 
 </body>
 </html>

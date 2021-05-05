@@ -174,11 +174,11 @@ iframe {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 100px 130px 33px 95px;
+  padding: 50px 150px 33px 95px;
 }
 .signup100-form {
   max-width: 100%;
-  padding-left: 100px;
+  padding-left: 50px;
 }
 .signup100-form-title {
   font-family: Poppins-Bold;
@@ -188,7 +188,7 @@ iframe {
   text-align: center;
   width: 100%;
   display: block;
-  padding-bottom: 54px;
+  padding-bottom: 45px;
 }
 .wrap-input100 {
   position: relative;
