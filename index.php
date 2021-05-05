@@ -74,14 +74,14 @@
 					<img src="images/logo1.png" alt="IMG">
 
  						<div class="overlay">
-    					<div class="text">TREAT <br> YOUR <br> SELF!!</div>
+    					<div class="text">TREAT YOUR SELF!!</div>
   						</div>
 					</div>
 				</div>
 
 				<form class="login100-form validate-form">
-					<span class="login100-form-title" style="font-family: Georgia, serif; font-weight: bold; font-size: 27px">
-						Social Media
+					<span class="login100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 37px">
+						LOG IN
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -115,11 +115,13 @@
 						</a>
 					</div>
 
-					<div class="text-center p-t-136">
+					<div class="text-center p-t-20 p-b-70">
+						<p>Do not have an account?
 						<a class="txt2" href="#" style="text-decoration: none">
-							Create your Account
+							Sign Up
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
+						</p>
 					</div>
 				</form>
 			</div>

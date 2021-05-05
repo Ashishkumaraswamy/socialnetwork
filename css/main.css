@@ -28,7 +28,7 @@ a {
   font-family: Poppins-Regular;
   font-size: 17px;
   line-height: 1.7;
-  color: #666;
+  color: red;
   margin: 0;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -91,6 +91,7 @@ textarea:focus::-webkit-input-placeholder {
 }
 textarea:focus:-moz-placeholder {
   color: transparent;
+  font-size: 30px;
 }
 textarea:focus::-moz-placeholder {
   color: transparent;
@@ -216,8 +217,9 @@ iframe {
   width: 100%;
   background: #e6e6e6;
   height: 50px;
-  border-radius: 25px;
-  padding: 0 30px 0 30px;
+  border-radius: 15px;
+  padding: 30 30px 0 30px;
+
 }
 .focus-input100 {
   display: block;
@@ -272,6 +274,7 @@ iframe {
 .input100:focus + .focus-input100 + .symbol-input100 {
   color: #57b846;
   padding-left: 28px;
+  padding-top: 15px;
 }
 .container-login100-form-btn {
   width: 100%;
