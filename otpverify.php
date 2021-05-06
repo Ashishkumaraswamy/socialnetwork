@@ -43,7 +43,6 @@
 		}	
 		function sendEmail() {
 			otp = generateOTP();
-			console.log(otp);
 			var to=document.getElementById("myText").value;
 			Email.send({
 				Host: "smtp.gmail.com",
@@ -62,8 +61,9 @@
 			otp = localStorage.getItem("name");
 			var otpinp  =document.getElementById("myOTP").value;
 			if(otp.localeCompare(otpinp) == 0){
-				location.href="signup1.php";
 				alert("OTP matched!!");
+				location.href="#signup1.php";
+				
 			}
 			else{
 				alert("OTP mismatched!!");
@@ -118,8 +118,9 @@
 						<div class="container2">
       						<ul class="progressbar">
         					<li class="active">Step 1</li>
-        					<li>Step 2</li>
+        					<li class="active">Step 2</li>
         					<li>Step 3</li>
+							<li>Step 4</li>
      						</ul>
    						 </div>
 

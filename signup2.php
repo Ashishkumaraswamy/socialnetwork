@@ -73,6 +73,7 @@
         					<li class="active">Step 1</li>
         					<li class="active">Step 2</li>
         					<li class="active">Step 3</li>
+							<li class="active">Step 4</li>
      						</ul>
    						 </div>
 

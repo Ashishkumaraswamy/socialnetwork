@@ -434,13 +434,13 @@ iframe {
 }
 
 .progressbar {
-  padding-left: 45px;
+  margin-left: 10px;
   counter-reset: step;
 }
 .progressbar li {
   list-style: none;
   display: inline-block;
-  width: 30.33%;
+  width: 23.33%;
   position: relative;
   text-align: center;
   cursor: pointer;
@@ -448,23 +448,23 @@ iframe {
 .progressbar li:before {
   content: counter(step);
   counter-increment: step;
-  width: 30px;
-  height: 30px;
-  line-height : 30px;
-  border: 2px solid #ff3728;
+  width: 15px;
+  height: 15px;
+  line-height : 15px;
+  border: 1px solid #ddd;
   border-radius: 100%;
   display: block;
   text-align: center;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 5px auto;
   background-color: #fff;
 }
 .progressbar li:after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 4px;
-  background-color: #ff3728;
-  top: 15px;
+  height: 2px;
+  background-color: #ddd;
+  top: 6px;
   left: -50%;
   z-index : -1;
 }

@@ -76,6 +76,7 @@
         					<li class="active">Step 1</li>
         					<li>Step 2</li>
         					<li>Step 3</li>
+							<li>Step 4</li>
      						</ul>
    						 </div>
 
@@ -137,13 +138,13 @@
 						</div>
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn">
-								<a href="signup1.php">SIGN UP</a>
+								<a href="otpverify.php">SIGN UP</a>
 							</button>
 						</div>
 						<br>
 						<hr style="width:100%;text-align:left;margin-left:0;margin-top-top: 15px;color: black;">
 						<div class="container-signup100-form-btn">
-							<button class="signup100-form-btn" onclick="sendEmail()">
+							<button class="signup100-form-btn">
 								<a href="otpverify.php" class="fa fa-facebook"></a>
 								<a href="otpverify.php">&nbsp&nbsp&nbsp&nbspLog in With Facebook</a> 
 							</button>
