@@ -268,7 +268,7 @@ iframe {
   padding-top: 20px;
 }
 
-.signup100-form-btn {
+.signup100-form-btn,.signup100-form-btn-facebook {
   font-family: Montserrat-Bold;
   font-size: 18px;
   line-height: 1.5;
@@ -291,6 +291,8 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
+
+
 .signup100-form-btn:hover {
   background: #333;
 }
