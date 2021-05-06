@@ -26,31 +26,24 @@
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script type="text/javascript">
-	var otp='';
-	function generateOTP()
-
-	{
-
-	otp='';
-    var digits = '0123456789';
-
-    var otpLength = 6;
-
-
-    for(let i=1; i<=otpLength; i++)
-
-    {
-
-        var index = Math.floor(Math.random()*(digits.length));
-
-        otp = otp + digits[index];
-
-    }
-
-    return otp;
-
-}
+	
+		var otp='';
+		function generateOTP()
+		{
+			otp='';
+			var digits = '0123456789';
+			var otpLength = 6;
+			for(let i=1; i<=otpLength; i++)
+			{
+				var index = Math.floor(Math.random()*(digits.length));
+				otp = otp + digits[index];
+			}
+			localStorage.setItem("name", otp);
+			return otp;
+		}	
 		function sendEmail() {
+			otp = generateOTP();
+			console.log(otp);
 			var to=document.getElementById("myText").value;
 			Email.send({
 				Host: "smtp.gmail.com",
@@ -59,33 +52,23 @@
 				To : to,
 				From : "socialmediaatwork123@gmail.com",
 				Subject : "Hi",
-				Body : "Message from Social Network.\nThe OTP is " + generateOTP(),
-			})
-			.then(function(message){
-				alert("mail sent successfully")
+				Body : "Message from Social Network.\nThe OTP is " + otp,
 			});
+			alert("mail sent successfully");
 		}
 
 		function checkOTP()
 		{
-			document.getElementById("demo").innerHTML="text11323124";
-			var otpinp=document.getElementById("myOTP").value;
-			var txt;
-			if(confirm())
-			{
-				if(otp==otpinp)
-				{
-					txt="OTP matched";
-					location.href="signup1.php";
-				}
-				else{
-
-
-					txt="OTP mismatch";
-					location.href="signup1.php";
-				}
+			otp = localStorage.getItem("name");
+			var otpinp  =document.getElementById("myOTP").value;
+			if(otp.localeCompare(otpinp) == 0){
+				location.href="signup1.php";
+				alert("OTP matched!!");
 			}
-			
+			else{
+				alert("OTP mismatched!!");
+			}
+
 		}
 	</script>
 
@@ -156,7 +139,7 @@
 						<hr style="width:100%;text-align:left;margin-left:0;margin-top: 20px;color: black;border-top: dashed black;">
 						<br>
 						<div class="wrap-input100 validate-input" style="width: 500px; margin-top:20px">
-							<input class="input100" type="text" name="otp" placeholder="Enter OTP" maxlength="6" minlength="6" >
+							<input class="input100" id="myOTP" type="text" name="otp" placeholder="Enter OTP" maxlength="6" minlength="6" >
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa fa-eye"></i>
