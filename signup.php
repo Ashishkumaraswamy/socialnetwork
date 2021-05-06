@@ -54,45 +54,7 @@
   }
 </style>
 
-	<script type="text/javascript">
-		function generateOTP()
-
-{
-
-    var digits = '0123456789';
-
-    var otpLength = 6;
-
-    var otp = '';
-
-    for(let i=1; i<=otpLength; i++)
-
-    {
-
-        var index = Math.floor(Math.random()*(digits.length));
-
-        otp = otp + digits[index];
-
-    }
-
-    return otp;
-
-}
-		function sendEmail() {
-			Email.send({
-				Host: "smtp.gmail.com",
-				Username : "socialmediaatwork123@gmail.com",
-				Password : "Qwerty123@",
-				To : 'ashishkumaraswamy@gmail.com',
-				From : "socialmediaatwork123@gmail.com",
-				Subject : "Hi",
-				Body : "Hi ashish the OTP is " + generateOTP(),
-			})
-			.then(function(message){
-				alert("mail sent successfully")
-			});
-		}
-	</script>
+	
 </head>
 <body>
 
@@ -182,7 +144,8 @@
 						<hr style="width:100%;text-align:left;margin-left:0;margin-top-top: 15px;color: black;">
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn" onclick="sendEmail()">
-								<a href="otpverify.php" class="fa fa-facebook"></a> &nbsp&nbsp&nbsp&nbspLog in With Facebook
+								<a href="otpverify.php" class="fa fa-facebook"></a>
+								<a href="otpverify.php">&nbsp&nbsp&nbsp&nbspLog in With Facebook</a> 
 							</button>
 						</div>
 
