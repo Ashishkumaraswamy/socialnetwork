@@ -64,7 +64,7 @@
 					<form class="signup100-form validate-form">
 			
 
-						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
+						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px; color: #666">
 							USER INFO
 						</span>
 						<ul class="progressbar">
@@ -102,10 +102,10 @@
 							</div>
 						</div>
 
-						<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan" style="width:49% ;height:100px">
-							<input class="input100" type="text" name="bio" placeholder="Bio" style="height:100px;" >
-							<span class="focus-input100"></span>
-						</div>	
+						<div class="wrap-input100 validate-input">
+							<textarea id="bio-text" class="text100" name="bio" rows="4" cols="50" placeholder="Enter your bio here" style="border:3px; background-color:#e6e6e6; border-radius: 5px; width: 800px;height: 100px;color: #999">Enter bio
+						</textarea>
+						</div>
 
 						<div class="name-details" style="display: flex">
 							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -145,7 +145,7 @@
 						</div>
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn">
-								<a href="signup1.php">SIGN UP</a>
+								<a href="signup2.php">SIGN UP</a>
 							</button>
 						</div>
 						<br>

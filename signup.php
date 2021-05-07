@@ -26,6 +26,32 @@
 
 <meta name="robots" content="noindex, follow">
 
+<script type="text/javascript">
+	const form=document.querySelector(".signup100-form"),
+continueBtn=form.querySelector(".signup100-form-btn"),
+facebookBtn=form.querySelector(".btn input");
+
+continueBtn.onclick = ()=>{
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/signup.php", true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              let data = xhr.response;
+              if(data === "success"){
+                setTimeout(function(){document.location.href = "otpverify.php"},200);
+              }else{
+                errorText.style.display = "block";
+                errorText.textContent = data;
+              }
+          }
+      }
+    }
+    let formData = new FormData(form);
+    xhr.send(formData);
+}
+</script>
+
 <style>
  .box {
   background: white;
@@ -54,6 +80,7 @@
   }
 </style>
 
+
 	
 </head>
 <body>
@@ -64,7 +91,7 @@
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" method="POST">
+					<form class="signup100-form validate-form" method="POST" enctype="multipart/form-data" autocomplete="off">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
@@ -111,7 +138,7 @@
 							<p>&nbsp&nbsp&nbsp</p>
 
 							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-								<input placeholder="Date of Birth" class="input100" type="text" onfocus="(this.type='date')" id="date">
+								<input placeholder="Date of Birth" name="dob" class="input100" type="text" onfocus="(this.type='date')" id="date">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class='fa fa-calendar-alt' style='font-size:17px'></i>
@@ -137,8 +164,8 @@
 							</div>
 						</div>
 						<div class="container-signup100-form-btn">
-							<button class="signup100-form-btn">
-								<a href="otpverify.php">SIGN UP</a>
+							<button class="signup100-form-btn" id ="btn">
+								SIGN UP
 							</button>
 						</div>
 						<br>
@@ -189,6 +216,7 @@
 
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+<!-- <script src="javascript/signup.js"></script> -->
 
 
 </body>
