@@ -97,8 +97,8 @@
 		<div class="container-login100">
 				<div class="wrap-login100">
 				<div class="container">
-					<div class="login100-pic js-tilt" data-tilt>
-						<img src="images/logo1.png" alt="IMG">
+				<div class="login100-pic js-tilt"data-tilt>
+						<img src="images/logo1.PNG" alt="IMG" >
 
 							<div class="overlay">
 							<div class="text">TREAT YOUR SELF!!</div>
@@ -163,11 +163,6 @@
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
