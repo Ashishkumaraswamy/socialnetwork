@@ -28,6 +28,30 @@
 	<script type="text/javascript">
 	
 		var otp='';
+
+		function url_redirect(url)
+		{
+		    var X = setTimeout(function(){
+		        window.location.replace(url);
+		        return true;
+		    },300);
+
+		    if( window.location == url ){
+		        clearTimeout(X);
+		        return true;
+		    } else {
+		        if( window.location.href = url ){
+		            clearTimeout(X);
+		            return true;
+		        }else{
+		            clearTimeout(X);
+		            window.location.replace(url);
+		            return true;
+			    }
+    		}
+    	return false;
+		};
+
 		function generateOTP()
 		{
 			otp='';
@@ -58,17 +82,17 @@
 
 		function checkOTP()
 		{
-			otp = localStorage.getItem("name");
-			var otpinp  =document.getElementById("myOTP").value;
-			if(otp.localeCompare(otpinp) == 0){
-				alert("OTP matched!!");
-				location.href="#signup1.php";
-				
-			}
-			else{
-				alert("OTP mismatched!!");
-			}
-
+			// otp = localStorage.getItem("name");
+			// var otpinp  =document.getElementById("myOTP").value;
+			// if(otp.localeCompare(otpinp) == 0){
+			// 	alert("OTP matched!!");
+			// 	// url_redirect("signup1.php");
+			// 	return true;			}
+			// else{
+			// 	alert("OTP mismatched!!");
+			// 	return false;
+			// }
+			setTimeout(function(){document.location.href = "signup1.php;"},200);
 		}
 	</script>
 
