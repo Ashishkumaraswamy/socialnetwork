@@ -5,17 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/signup.css">
 <!--===============================================================================================-->
@@ -25,33 +14,6 @@
 	<script src="https://smtpjs.com/v3/smtp.js"></script>  
 
 <meta name="robots" content="noindex, follow">
-
-<script type="text/javascript">
-	const form=document.querySelector(".signup100-form"),
-continueBtn=form.querySelector(".signup100-form-btn"),
-facebookBtn=form.querySelector(".btn input");
-
-continueBtn.onclick = ()=>{
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/signup.php", true);
-    xhr.onload = ()=>{
-      if(xhr.readyState === XMLHttpRequest.DONE){
-          if(xhr.status === 200){
-              let data = xhr.response;
-              if(data === "success"){
-                setTimeout(function(){document.location.href = "otpverify.php"},200);
-              }else{
-                errorText.style.display = "block";
-                errorText.textContent = data;
-              }
-          }
-      }
-    }
-    let formData = new FormData(form);
-    xhr.send(formData);
-}
-</script>
-
 <style>
  .box {
   background: white;
@@ -91,7 +53,7 @@ continueBtn.onclick = ()=>{
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" method="POST" enctype="multipart/form-data" autocomplete="off">
+					<form class="signup100-form validate-form" method="POST" enctype="multipart/form-data" autocomplete="off" id="for">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
@@ -190,34 +152,32 @@ continueBtn.onclick = ()=>{
 		</div>
 
 	</div>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(){
+    	document.querySelector('#btn').onclick = function() {
 
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
+			const form = document.querySelector("#for");
+			let xhr = new XMLHttpRequest();
+			xhr.open("POST", "php/signup.php", true);
+			alert("WASTEDasd");
+			xhr.onload = ()=>{
+				alert("WASTED!!");
+			if(xhr.readyState === XMLHttpRequest.DONE){
+			if(xhr.status === 200){
+				let data = xhr.response;
+				if(data === "success"){
+					setTimeout(function(){document.location.href = "otpverify.php"},200);
+				}else{
+					alert("WASTED");
+				}
+			}
+			}
+							}
+			let formData = new FormData(form);
+			xhr.send(formData);
+		};
+	});
 </script>
-
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-<!-- <script src="javascript/signup.js"></script> -->
-
 
 </body>
 </html>
