@@ -82,17 +82,17 @@
 
 		function checkOTP()
 		{
-			// otp = localStorage.getItem("name");
-			// var otpinp  =document.getElementById("myOTP").value;
-			// if(otp.localeCompare(otpinp) == 0){
-			// 	alert("OTP matched!!");
-			// 	// url_redirect("signup1.php");
-			// 	return true;			}
-			// else{
-			// 	alert("OTP mismatched!!");
-			// 	return false;
-			// }
-			setTimeout(function(){document.location.href = "signup1.php;"},200);
+			otp = localStorage.getItem("name");
+			var otpinp  =document.getElementById("myOTP").value;
+			if(otp.localeCompare(otpinp) == 0){
+				alert("OTP matched!!");
+				setTimeout(function(){document.location.href = "signup1.php"},200);
+				return true;			}
+			else{
+				alert("OTP mismatched!!");
+				return false;
+			}
+			
 		}
 	</script>
 
