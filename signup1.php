@@ -65,7 +65,7 @@
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
-							SIGN UP
+							USER INFO
 						</span>
 						<ul class="progressbar">
 				        <li class="active">Step 1</li>
@@ -74,9 +74,18 @@
 						<li>Step 4</li>
 				      	</ul>
 				      	<br>
+						<br>
+						<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan" style="margin-top: 20px ;width:49%">
+							<input class="input100" type="text" name="username" placeholder="User name">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class='fa fa-user-alt' style='font-size:17px'></i>
+							</span>
+						</div>
+						
 						<div class="name-details" style="display: flex">
-							<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan">
-								<input class="input100" type="text" name="firstname" placeholder="First name">
+							<div class="wrap-input100 validate-input">
+								<input class="input100" type="text" name="country" placeholder="Country">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class='fa fa-user-alt' style='font-size:17px'></i>
@@ -84,13 +93,18 @@
 							</div>
 							<p>&nbsp&nbsp&nbsp</p>
 
-							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-								<input class="input100" type="text" name="lastname" placeholder="Last name">
+							<div class="wrap-input100 validate-input">
+								<input class="input100" type="text" name="state" placeholder="State">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class='fa fa-user-alt' style='font-size:17px'></i>
 								</span>
 							</div>
+						</div>
+
+						<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan" style="width:49% ;height:100px">
+							<input class="input100" type="text" name="bio" placeholder="Bio" style="height:100px;" >
+							<span class="focus-input100"></span>
 						</div>	
 
 						<div class="name-details" style="display: flex">
