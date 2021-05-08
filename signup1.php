@@ -37,7 +37,7 @@
     50%  {border-left: 4px solid #ff8080;}
     100% {border-left: 5px solid #ff0000;}
 }
-  }
+
 </style>
 </head>
 <body>
@@ -94,6 +94,17 @@
 						</textarea>
 						</div>
 
+						<div class="wrap-input100 validate-input">
+							<p>Areas of Interest<p>
+							<select name="ingredients[]" id="ingredients" multiple="multiple">
+    <option value="cheese">Cheese</option>
+    <option value="tomatoes">Tomatoes</option>
+    <option value="mozarella">Mozzarella</option>
+    <option value="mushrooms">Mushrooms</option>
+    <option value="pepperoni">Pepperoni</option>
+    <option value="onions">Onions</option>
+</select>
+						</div>	  
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn">
 								<a href="signup2.php">NEXT</a>
