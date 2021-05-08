@@ -42,32 +42,6 @@
   }
 </style>
 
-<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function(){
-		const form = document.querySelector('#for');
-    	form.querySelector('#btn').onclick = function() {			
-			let xhr = new XMLHttpRequest();
-			xhr.open("POST", "php/signup.php", true);
-			alert("WASTsaD!!");
-			xhr.onload = function() {
-				alert("WASTED!!");
-				if(xhr.readyState === XMLHttpRequest.DONE){
-				if(xhr.status === 200){
-					let data = xhr.response;
-					if(data === "success"){
-						setTimeout(function(){document.location.href = "otpverify.php"},200);
-					}else{
-						alert("WASTED");
-					}
-				}
-				}
-							}
-			let formData = new FormData(form);
-			xhr.send(formData);
-		}
-	});
-</script>
-
 
 	
 </head>
@@ -79,7 +53,7 @@
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" method="POST" enctype="multipart/form-data" autocomplete="off" id="for">
+					<form class="signup100-form validate-form" method="post" enctype="multipart/form-data" autocomplete="off" id="for">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
@@ -96,6 +70,8 @@
    						 </div>
 
 				      	<br>
+
+				      	<div class="error-text"></div>
 						<div class="name-details" style="display: flex">
 							<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan">
 								<input class="input100" type="text" name="firstname" placeholder="First name">
@@ -152,9 +128,7 @@
 							</div>
 						</div>
 						<div class="container-signup100-form-btn">
-							<button class="signup100-form-btn" id ="btn">
-								NEXT
-							</button>
+							<input type="submit" name="submit" value="NEXT" class="signup100-form-btn" id="btn">
 						</div>
 						<br>
 						<hr style="width:100%;text-align:left;margin-left:0;margin-top-top: 15px;color: black;">
@@ -178,5 +152,6 @@
 		</div>
 
 	</div>
+	<script src="javascript/signup.js" ></script>
 </body>
 </html>

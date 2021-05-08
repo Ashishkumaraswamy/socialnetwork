@@ -5,12 +5,11 @@
   $dbname = "cp8gnJjhXH";
 
   $conn = mysqli_connect($hostname, $username, $password, $dbname);
-  alert("here in phpsadasd");
-  console.log("here in phpasdasd");
+
   if(!$conn){
-    alert("Database connection error".mysqli_connect_error());
+    die('Connection Failed : '.$conn->connect_error);
   }
   else{
-    alert("Database connected successfully");	
+    echo "Connection successful";
   }
 ?>
