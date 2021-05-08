@@ -21,7 +21,7 @@
                 echo "Email or Password is Incorrect!";
             }
         }else{
-            echo "$email - This email not Exist!";
+            echo "This email does not Exist!";
         }
     }else{
         echo "All input fields are required!";

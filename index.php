@@ -52,8 +52,8 @@
 }
 
 .wrap-login100 {
-  width:960px;
-  height:500px;
+  width:1000px;
+  height:600px;
   background: white;
   margin: auto;
   padding: 20px 50px;
@@ -93,7 +93,7 @@
 
 	<div class="limiter">
 		<div class="container-login100">
-				<div class="wrap-login100">
+				<div class="wrap-login100" style="padding-top: 50px;">
 				<div class="container">
 				<div class="login100-pic js-tilt"data-tilt>
 						<img src="images/logo1.PNG" alt="IMG" >
@@ -111,6 +111,7 @@
 						</span>
 
 						<div class="error-text"></div>
+						<br>
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<input class="input100" type="text" name="email" placeholder="Email">
 							<span class="focus-input100"></span>

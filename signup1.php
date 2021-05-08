@@ -72,7 +72,7 @@
 								<input class="input100" type="text" name="country" placeholder="Country">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fas fa-globe-asia" style='font-size:17px'></i>
+									<i class="fas fa-globe-asia" style='font-size:17px; margin-top:15px'></i>
 								</span>
 							</div>
 							<p>&nbsp&nbsp&nbsp</p>
@@ -81,7 +81,7 @@
 								<input class="input100" type="text" name="state" placeholder="State">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fas fa-flag"  style='font-size:17px'></i>
+									<i class="fas fa-flag"  style='font-size:17px; margin-top:15px'></i>
 								</span>
 							</div>
 						</div>
