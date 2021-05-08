@@ -39,6 +39,15 @@
     50%  {border-left: 4px solid #ff8080;}
     100% {border-left: 5px solid #ff0000;}
 }
+
+.error-text{
+	font-family: Poppins-Regular;
+	background: #ffcccb;
+	display :block;
+	border-radius: 5px;
+	line-height: 2.5;
+	text-align: center;
+}
   }
 </style>
 
@@ -72,6 +81,8 @@
 				      	<br>
 
 				      	<div class="error-text"></div>
+						<br>
+
 						<div class="name-details" style="display: flex">
 							<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan">
 								<input class="input100" type="text" name="firstname" placeholder="First name">
