@@ -44,6 +44,7 @@
 </style>
 
 <script type="text/javascript">
+	function checkOTP(){
 	let otp = localStorage.getItem("name");
 	let otpinp  = document.getElementById("myOTP").value;
 	if(otp == otpinp){
@@ -52,7 +53,9 @@
     }
 	else{
 		alert("OTP mismatched!!");
+		document.getElementById("ko").action = "otpverify.php";
 	}
+}
 </script>
 
 </head>
@@ -61,7 +64,7 @@
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" method="post" action="signup1.php">
+					<form class="signup100-form validate-form" method="post" action="signup1.php" id="ko" autocomplete="off">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
