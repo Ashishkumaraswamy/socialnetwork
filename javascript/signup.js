@@ -58,5 +58,5 @@ function sendEmail() {
     Subject : "Hi",
     Body : "Message from Social Network.\nThe OTP is " + otp,
   });
-  alert("mail sent successfully");
+  alert("Mail sent successfully Check for OTP");
 }

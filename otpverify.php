@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
 <head>
 	<title>OTP verification</title>
@@ -12,24 +13,6 @@
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
-	<script type="text/javascript">
-		document.addEventListener("DOMContentLoaded", function(){
-			
-			document.getElementById("otp").addEventListener("click",function(){
-			otp = localStorage.getItem("name");
-			var otpinp  =document.getElementById("myOTP").value;
-			if(otp.localeCompare(otpinp) == 0){
-				alert("OTP matched!!");
-				location.href = "signup1.php";
-			}else{
-				alert("OTP mismatched!!");
-				location.href = "signup1.php";
-			}});
-	});
-
-		
-	</script>
-
 <style>
  .box {
   width:700px;
@@ -60,13 +43,25 @@
   }
 </style>
 
+<script type="text/javascript">
+	let otp = localStorage.getItem("name");
+	let otpinp  = document.getElementById("myOTP").value;
+	if(otp == otpinp){
+		alert("OTP matched!!");
+		document.location.href = "signup1.php";			
+    }
+	else{
+		alert("OTP mismatched!!");
+	}
+</script>
+
 </head>
 <body>
 	<div class="limiter">
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" method="post" enctype="multipart/form-data" autocomplete="off">
+					<form class="signup100-form validate-form" method="post" action="signup1.php">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
@@ -93,7 +88,9 @@
 						</div>
 
 						<div class="container-signup100-form-btn">
-							<input type="submit" name="submit" value="CHECK" class="signup100-form-btn" id= "otp">
+							<button class="signup100-form-btn" onclick="checkOTP()">
+								CHECK
+							</button>
 						</div>
 						<br>
 					</form>
