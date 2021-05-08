@@ -80,7 +80,7 @@
 
 				      	<br>
 
-				      	<div class="error-text" style="font-family: Poppins-Regular"></div>
+				      	<div class="error-text"></div>
 						<br>
 
 						<div class="name-details" style="display: flex">
