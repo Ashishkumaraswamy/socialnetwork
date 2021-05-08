@@ -36,15 +36,16 @@
 
 .overlay {
   position: absolute;
-  top: 0;
+  top: 50px;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 70%;
-  width: 110%;
-  opacity: 0;
+  right: 70px;
+  height: 60%;
+  width: 92%;
+  opacity: 0%;
   transition: .5s ease;
   background-color: #aa0468;
+ 
 }
 
 .container:hover .overlay {
@@ -64,7 +65,7 @@
 }
 
 .wrap-login100 {
-  width:960px;
+  width:1060px;
   height:500px;
   background: white;
   margin: auto;
@@ -89,14 +90,24 @@
     50%  {border-left: 4px solid #ff8080;}
     100% {border-left: 5px solid #ff0000;}
 }
+
+.error-text{
+	font-family: Poppins-Regular;
+	background: #ffcccb;
+	display :block;
+	border-radius: 5px;
+	line-height: 2.5;
+	text-align: center;
+}
+
 </style>
 </head>
 <body>
 
 	<div class="limiter">
 		<div class="container-login100">
-				<div class="wrap-login100">
-				<div class="container">
+				<div class="wrap-login100" style="padding-top: 50px;">
+				<div class="container" style="padding-top: 30px; margin-left: 50px">
 				<div class="login100-pic js-tilt"data-tilt>
 						<img src="images/logo1.PNG" alt="IMG" >
 
@@ -106,11 +117,12 @@
 						</div>
 					</div>
 
-					<form class="login100-form validate-form">
+					<form class="login100-form validate-form" method="POST"  autocomplete="off" id="form" action="#">
 						<span class="login100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 50px">
 							LOG IN
 						</span>
 
+						<div class="error-text" style="font-family: Poppins-Regular"></div>
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<input class="input100" type="text" name="email" placeholder="Email">
 							<span class="focus-input100"></span>
@@ -128,9 +140,7 @@
 						</div>
 
 						<div class="container-login100-form-btn">
-							<button class="login100-form-btn">
-								Login
-							</button>
+							<input type="submit" name="submit" value="LOGIN" class="login100-form-btn" id="btn">
 						</div>
 
 						<div class="text-center p-t-12">
@@ -141,7 +151,6 @@
 								&nbsp Username / Password?
 							</a>
 						</div>
-
 						<div class="text-center p-t-20 p-b-70">
 							<p>Do not have an account?
 							<a class="txt2" href="signup.php">
@@ -175,6 +184,7 @@
 
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="javascript/login.js" ></script>
 
 </body>
 </html>
