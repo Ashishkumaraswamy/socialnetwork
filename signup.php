@@ -42,13 +42,13 @@
 
 .error-text{
 	font-family: Poppins-Regular;
-	background: #ffcccb;
+	background: #FFBABA;
 	display :block;
 	border-radius: 5px;
 	line-height: 2.5;
 	text-align: center;
+	color:#D8000C;
 }
-  }
 </style>
 
 
