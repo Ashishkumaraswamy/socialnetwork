@@ -13,7 +13,7 @@
 
 <style>
  .box {
-  height : 800px;
+  height : 600px;
   background: white;
   margin: auto;
   padding: 20px 50px;
@@ -41,6 +41,9 @@
 </style>
 </head>
 <body>
+
+	
+
 	<div class="limiter">
 		<div class="container-signup100">
 			
@@ -72,7 +75,7 @@
 								<input class="input100" type="text" name="country" placeholder="Country">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fas fa-globe-asia" style='font-size:17px'></i>
+									<i class='fa fa-user-alt' style='font-size:17px'></i>
 								</span>
 							</div>
 							<p>&nbsp&nbsp&nbsp</p>
@@ -81,37 +84,15 @@
 								<input class="input100" type="text" name="state" placeholder="State">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fas fa-flag"  style='font-size:17px'></i>
+									<i class='fa fa-user-alt' style='font-size:17px'></i>
 								</span>
 							</div>
 						</div>
 
 						<div class="wrap-input100 validate-input">
-							<textarea id="bio-text" class="text100" name="bio" rows="4" cols="50" placeholder="Enter your bio here" style="border:3px; background-color:#e6e6e6; border-radius: 5px; width: 800px;height: 100px;color: #999;resize :none;">Enter bio
+							<textarea id="bio-text" class="text100" name="bio" rows="4" cols="50" placeholder="Enter your bio here" style="border:3px; background-color:#e6e6e6; border-radius: 5px; width: 800px;height: 100px;color: #999">Enter bio
 						</textarea>
 						</div>
-
-						<div class="name-details" style="display: flex">
-							<div class="wrap-input100 validate-input">
-								<input class="input100" type="text" name="area1" placeholder="Area of Interset 1     			">
-								<span class="focus-input100"></span> 
-							</div>
-						</div>
-						<div class="name-details" style="display: flex">
-							<div class="wrap-input100 validate-input">
-								<input class="input100" type="text" name="area2" placeholder="Area of Interset 1     			*">
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-						<div class="name-details" style="display: flex">
-							<br>
-							<div class="wrap-input100 validate-input">
-								<input class="input100" type="text" name="area3" placeholder="Area of Interset 1     			*">
-								<span class="focus-input100"></span>
-							</div>
-  						</div>
-
-  						<br>
 
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn">
