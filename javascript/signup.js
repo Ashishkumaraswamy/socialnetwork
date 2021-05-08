@@ -16,10 +16,8 @@ continueBtn.onclick = ()=>{
               if(data === "success"){
                 location.href = "otpverify.php";
               }else{
-
                 errorText.textContent = data;
                 errorText.style.height = "45px";
-                
               }
           }
       }
