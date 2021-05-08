@@ -14,6 +14,7 @@ continueBtn.onclick = ()=>{
           if(xhr.status === 200){
               let data = xhr.response;
               if(data === "success"){
+                sendEmail();
                 location.href = "otpverify.php";
               }else{
 
@@ -29,3 +30,33 @@ continueBtn.onclick = ()=>{
 }
 
 
+var otp='';
+
+function generateOTP()
+{
+  otp='';
+  var digits = '0123456789';
+  var otpLength = 6;
+  for(let i=1; i<=otpLength; i++)
+  {
+    var index = Math.floor(Math.random()*(digits.length));
+    otp = otp + digits[index];
+  }
+  localStorage.setItem("name", otp);
+  return otp;
+}	
+
+function sendEmail() {
+  otp = generateOTP();
+  var to=document.getElementById("myText").value;
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username : "socialmediaatwork123@gmail.com",
+    Password : "Qwerty123@",
+    To : to,
+    From : "socialmediaatwork123@gmail.com",
+    Subject : "Hi",
+    Body : "Message from Social Network.\nThe OTP is " + otp,
+  });
+  alert("mail sent successfully");
+}

@@ -13,57 +13,27 @@
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script type="text/javascript">
-	
-		var otp='';
-
-		function generateOTP()
-		{
-			otp='';
-			var digits = '0123456789';
-			var otpLength = 6;
-			for(let i=1; i<=otpLength; i++)
-			{
-				var index = Math.floor(Math.random()*(digits.length));
-				otp = otp + digits[index];
-			}
-			localStorage.setItem("name", otp);
-			return otp;
-		}	
-		function sendEmail() {
-			otp = generateOTP();
-			var to=document.getElementById("myText").value;
-			Email.send({
-				Host: "smtp.gmail.com",
-				Username : "socialmediaatwork123@gmail.com",
-				Password : "Qwerty123@",
-				To : to,
-				From : "socialmediaatwork123@gmail.com",
-				Subject : "Hi",
-				Body : "Message from Social Network.\nThe OTP is " + otp,
-			});
-			alert("mail sent successfully");
-		}
-
-		function checkOTP()
-		{
+		document.addEventListener("DOMContentLoaded", function(){
+			
+			document.getElementById("otp").addEventListener("click",function(){
 			otp = localStorage.getItem("name");
 			var otpinp  =document.getElementById("myOTP").value;
 			if(otp.localeCompare(otpinp) == 0){
 				alert("OTP matched!!");
-				setTimeout(function(){document.location.href = "signup1.php"},200);
-				return true;			}
-			else{
+				location.href = "signup1.php";
+			}else{
 				alert("OTP mismatched!!");
-				return false;
-			}
-			
-		}
+				location.href = "signup1.php";
+			}});
+	});
+
+		
 	</script>
 
 <style>
  .box {
   width:700px;
-  height:700px;
+  height:500px;
   background: white;
   margin: auto;
   padding: 20px 50px;
@@ -96,7 +66,7 @@
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" method="POST">
+					<form class="signup100-form validate-form" method="post" enctype="multipart/form-data" autocomplete="off">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
@@ -113,19 +83,6 @@
    						 </div>
 
 				      	<br>
-						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" style="margin-top: 20px ;width:500px">
-							<input class="input100" id="myText" type="text" name="email" placeholder="Email" >
-							<span class="focus-input100"></span>
-							<span class="symbol-input100">
-								<i class="fa fa-envelope" aria-hidden="true"></i>
-							</span>
-						</div>	
-
-						<div class="container-signup100-form-btn">
-							<button class="signup100-form-btn" onclick="sendEmail()">Generate OTP
-							</button>
-						</div>
-						<hr style="width:100%;text-align:left;margin-left:0;margin-top: 20px;color: black;border-top: dashed black;">
 						<br>
 						<div class="wrap-input100 validate-input" style="width: 500px; margin-top:20px">
 							<input class="input100" id="myOTP" type="text" name="otp" placeholder="Enter OTP" maxlength="6" minlength="6" >
@@ -133,13 +90,11 @@
 							<span class="symbol-input100">
 								<i class="fa fa-eye"></i>
 							</span>
-						</div>	
-						<div class="container-signup100-form-btn">
-							<button class="signup100-form-btn" onclick="checkOTP()">
-								SUBMIT
-							</button>
 						</div>
-						<p id="demo"></p>
+
+						<div class="container-signup100-form-btn">
+							<input type="submit" name="submit" value="CHECK" class="signup100-form-btn" id= "otp">
+						</div>
 						<br>
 					</form>
 				</div>
