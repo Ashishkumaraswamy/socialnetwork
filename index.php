@@ -4,19 +4,7 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
-
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
@@ -36,16 +24,15 @@
 
 .overlay {
   position: absolute;
-  top: 50px;
+  top: 0;
   bottom: 0;
   left: 0;
-  right: 70px;
-  height: 60%;
-  width: 92%;
-  opacity: 0%;
+  right: 0;
+  height: 70%;
+  width: 110%;
+  opacity: 0;
   transition: .5s ease;
   background-color: #aa0468;
- 
 }
 
 .container:hover .overlay {
@@ -65,7 +52,7 @@
 }
 
 .wrap-login100 {
-  width:1060px;
+  width:960px;
   height:500px;
   background: white;
   margin: auto;
@@ -106,8 +93,8 @@
 
 	<div class="limiter">
 		<div class="container-login100">
-				<div class="wrap-login100" style="padding-top: 50px;">
-				<div class="container" style="padding-top: 30px; margin-left: 50px">
+				<div class="wrap-login100">
+				<div class="container">
 				<div class="login100-pic js-tilt"data-tilt>
 						<img src="images/logo1.PNG" alt="IMG" >
 
@@ -118,11 +105,12 @@
 					</div>
 
 					<form class="login100-form validate-form" method="POST"  autocomplete="off" id="form" action="#">
+					<form class="login100-form validate-form">
 						<span class="login100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 50px">
 							LOG IN
 						</span>
 
-						<div class="error-text" style="font-family: Poppins-Regular"></div>
+						<div class="error-text"></div>
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<input class="input100" type="text" name="email" placeholder="Email">
 							<span class="focus-input100"></span>
@@ -163,28 +151,8 @@
 				</div>
 		</div>
 	</div>
-
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
-
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 	<script src="javascript/login.js" ></script>
+	
 
 </body>
 </html>
