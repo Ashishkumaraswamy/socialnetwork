@@ -42,6 +42,32 @@
   }
 </style>
 
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(){
+		const form = document.querySelector('#for');
+    	form.querySelector('#btn').onclick = function() {			
+			let xhr = new XMLHttpRequest();
+			xhr.open("POST", "php/signup.php", true);
+			alert("WASTsaD!!");
+			xhr.onload = function() {
+				alert("WASTED!!");
+				if(xhr.readyState === XMLHttpRequest.DONE){
+				if(xhr.status === 200){
+					let data = xhr.response;
+					if(data === "success"){
+						setTimeout(function(){document.location.href = "otpverify.php"},200);
+					}else{
+						alert("WASTED");
+					}
+				}
+				}
+							}
+			let formData = new FormData(form);
+			xhr.send(formData);
+		}
+	});
+</script>
+
 
 	
 </head>
@@ -127,7 +153,7 @@
 						</div>
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn" id ="btn">
-								SIGN UP
+								NEXT
 							</button>
 						</div>
 						<br>
@@ -152,32 +178,5 @@
 		</div>
 
 	</div>
-<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function(){
-    	document.querySelector('#btn').onclick = function() {
-
-			const form = document.querySelector("#for");
-			let xhr = new XMLHttpRequest();
-			xhr.open("POST", "php/signup.php", true);
-			alert("WASTEDasd");
-			xhr.onload = ()=>{
-				alert("WASTED!!");
-			if(xhr.readyState === XMLHttpRequest.DONE){
-			if(xhr.status === 200){
-				let data = xhr.response;
-				if(data === "success"){
-					setTimeout(function(){document.location.href = "otpverify.php"},200);
-				}else{
-					alert("WASTED");
-				}
-			}
-			}
-							}
-			let formData = new FormData(form);
-			xhr.send(formData);
-		};
-	});
-</script>
-
 </body>
 </html>

@@ -1,6 +1,10 @@
 <?php
     session_start();
     include_once "config.php";
+
+    alert("here in php");
+    console.log("here in php");
+    
     $fname = mysqli_real_escape_string($conn, $_POST['firstname']);
     $lname = mysqli_real_escape_string($conn, $_POST['lastname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
