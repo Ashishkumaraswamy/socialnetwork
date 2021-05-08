@@ -90,6 +90,16 @@
     50%  {border-left: 4px solid #ff8080;}
     100% {border-left: 5px solid #ff0000;}
 }
+
+.error-text{
+	font-family: Poppins-Regular;
+	background: #ffcccb;
+	display :block;
+	border-radius: 5px;
+	line-height: 2.5;
+	text-align: center;
+}
+
 </style>
 </head>
 <body>
@@ -107,11 +117,12 @@
 						</div>
 					</div>
 
-					<form class="login100-form validate-form" method="POST"  autocomplete="off" id="form">
+					<form class="login100-form validate-form" method="POST"  autocomplete="off" id="form" action="#">
 						<span class="login100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 50px">
 							LOG IN
 						</span>
 
+						<div class="error-text" style="font-family: Poppins-Regular"></div>
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<input class="input100" type="text" name="email" placeholder="Email">
 							<span class="focus-input100"></span>
@@ -129,7 +140,7 @@
 						</div>
 
 						<div class="container-login100-form-btn">
-							<<input type="submit" name="submit" value="NEXT" class="signup100-form-btn" id="btn">
+							<input type="submit" name="submit" value="LOGIN" class="login100-form-btn" id="btn">
 						</div>
 
 						<div class="text-center p-t-12">
@@ -140,7 +151,6 @@
 								&nbsp Username / Password?
 							</a>
 						</div>
-
 						<div class="text-center p-t-20 p-b-70">
 							<p>Do not have an account?
 							<a class="txt2" href="signup.php">
@@ -174,6 +184,7 @@
 
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="javascript/login.js" ></script>
 
 </body>
 </html>
