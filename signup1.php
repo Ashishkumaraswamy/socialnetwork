@@ -56,9 +56,7 @@
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" id="form" method="post">
-			
-
+					<form class="signup100-form validate-form" id="form" method="post" autocomplete="off">
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px; color: #666">
 							USER INFO
 						</span>
@@ -70,7 +68,6 @@
 				      	</ul>
 				      	<br>
 				      	<div class="error-text"></div>
-						<br>
 						<input type="hidden" id="email" name="email" value="">
 						<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan" style="margin-top: 20px ;width:49%">
 							<input class="input100" type="text" name="username" placeholder="User name">
