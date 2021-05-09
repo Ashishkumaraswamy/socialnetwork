@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="icon" type="image/png" href="images/logoicon.ICO"/>
+	<link rel="icon" type="image/png" href="images/logoicon.ico"/>
 <!--===============================================================================================-->
 <meta name="robots" content="noindex, follow">
 
