@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Sign UP</title>
+	<title>Forgot Password</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -9,15 +9,18 @@
 	<link rel="stylesheet" type="text/css" href="css/signup.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="icon" type="image/png" href="images/logoicon.ICO"/>
+
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>  
+    <link rel="icon" type="image/png" href="images/logoicon.ICO"/>
+
 
 <meta name="robots" content="noindex, follow">
 <style>
  .box {
   background: white;
   margin: auto;
+  width: 600px;
   padding: 20px 50px;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -51,86 +54,47 @@
   }
 </style>
 
-
 	
 </head>
 <body>
-
-	
-
 	<div class="limiter">
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" method="post" enctype="multipart/form-data" autocomplete="off" id="for">
+					<form class="signup100-form validate-form" method="post" enctype="multipart/form-data" autocomplete="off" id="form">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
-							SIGN UP
+							Change Password
 						</span>
 
-						<div class="container2">
-      						<ul class="progressbar">
-        					<li class="active">Step 1</li>
-        					<li>Step 2</li>
-        					<li>Step 3</li>
-							<li>Step 4</li>
-     						</ul>
-   						 </div>
 
 				      	<br>
-
 				      	<div class="error-text"></div>
-						<br>
+                        <br>
 
 						<div class="name-details" style="display: flex">
-							<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan">
-								<input class="input100" type="text" name="firstname" placeholder="First name">
-								<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class='fa fa-user-alt' style='font-size:17px'></i>
-								</span>
-							</div>
-							<p>&nbsp&nbsp&nbsp</p>
-
-							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-								<input class="input100" type="text" name="lastname" placeholder="Last name">
-								<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class='fa fa-user-alt' style='font-size:17px'></i>
-								</span>
-							</div>
-						</div>	
-
-						<div class="name-details" style="display: flex">
-							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" style="width:100%;">
 								<input class="input100" type="text" id="myText" name="email" placeholder="Email">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa fa-envelope" aria-hidden="true"></i>
 								</span>
 							</div>
-							<p>&nbsp&nbsp&nbsp</p>
-
-							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-								<input placeholder="Date of Birth" name="dob" class="input100" type="text" onfocus="(this.type='date')" id="date">
-								<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class='fa fa-calendar-alt' style='font-size:17px'></i>
-								</span>
-							</div>
 						</div>	
 
 						<div class="name-details" style="display: flex">
-							<div class="wrap-input100 validate-input" data-validate = "Password is required">
-								<input class="input100" type="password" name="pass" placeholder="Password">
+							<div class="wrap-input100 validate-input" data-validate = "Password is required" style="width:100%;">
+								<input class="input100" type="password" name="pass" placeholder="New Password">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa fa-lock" aria-hidden="true"></i>
 								</span>
 							</div>
-							<p>&nbsp&nbsp&nbsp</p>
-							<div class="wrap-input100 validate-input" data-validate = "Password is required">
+                        </div>	
+
+                        <div class="name-details" style="display: flex">
+							<div class="wrap-input100 validate-input" data-validate = "Password is required" style="width:100%;">
 								<input class="input100" type="password" name="pass" placeholder="Confirm Password">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -138,31 +102,49 @@
 								</span>
 							</div>
 						</div>
+
 						<div class="container-signup100-form-btn">
 							<input type="submit" name="submit" value="NEXT" class="signup100-form-btn" id="btn">
 						</div>
-						<br>
-						<hr style="width:100%;text-align:left;margin-left:0;margin-top-top: 15px;color: black;">
-						<div class="container-signup100-form-btn">
-							<button class="signup100-form-btn">
-								<a href="otpverify.php" class="fa fa-facebook"></a>
-								<a href="otpverify.php">&nbsp&nbsp&nbsp&nbspLog in With Facebook</a> 
-							</button>
-						</div>
 
-						<div class="text-center p-t-20 p-b-70">
-							<p>Already have an account?
-							<a class="txt2" href="index.php">
-								Log in
-								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-							</a>
-							</p>
-						</div>
+                        <br>
 					</form>
 				</div>
 		</div>
 
 	</div>
-	<script src="javascript/signup.js" ></script>
+
+    <script type="text/javascript">
+    const form=document.querySelector("#form"),
+    continueBtn=document.querySelector("#btn"),
+    errorText= form.querySelector(".error-text");
+
+    form.onsubmit = (e)=>{
+        e.preventDefault();
+    }
+
+    continueBtn.onclick = ()=>{
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/forgot.php", true);
+        xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                console.log(data);
+                if(data === "success"){
+                    location.href = "index.php";
+                    alert("PASSWORD changed!!");
+
+                }else{
+                    errorText.textContent = data;
+                    errorText.style.height = "45px";
+                }
+            }
+        }
+        }
+        let formData = new FormData(form);
+        xhr.send(formData);
+    }
+</script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" type="image/png" href="images/logoicon.ICO"/>
 <!--===============================================================================================-->
 <meta name="robots" content="noindex, follow">
 
@@ -136,8 +137,8 @@
 							<span class="txt1">
 								Forgot
 							</span>
-							<a class="txt2" href="#" style="text-decoration: none">
-								&nbsp Username / Password?
+							<a class="txt2" href="forgotpassword.php" style="text-decoration: none">
+								&nbsp Password?
 							</a>
 						</div>
 						<div class="text-center p-t-20 p-b-70">

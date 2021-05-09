@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <link rel="icon" type="image/png" href="images/logoicon.ICO"/>
     <script src="http://fonts.cdnfonts.com/css/billabong" crossorigin='anonymous'></script>
 
 </head>

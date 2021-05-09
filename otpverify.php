@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/signup.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<link rel="icon" type="image/png" href="images/logoicon.ICO"/>
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
