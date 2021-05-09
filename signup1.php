@@ -39,6 +39,16 @@
     100% {border-left: 5px solid #ff0000;}
 }
 
+
+.error-text{
+	font-family: Poppins-Regular;
+	background: #ffcccb;
+	display :block;
+	border-radius: 5px;
+	line-height: 2.5;
+	text-align: center;
+}
+
 </style>
 </head>
 <body>
@@ -46,7 +56,7 @@
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form">
+					<form class="signup100-form validate-form" id="form" method="post">
 			
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px; color: #666">
@@ -59,7 +69,9 @@
 						<li>Step 4</li>
 				      	</ul>
 				      	<br>
+				      	<div class="error-text"></div>
 						<br>
+						<input type="hidden" id="email" name="email" value="">
 						<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan" style="margin-top: 20px ;width:49%">
 							<input class="input100" type="text" name="username" placeholder="User name">
 							<span class="focus-input100"></span>
@@ -112,14 +124,13 @@
   						</div>
   						<br>
 						<div class="container-signup100-form-btn">
-							<button class="signup100-form-btn">
-								<a href="signup2.php">NEXT</a>
-							</button>
+							<input type="submit" name="submit" value="NEXT" class="signup100-form-btn" id="btn">
 						</div>
 					</form>
 				</div>
 		</div>
 
 	</div>
+	<script src="javascript/signup1.js"></script>>
 </body>
 </html>

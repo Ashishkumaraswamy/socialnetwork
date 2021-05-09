@@ -58,5 +58,6 @@ function sendEmail() {
     Subject : "Hi",
     Body : "Message from Social Network.\nThe OTP is " + otp,
   });
+  localStorage.setItem("email", to);
   alert("Mail sent successfully Check for OTP");
 }
