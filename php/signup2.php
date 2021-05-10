@@ -7,7 +7,8 @@
     $user_id= $result['user_id'];
     if(isset($_FILES['image']))
     {
-        $file= addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+        $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+    
         $img_name = $_FILES['image']['name'];
         $img_type = $_FILES['image']['type'];
         $tmp_name = $_FILES['image']['tmp_name'];
@@ -21,7 +22,7 @@
             $types = ["image/jpeg", "image/jpg", "image/png"];
             if(in_array($img_type, $types) === true)
             {
-                    $update_query = mysqli_query($conn, "UPDATE users SET propic='$file' WHERE user_id='{$user_id}'");
+                    $update_query = mysqli_query($conn, "UPDATE users SET propic = '$file' WHERE user_id ='{$user_id}'");
                     if($update_query)
                     {
                             echo "success";

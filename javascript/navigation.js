@@ -27,7 +27,6 @@ searchIcon.onclick = ()=>{
 
 searchBar.onkeyup = ()=>{
   let searchTerm = searchBar.value;
-  alert('Entered here');
   if(searchTerm != ""){
     searchBar.classList.add("active");
   }else{

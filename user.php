@@ -1,11 +1,15 @@
 <?php 
     session_start();
     include_once "php/config.php";
+	$sql=mysqli_query($conn, "select * from users where user_id='{$_SESSION['unique_id']}'");
+	if(mysqli_num_rows($sql) > 0){
+			$row = mysqli_fetch_assoc($sql);
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>USER</title>
+	<title><?php echo $row['user_name'] ?></title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/navigation.css">
@@ -25,14 +29,8 @@
 <div class="container">
 
 <div class="profile">
-
-    <div class="profile-image">
-    	<?php
-    		$sql=mysqli_query($conn, "select * from users where user_id='{$_SESSION['unique_id']}'");
-    	 if(mysqli_num_rows($sql) > 0){
-              $row = mysqli_fetch_assoc($sql);
-            }
-    	?>
+  <div class="profile-image">
+    	
 	<?php echo '<img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image">';?>
     </div>
 
