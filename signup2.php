@@ -212,9 +212,9 @@ return false;
 						<br>
 						<ul id="progressbar">
                         <li class="active" id="account"><strong>Account</strong></li>
-                        <li class="active" id="personal"><strong>Personal</strong></li>
-                        <li class="active" id="payment"><strong>Image</strong></li>
-                        <li class="active" id="confirm"><strong>Finish</strong></li>
+                        <li class="active" id="personal"><strong>Verification</strong></li>
+                        <li class="active" id="payment"><strong>Personal</strong></li>
+                        <li class="active" id="confirm"><strong>Image</strong></li>
                     </ul>
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>

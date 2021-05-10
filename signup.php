@@ -148,9 +148,9 @@ return false;
 
 						<ul id="progressbar">
                         <li class="active" id="account"><strong>Account</strong></li>
-                        <li id="personal"><strong>Personal</strong></li>
-                        <li id="payment"><strong>Image</strong></li>
-                        <li id="confirm"><strong>Finish</strong></li>
+                        <li id="personal"><strong>Verification</strong></li>
+                        <li id="payment"><strong>Personal</strong></li>
+                        <li id="confirm"><strong>Image</strong></li>
                     </ul>
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
