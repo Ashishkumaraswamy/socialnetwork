@@ -204,7 +204,7 @@ return false;
 		<div class="container-signup100">
 			
 				<div class="box">
-					<form class="signup100-form validate-form" id="form" method="post" autocomplete="off">
+					<form class="signup100-form validate-form" id="form" method="post" autocomplete="off" enctype="multipart/form-data">
 
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 40px;">
 							UPLOAD PROFILE PICTURE
@@ -227,7 +227,7 @@ return false;
 						 <div class="picture-container">
 					        <div class="picture">
 					        	<img src="images/photoupload.PNG" class="picture-src" id="wizardPicturePreview" title="" >
-					            <input type="file" id="wizard-picture" class="" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg">
+					            <input type="file" id="wizard-picture" name="image">
 					        </div>
 					        <br>
 					        <h5 class="">Choose Picture</h5>

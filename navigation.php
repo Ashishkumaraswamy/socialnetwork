@@ -4,8 +4,6 @@
     <link rel="stylesheet" type="text/css" href="css/navigation.css">
     <link rel="icon" type="image/png" href="images/logoicon.ico"/>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script type="text/javascript" src="javascript/navigation.js"></script>
-
 </head>
 <body><div class="navigation">
   <div class="logo">
@@ -14,11 +12,11 @@
     </a>
   </div>
   <div class="navigation-search-container">
-    <i class="fa fa-search"></i>
-    <input class="search-field" type="text" placeholder="Search">
+    <i class="fa fa-search" id="searchicon"></i>
+    <input class="search-field" type="text" placeholder="Search" id="searchinput">
     <div class="search-container">
       <div class="search-container-box">
-        <div class="search-results">
+        <div class="search-results" id="searchlist">
 
         </div>
       </div>
@@ -45,6 +43,6 @@
     </a>
   </div>
 </div>
-  
+<script type="text/javascript" src="javascript/navigation.js"></script>
 </body>
 </html>

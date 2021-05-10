@@ -33,7 +33,7 @@
               $row = mysqli_fetch_assoc($sql);
             }
     	?>
-        <img src="$row['propic']" alt="">
+	<?php echo '<img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image">';?>
     </div>
 
     <div class="profile-user-settings">
