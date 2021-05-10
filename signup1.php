@@ -209,6 +209,6 @@ return false;
 		</div>
 
 	</div>
-	<script src="javascript/signup1.js"></script>>
+	<script src="javascript/signup1.js"></script>
 </body>
 </html>

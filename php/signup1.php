@@ -30,7 +30,7 @@
             }
             else
             {
-                echo "Insertion failure";;
+                echo "Insertion failure";
             }   
         }         
     }else{
