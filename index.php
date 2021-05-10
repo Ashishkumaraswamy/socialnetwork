@@ -94,9 +94,9 @@
 
 	<div class="limiter">
 		<div class="container-login100">
-				<div class="wrap-login100" style="padding-top: 50px;">
+				<div class="wrap-login100" style="padding-top: 100px;">
 				<div class="container">
-				<div class="login100-pic js-tilt"data-tilt>
+				<div class="login100-pic js-tilt"data-tilt style="margin-left:40px; margin-top: 30px;">
 						<img src="images/logo1.PNG" alt="IMG" >
 
 							<div class="overlay">
@@ -105,8 +105,7 @@
 						</div>
 					</div>
 
-					<form class="login100-form validate-form" method="POST"  autocomplete="off" id="form" action="#">
-					<form class="login100-form validate-form">
+					<form class="login100-form validate-form" method="POST"  autocomplete="off" id="form" action="#" style="width:375px">
 						<span class="login100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 50px">
 							LOG IN
 						</span>

@@ -56,6 +56,82 @@
 		document.getElementById("ko").action = "otpverify.php";
 	}
 }
+	$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+var current = 1;
+var steps = $("fieldset").length;
+
+setProgressBar(current);
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(++current);
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(--current);
+});
+
+function setProgressBar(curStep){
+var percent = parseFloat(100 / steps) * curStep;
+percent = percent.toFixed();
+$(".progress-bar")
+.css("width",percent+"%")
+}
+
+$(".submit").click(function(){
+return false;
+})
+
+});
 </script>
 
 </head>
@@ -71,17 +147,16 @@
 							OTP verification
 						</span>
 
-						<div class="container2">
-      						<ul class="progressbar">
-        					<li class="active">Step 1</li>
-        					<li class="active">Step 2</li>
-        					<li>Step 3</li>
-							<li>Step 4</li>
-     						</ul>
-   						 </div>
-
-				      	<br>
-						<br>
+						<ul id="progressbar">
+                        <li class="active" id="account"><strong>Account</strong></li>
+                        <li class="active" id="personal"><strong>Personal</strong></li>
+                        <li id="payment"><strong>Image</strong></li>
+                        <li id="confirm"><strong>Finish</strong></li>
+                    </ul>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> 
+                    	<br> <!-- fieldsets -->
 						<div class="wrap-input100 validate-input" style="width: 500px; margin-top:20px">
 							<input class="input100" id="myOTP" type="text" name="otp" placeholder="Enter OTP" maxlength="6" minlength="6" >
 							<span class="focus-input100"></span>
@@ -89,7 +164,6 @@
 								<i class="fa fa-eye"></i>
 							</span>
 						</div>
-
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn" onclick="checkOTP()">
 								CHECK
