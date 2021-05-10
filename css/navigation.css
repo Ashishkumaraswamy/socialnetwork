@@ -1,8 +1,3 @@
-html, body {
-background: #1f2022;
-height: 100%;
-}
-
 @import url('http://fonts.cdnfonts.com/css/billabong');
 
 /* start header */
@@ -21,6 +16,10 @@ height: 100%;
   padding: 0px 50px;
   box-sizing: border-box;
   z-index: 2;
+  /* animation magic */
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
 }
 
 .shrink {
@@ -49,6 +48,7 @@ height: 100%;
   border-radius: 3px;
   font-size: 14px;
 }
+
 
 .navigation-search-container .fa-search {
   position: absolute;
@@ -111,7 +111,8 @@ height: 100%;
   text-align: center;
   font-size: 13px;
   padding: 5px 5px 3px;
-  font-family: "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
   display: none;
 }

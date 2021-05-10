@@ -23,9 +23,10 @@ Flexbox and floats are used as a fallback so that browsers which don't support g
 body {
     font-family: "Open Sans", Arial, sans-serif;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: #383736;
     color: #262626;
     padding-bottom: 3rem;
+    color: white;
 }
 
 img {
@@ -33,7 +34,7 @@ img {
 }
 
 .container {
-    max-width: 93.5rem;
+    max-width: 80%;
     margin: 0 auto;
     padding: 0 2rem;
 }
