@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 <meta name="robots" content="noindex, follow">
 
@@ -226,7 +226,7 @@ return false;
                 <input type="hidden" id="email" name="email" value="">
 						 <div class="picture-container">
 					        <div class="picture">
-					        	<img src="images/photoupload.png" class="picture-src" id="wizardPicturePreview" title="" >
+					        	<img src="images/photoupload.PNG" class="picture-src" id="wizardPicturePreview" title="" >
 					            <input type="file" id="wizard-picture" class="" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg">
 					        </div>
 					        <br>
