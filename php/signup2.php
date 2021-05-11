@@ -5,7 +5,7 @@
     $sql= mysqli_query($conn, "select user_id from login where email_id='{$email}'");
     $result = mysqli_fetch_assoc($sql);
     $user_id= $result['user_id'];
-    if(isset($_FILES['image']))
+    if($_FILES['image']['name'] != "")
     {
         $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
     
@@ -44,6 +44,6 @@
     }
     else
     {
-        echo "Else part of isset";
+        echo "Please upload an image file - jpeg, png, jpg";
     }
 ?>

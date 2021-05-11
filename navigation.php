@@ -8,15 +8,15 @@
 <body><div class="navigation">
   <div class="logo">
     <a class="no-underline" href="#">
-      logo here
+      <img src="images/logo1.PNG" alt="IMG" style="width:75px;height:70px;">
     </a>
   </div>
-  <div class="navigation-search-container">
+  <div class="navigation-search-container" style="width: 500px; margin-bottom: 13px">
     <i class="fa fa-search" id="searchicon"></i>
-    <input class="search-field" type="text" placeholder="Search" id="searchinput">
+    <input class="search-field" type="text" placeholder="Search" id="searchinput" style="width: 500px">
     <div class="search-container">
       <div class="search-container-box">
-        <div class="search-results" id="searchlist">
+        <div class="search-results" id="searchlist" style="margin-top: 20px; margin-bottom: 20px">
 
         </div>
       </div>

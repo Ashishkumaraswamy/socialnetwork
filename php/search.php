@@ -11,7 +11,7 @@
     if(mysqli_num_rows($query) > 0){
         include_once "data.php";
     }else{
-        $output .= 'No user found related to your search term';
+        $output .= '<div style="width:500px; border:2px solid black; border-width:3px;background-color:white"><p style="text-align:center; font-size:18px">No user found related to your search term</p></div>';
     }
     echo $output;
 ?>
