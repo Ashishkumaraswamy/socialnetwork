@@ -214,6 +214,6 @@ button {
         </form>
 
     <a href="mainpage.php" class="back-to-article">back to Home</a>
-    </body>
     <script src="javascript/posting.js"></script> 
+  </body>
 </html>

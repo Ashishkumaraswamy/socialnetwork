@@ -79,61 +79,26 @@
                 while($row1 = mysqli_fetch_array($result))  
                 {  
                      echo '   
-					 			<div class="gallery-item" tabindex="0">
-                                <img src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" class="gallery-image" alt="" />
+					 		<div class="gallery-item" tabindex="0">
+                                <img src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" class="gallery-image" alt=""/>
+								
+								
 								<div class="gallery-item-info">
 
 								<ul>
-								<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 3</li>
-								<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+								<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> '.$row1['likecount'].'</li>
+								<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i>'.$row1['commentcount'].'</li>
 								</ul>
 
-								</div>    
+								</div>  
+							</div>  
                      ';  
                 }  
             ?> 
 			
 				<!--<img src="https://drive.google.com/uc?id=1Ffze6lU1BZBs7mG3yrEgEvIuuLfgs324" class="gallery-image" alt="">-->
-
-			<!--
-			</div>
-
-			<div class="gallery-item" tabindex="0">
-
-				<img src="https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop" class="gallery-image" alt="">
-
-				<div class="gallery-item-info">
-
-					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 89</li>
-						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 5</li>
-					</ul>
-
-				</div>
-
-			</div>
-			-->
-			<div class="gallery-item" tabindex="0">
-
-				<img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop" class="gallery-image" alt="">
-
-				<div class="gallery-item-type">
-
-					<span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
-
-				</div>
-
-				<div class="gallery-item-info">
-
-					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 42</li>
-						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 1</li>
-					</ul>
-
-				</div>
-
-			</div>
-
+		
+	
 		</div>
 		<!-- End of gallery -->
 
