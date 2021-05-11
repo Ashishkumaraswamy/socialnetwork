@@ -43,7 +43,7 @@ $(document).ready(function(){
 const form=document.querySelector("#form"),
 continueBtn = form.querySelector("#insert"),
 errorText = form.querySelector(".error-text"),
-foo =form.querySelector(".gallery-item");
+
 
 form.onsubmit = (e)=>{
     e.preventDefault();

@@ -106,7 +106,13 @@
 	</div>
 	<!-- End of container -->
 
-    <script src="javascript/user.js"></script> 
+    <script>
+        foo = document.querySelector(".gallery");
+
+    foo.onclick = ()=>{
+        location.href = "viewpost.php";
+    }
+    </script> 
 
 
 
