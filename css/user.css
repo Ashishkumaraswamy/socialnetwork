@@ -156,8 +156,10 @@ img {
 }
 
 .gallery-item {
+    width: 500px;
+    height: 300px;  
     position: relative;
-    flex: 1 0 22rem;
+    flex: 1 0 27rem;
     margin: 1rem;
     color: #fff;
     cursor: pointer;

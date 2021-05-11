@@ -16,14 +16,16 @@ $(document).ready(function(){
                    return false;  
               }  
          }  
-    });  
+    });
+
 });  
 
 
 
 const form=document.querySelector("#form"),
 continueBtn = form.querySelector("#insert"),
-errorText = form.querySelector(".error-text");
+errorText = form.querySelector(".error-text"),
+foo =form.querySelector(".gallery-item");
 
 form.onsubmit = (e)=>{
     e.preventDefault();
@@ -51,3 +53,7 @@ continueBtn.onclick = ()=>{
    let formData = new FormData(form);
    xhr.send(formData);
 }
+
+foo.ondblclick = ()=>{
+    alert('Invalid Image File'); 
+}  
