@@ -26,7 +26,7 @@
     <a href="https://instagram.com/mimoudix" class="navigation-link">
       <i class="fa fa-compass"></i>
     </a>
-    <a class="navigation-link notifica">
+    <a class="navigation-link notification">
       <i class="far fa-heart">
         <div class="notification-bubble-wrapper">
           <div class="notification-bubble">

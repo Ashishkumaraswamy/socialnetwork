@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript/posting.js"></script>
 </head>
 
 
@@ -176,7 +177,7 @@ button {
         <br>
         <div class="form-group file-area">
                 <label for="images">Images <span>Your images should be at least 400x300 wide</span></label>
-            <input type="file" name="images" id="images" required="required" multiple="multiple"/>
+            <input type="file" name="files[]" id="files" required="required" multiple="multiple"/>
             <div class="file-dummy">
             <div class="success">Great, your files are selected. Keep on.</div>
             <div class="default">Please select some files</div>
@@ -193,14 +194,12 @@ button {
         <br>
         <br>        
         <div class="form-group">
-            <button type="submit">POST</button>
+            <button type="submit" id="upload">POST</button>
         </div>
         
         
         </form>
 
     <a href="http://scribblerockerz.com/drag-n-drop-file-input-without-javascript/" class="back-to-article" target="_blank">back to Article</a>
-
-
 </body>
 </html>

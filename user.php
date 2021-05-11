@@ -16,7 +16,6 @@
 	<link rel="icon" type="image/png" href="images/logoicon.ico"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	<script type="text/javascript" src="javascript/navigation.js"></script>
     <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" type="text/css" href="css/user.css">
 </head>
