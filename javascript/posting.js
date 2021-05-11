@@ -2,17 +2,18 @@
 //W6PoOiGjt7MRoopRi-vB5PiC
 
 $(document).ready(function(){
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(document.location.search.substring(1));
+    alert(urlParams);
     const code = urlParams.get('code');
     const redirect_uri = "http://localhost/SocialNetwork/posting.php" // replace with your redirect_uri;
     const client_secret = "W6PoOiGjt7MRoopRi-vB5PiC"; // replace with your client secret
     const scope = "https://www.googleapis.com/auth/drive";
     var access_token= "";
     var client_id = "208078296584-nqh94ti82n7gkga84viajvm61laec6el.apps.googleusercontent.com"// replace it with your client id;
-    url = "https://accounts.google.com/o/oauth2/v2/auth?redirect_uri="+redirect_uri
-        +"&prompt=consent&response_type=code&client_id="+client_id+"&scope="+scope
-        +"&access_type=offline";
-    window.location = url;
+    // url = "https://accounts.google.com/o/oauth2/v2/auth?redirect_uri="+redirect_uri
+    //     +"&prompt=consent&response_type=code&client_id="+client_id+"&scope="+scope
+    //     +"&access_type=offline";
+    // window.location = url;
 
 
     $.ajax({
@@ -26,8 +27,6 @@ $(document).ready(function(){
         grant_type:"authorization_code"},
         dataType: "json",
         success: function(resultData) {
-           
-           
            localStorage.setItem("accessToken",resultData.access_token);
            localStorage.setItem("refreshToken",resultData.refreshToken);
            localStorage.setItem("expires_in",resultData.expires_in);
