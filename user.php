@@ -18,6 +18,7 @@
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" type="text/css" href="css/user.css">
+    
 </head>
 <body>
 <?php include_once "navigation.php"; ?>
