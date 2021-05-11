@@ -40,7 +40,6 @@
     50%  {border-left: 4px solid #ff8080;}
     100% {border-left: 5px solid #ff0000;}
 }
-  }
 </style>
 
 <script type="text/javascript">

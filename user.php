@@ -70,20 +70,32 @@
 	<div class="container">
 
 		<div class="gallery">
+			
 
-			<div class="gallery-item" tabindex="0">
 
-				<img src="https://drive.google.com/uc?id=1Ffze6lU1BZBs7mG3yrEgEvIuuLfgs324" class="gallery-image" alt="">
+			<?php  
+                $query = "SELECT * FROM posts where postby = '{$row['user_name']}' ORDER BY timeset DESC";  
+                $result = mysqli_query($conn, $query);  
+                while($row1 = mysqli_fetch_array($result))  
+                {  
+                     echo '   
+					 			<div class="gallery-item" tabindex="0">
+                                <img src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" class="gallery-image" alt="" />
+								<div class="gallery-item-info">
 
-				<div class="gallery-item-info">
+								<ul>
+								<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 3</li>
+								<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+								</ul>
 
-					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-					</ul>
+								</div>    
+                     ';  
+                }  
+            ?> 
+			
+				<!--<img src="https://drive.google.com/uc?id=1Ffze6lU1BZBs7mG3yrEgEvIuuLfgs324" class="gallery-image" alt="">-->
 
-				</div>
-
+			<!--
 			</div>
 
 			<div class="gallery-item" tabindex="0">
@@ -100,7 +112,7 @@
 				</div>
 
 			</div>
-
+			-->
 			<div class="gallery-item" tabindex="0">
 
 				<img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop" class="gallery-image" alt="">
@@ -128,6 +140,8 @@
 
 	</div>
 	<!-- End of container -->
+
+
 
 </main>
 </body>

@@ -7,7 +7,7 @@
 </head>
 <body><div class="navigation">
   <div class="logo">
-    <a class="no-underline" href="#">
+    <a class="no-underline" href="mainpage.php">
       <img src="images/logo1.PNG" alt="IMG" style="width:75px;height:70px;">
     </a>
   </div>
@@ -23,6 +23,9 @@
     </div>
   </div>
   <div class="navigation-icons">
+    <a href="posting.php" class="navigation-link">
+      <i class="fas fa-plus"></i>
+    </a>
     <a href="https://instagram.com/mimoudix" class="navigation-link">
       <i class="fa fa-compass"></i>
     </a>

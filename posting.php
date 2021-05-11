@@ -3,16 +3,25 @@
 <head>
     <title>Post your photo </title>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/logoicon.ico"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+
     <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="javascript/posting.js"></script>
 </head>
 
 
 <style>
 /* ===================== FILE INPUT ===================== */
+.error-text{
+  font-family: Poppins-Regular;
+  background: #ffcccb;
+  display :block;
+  border-radius: 5px;
+  line-height: 2.5;
+  text-align: center;
+}
 .file-area {
   width: 100%;
   position: relative;
@@ -168,7 +177,7 @@ button {
 
 
 <body>
-        <form action method="post">
+        <form action method="post" id="form" enctype="multipart/form-data" autocomplete="off" action="signup1.php">
         
         <br>
         <br>
@@ -176,16 +185,19 @@ button {
         <br>        
         <br>
         <br>
+        <br>
+        <br> 
+        <br>
+        <br>
+        <br>
         <div class="form-group file-area">
                 <label for="images">Images <span>Your images should be at least 400x300 wide</span></label>
-            <input type="file" name="files[]" id="files" required="required" multiple="multiple"/>
+            <input type="file" name="image" id="image" required="required" multiple="multiple"/>
             <div class="file-dummy">
             <div class="success">Great, your files are selected. Keep on.</div>
             <div class="default">Please select some files</div>
             </div>
         </div>
-    
-
         <br>
         <br>        
         <div class="form-group">
@@ -195,12 +207,13 @@ button {
         <br>
         <br>        
         <div class="form-group">
-            <button type="submit" id="upload">POST</button>
+            <input type="submit" name="insert" id="insert" value = "POST"></input>
         </div>
-        
+        <div class="error-text"></div>
         
         </form>
 
-    <a href="http://scribblerockerz.com/drag-n-drop-file-input-without-javascript/" class="back-to-article" target="_blank">back to Article</a>
-</body>
+    <a href="mainpage.php" class="back-to-article">back to Home</a>
+    </body>
+    <script src="javascript/posting.js"></script> 
 </html>

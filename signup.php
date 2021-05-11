@@ -48,7 +48,7 @@
 	line-height: 2.5;
 	text-align: center;
 }
-  }
+
 </style>
 
 <script type="text/javascript">
