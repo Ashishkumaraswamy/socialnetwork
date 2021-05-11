@@ -9,7 +9,7 @@ $(document).ready(function(){
     const scope = "https://www.googleapis.com/auth/drive";
     var access_token= "";
     var clientId = "208078296584-nqh94ti82n7gkga84viajvm61laec6el.apps.googleusercontent.com";// replace it with your client id;
-
+    console.log(code);
     $.ajax({
         type: 'POST',
         url: "https://www.googleapis.com/oauth2/v4/token",
@@ -21,6 +21,7 @@ $(document).ready(function(){
             scope:scope,
             grant_type:"authorization_code"
         },
+        dataType: "json",
         success: function(resultData) {
            
            localStorage.setItem("accessToken",resultData.access_token);
