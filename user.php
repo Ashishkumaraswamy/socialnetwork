@@ -106,6 +106,9 @@
 	</div>
 	<!-- End of container -->
 
+    <script src="javascript/user.js"></script> 
+
+
 
 
 </main>

@@ -177,7 +177,7 @@ button {
 
 
 <body>
-        <form action method="post" id="form" enctype="multipart/form-data" autocomplete="off" action="signup1.php">
+        <form method="post" name="form" id="form" enctype="multipart/form-data" autocomplete="off" action="user.php">
         
         <br>
         <br>

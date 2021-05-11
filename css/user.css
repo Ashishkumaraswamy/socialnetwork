@@ -156,7 +156,7 @@ img {
 }
 
 .gallery-item {
-    width: 500px;
+    width: 400px;
     height: 300px;  
     position: relative;
     flex: 1 0 27rem;
