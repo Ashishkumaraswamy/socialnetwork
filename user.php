@@ -74,7 +74,7 @@
 
 			<div class="gallery-item" tabindex="0">
 
-				<img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">
+				<img src="https://drive.google.com/uc?id=1Ffze6lU1BZBs7mG3yrEgEvIuuLfgs324" class="gallery-image" alt="">
 
 				<div class="gallery-item-info">
 
