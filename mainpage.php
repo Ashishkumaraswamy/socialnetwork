@@ -74,7 +74,7 @@ body {
                          <!--Heart (Like)-->
                      
                            <div>
-                             <i class="fas fa-heart" onclick=" yikes(this,`'.$row1['postby'].''.$row1['timeset'].'`) " ondblclick="likesoff(this)"></i>
+                             <i class="fas fa-heart" onclick=" likesoff(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)" ondblclick="yikes(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
                            </div>
 
                          <input type="hidden" name="'.$row1['postby'].''.$row1['timeset'].'" id="'.$row1['postby'].''.$row1['timeset'].'" value="'.$row1['postby'].''.$row1['timeset'].'">
@@ -126,26 +126,39 @@ body {
 
 <script>
 
-  function yikes(x,y)
+  function yikes(x,y,z)
   {
-    let op = y;
-    var str1 = "\#";
-    var str2 = op;
-    var str3 = "";
-    var res = str1.concat(str2, str3);
     x.style.color = "red";
-    alert(y);
-    alert(op);
-    alert(res);
-    alert(document.querySelector(res).value);
 
-    <?php
-    ?>
   }
 
-  function likesoff(x)
+  function likesoff(x,y,z)
   {
     x.style.color = "black";
+  }
+
+  function likephp(){
+    url=window.location.href;
+    user_id = location.search.slice(1).split("=")[1];
+    let xhml = new XMLHttpRequest();
+    if(user_id===undefined)
+    { 
+
+    }
+    else
+    {
+      xhml.open("POST", "php/like.php", true);
+      xhml.onload = ()=>{
+        if(xhml.readyState === XMLHttpRequest.DONE){
+            if(xhml.status === 200){
+              let data = xhml.response;
+              console.log(data);
+            }
+        }
+      }
+    let formData = new FormData(form);
+    xhml.send(formData);
+    }
   }
   
 </script>
