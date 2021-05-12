@@ -4,6 +4,7 @@ usersList = document.querySelector("#userlist");
 const form = document.querySelector("#typing-area"),
 to_id = form.querySelector("#store_to_id").value,
 inputField = form.querySelector("#send-input"),
+sendBtn = form.querySelector("button"),
 chatBox = document.querySelector("#chatbox");
 
 searchIcon.onclick = ()=>{
@@ -72,7 +73,6 @@ setInterval(() =>{
         if(xhml.readyState === XMLHttpRequest.DONE){
             if(xhml.status === 200){
               let data = xhml.response;
-              console.log(data);
               chatBox.innerHTML = data;
               if(!chatBox.classList.contains("active")){
                   scrollToBottom();
@@ -89,28 +89,6 @@ setInterval(() =>{
 form.onsubmit = (e)=>{
     e.preventDefault();
 }
-
-inputField.focus();
-inputField.onkeyup = ()=>{
-    if(inputField.value != ""){
-        sendBtn.classList.add("active");
-    }else{
-        sendBtn.classList.remove("active");
-    }
-}
-
-chatBox.onmouseenter = ()=>{
-    chatBox.classList.add("active");
-}
-
-chatBox.onmouseleave = ()=>{
-    chatBox.classList.remove("active");
-}
-
-
-function scrollToBottom(){
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
 
 //onclick like
 function like() 

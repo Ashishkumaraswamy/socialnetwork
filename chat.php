@@ -38,17 +38,16 @@
     <div class="preview" id="userlist">
 
 
-      </div>
     </div>
-<div class="chats" id="chatbox">
-      <div class="input-msg">
-        <form action="#" id="typing-area" method=post>
-          <input type="hidden" name="to_id" value="" id="store_to_id"/>
-          <input type="text" id="send-input" placeholder="type something" onfocus="this.value=''"/>
-          <i onclick="send()" class='fa fa-paper-plane'></i></button>
-        </form>
+      <div class="user-input" id="chatbox"></div>
+        <div class="input-msg">
+          <form action="#" id="typing-area" method=post>
+            <input type="hidden" name="to_id" value="" id="store_to_id"/>
+            <input type="text" id="send-input" name="message" placeholder="type something" onfocus="this.value=''"/>
+            <i onclick="send()" class="fab fa-telegram-plane" style="color: black"></i>
+          </form>
+        </div>
       </div>
-    </div>
   </main>
   <script type="text/javascript" src="javascript/chat.js"></script>
 </body>

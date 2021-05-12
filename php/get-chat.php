@@ -35,15 +35,21 @@
                                 </div><div id="heart">❤️</div>';
                 }
             }
-            $output .=  '<div class="input-msg">
-            <form action="#" id="typing-area" method=post>
-              <input type="hidden" name="to_id" value="" id="store_to_id"/>
-              <input type="text" id="send-input" placeholder="type something" onfocus="this.value="""/>
-              <i onclick="send()" class="fa fa-paper-plane"></i></button>
-            </form>
-          </div>';
+            $output .= '<div class="input-msg" style="margin-top:600px">
+                            <form action="#" id="typing-area" method=post>
+                              <input type="hidden" name="to_id" value="" id="store_to_id"/>
+                              <input type="text" id="send-input" placeholder="type something" onfocus="this.value="""/>
+                              <button style="background-color: white"><i onclick="send()" class="fab fa-telegram-plane" style="color: black"></i></button>
+                            </form>
+                        </div>';
         }else{
-            $output .= '<div class="receiver">No messages are available. Once you send message they will appear here.</div>';
+            $output .= '<div class="receiver">No messages are available. Once you send message they will appear here.</div><div class="input-msg" style="margin-top:600px">
+                            <form action="#" id="typing-area" method=post>
+                              <input type="hidden" name="to_id" value="" id="store_to_id"/>
+                              <input type="text" id="send-input" placeholder="type something" onfocus="this.value="""/>
+                              <button style="background-color: white"><i onclick="send()" class="fab fa-telegram-plane" style="color: black"></i></button>
+                            </form>
+                        </div>';
         }
         echo $output;
     }else{
