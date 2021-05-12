@@ -15,7 +15,7 @@ body {
   max-width: 420px;
   margin-left: auto;
   margin-right: auto;
-  background-color: lightgray;
+  background-color: #262626;
 }
 
 </style>
@@ -29,14 +29,14 @@ body {
 <br>
 <br>
 <br>
-<?php  
+              <?php  
                 
                 $query = "SELECT * FROM users, posts WHERE users.user_name = posts.postby ORDER BY posts.timeset DESC;";  
                 $result = mysqli_query($conn, $query);  
                 while($row1 = mysqli_fetch_array($result))  
                 {  
                      echo '   
-                     <blockquote style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; min-width:300px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);margin-bottom: 20px;">
+                     <blockquote style=" background:#696969; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; min-width:300px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);margin-bottom: 20px;">
 
                      <div style="padding:16px;">
                        <div style=" display: flex; flex-direction: row; align-items: center;">
@@ -72,48 +72,31 @@ body {
                        <!--Start Interactions Section-->
                        <div style="display: flex; flex-direction: row; margin-bottom: 0px; align-items: center;">
                          <!--Heart (Like)-->
-                         <a href="" target="_blank">
+                     
                            <div>
-                             <div style="background-color: #ee4956; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div>
-                             <div style="background-color: #ee4956; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div>
-                             <div style="background-color: #ee4956; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);border-color: black;"></div>
+                             <i class="fas fa-heart" onclick=" yikes(this,`'.$row1['postby'].''.$row1['timeset'].'`) " ondblclick="likesoff(this)"></i>
                            </div>
-                         </a>
+
+                         <input type="hidden" name="'.$row1['postby'].''.$row1['timeset'].'" id="'.$row1['postby'].''.$row1['timeset'].'" value="'.$row1['postby'].''.$row1['timeset'].'">
                          <!--End Heart (Like)-->
                      
                          <!--Comment Section-->
                          <div style="margin-left: 8px;">
-                           <div style=" background-color: black; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div>
-                           <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid black; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div>
+                             <i class="far fa-comment"></i>
                          </div>
                          <!--End Comment Section-->
-                     
-                         <!--Picture Dots Section-->
-                         <div style="text-align: center;margin-left: 30%;">
-                           <div style="height: 5px;width: 5px;background-color: lightblue;border-radius: 50%;display: inline-block;"></div>
-                           <div style="height: 5px;width: 5px;background-color: #bbb;border-radius: 50%;display: inline-block;"></div>
-                           <div style="height: 5px;width: 5px;background-color: #bbb;border-radius: 50%;display: inline-block;"></div>
-                           <div style="height: 5px;width: 5px;background-color: #bbb;border-radius: 50%;display: inline-block;"></div>
-                         </div>
-                         <!--End Picture Dots Section-->
-                     
-                         <!--Bookmark Section-->
-                         <div style="margin-left: auto;">
-                           <div style=" width: 0px; border-top: 8px solid black; border-right: 8px solid transparent; transform: translateY(16px);"></div>
-                           <div style=" background-color: black; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div>
-                           <div style=" width: 0; height: 0; border-top: 8px solid black; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div>
-                         </div>
-                         <!--End Bookmark Section-->
+                  
                        </div>
                        <!--End Interactions Section-->
-                     
-                       <!--Stats Section-->
                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 0px;">
-                         <div>
-                           <p style="font-family: Proxima Nova, Helvetica, Arial;font-size: 12px;"><img src="https://images.squarespace-cdn.com/content/v1/53ed0e3ce4b0c296acaeae80/1488348396080-727EIWBGP1MJN3FSXVWS/ke17ZwdGBToddI8pDm48kD8Xroq_AX5Zgi3HGn2a5gd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UQQ0iLpUJJ55dW55w_oZ6JvHnXlmx4oSoNzVwlPskgpsLIXfY3DEqu8fc08UsQJ-4w/SNAPTEMBER-1904-Edit+Headshot+Photography+by+Tommy+Collier+Productions+Denver+Colorado+Headshots+Photographer.jpg" style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; margin-right: 2px; width: 20px;">
-                             <span style="font-weight: bold;">doc_john</span> and <span style="font-weight: bold;">other 224 people</span> like it</p>
-                         </div>
-                         <!--End Stats Section-->
+
+                       <!--Stats Section-->
+                        <!--End Stats Section-->
+                        <div style="overflow: auto;">
+                        <p style="font-family: Proxima Nova, Helvetica, Arial;font-size: 12px;text-overflow: ellipsis;"><span style="font-weight:bold;">'.$row1['likecount'].' likes</span>
+                  
+                          </p>
+                        </div>
                      
                          <!--Text Section-->
                          <div style="overflow: auto;">
@@ -123,7 +106,7 @@ body {
                          </div>
                        </div>
                        <!--End Text Section-->
-                     
+                        <br>
                        <div style="margin-top: -17px;">
                          <p style="font-family: Proxima Nova, Helvetica, Arial;font-size: 12px;color: lightgray;">'.$row1['timeset'].'</p>
                        </div>
@@ -140,4 +123,30 @@ body {
             ?> 
   
 </body>
+
+<script>
+
+  function yikes(x,y)
+  {
+    let op = y;
+    var str1 = "\#";
+    var str2 = op;
+    var str3 = "";
+    var res = str1.concat(str2, str3);
+    x.style.color = "red";
+    alert(y);
+    alert(op);
+    alert(res);
+    alert(document.querySelector(res).value);
+
+    <?php
+    ?>
+  }
+
+  function likesoff(x)
+  {
+    x.style.color = "black";
+  }
+  
+</script>
 </html>
