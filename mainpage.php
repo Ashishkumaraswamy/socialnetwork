@@ -137,7 +137,7 @@ body {
     alert(y);
     alert(op);
     alert(res);
-    alert(document.querySelector(res).value);
+    alert(document.querySelector("#mathan_052021-05-11 18:53:24").value);
 
     <?php
     ?>
