@@ -58,6 +58,8 @@ setInterval(() =>{
 setInterval(() =>{
     url=window.location.href;
     user_id = location.search.slice(1).split("=")[1];
+    document.getElementById("store_to_id").value = user_id;
+    
     let xhml = new XMLHttpRequest();
     if(user_id===undefined)
     {

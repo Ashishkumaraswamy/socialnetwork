@@ -41,7 +41,7 @@
       </div>
     </div>
 <div class="chats" id="chatbox">
-      <div class="input-msg" style="margin-top:600px">
+      <div class="input-msg">
         <form action="#" id="typing-area" method=post>
           <input type="hidden" name="to_id" value="" id="store_to_id"/>
           <input type="text" id="send-input" placeholder="type something" onfocus="this.value=''"/>
