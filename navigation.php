@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="css/navigation.css">
     <link rel="icon" type="image/png" href="images/logoicon.ico"/>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body><div class="navigation" style="background-color: #202020;">
   <div class="logo">
@@ -26,7 +28,7 @@
     <a href="posting.php" class="navigation-link">
       <i class="fas fa-plus"></i>
     </a>
-    <a href="https://instagram.com/mimoudix" class="navigation-link">
+    <a href="" class="navigation-link">
       <i class="fa fa-compass"></i>
     </a>
     <a class="navigation-link notification">
@@ -41,11 +43,12 @@
     <a href="user.php" class="navigation-link">
       <i class="fa fa-user-circle"></i>
     </a>
-    <a class="navigation-link">
-      <i class="fa fa-sign-out-alt" id="signout" name="signout"></i>
+    <a href="" class="navigation-link">
+      <i class="fa fa-sign-out-alt"></i>
     </a>
   </div>
 </div>
-<script type="text/javascript" src="javascript/navigation.js"></script>
 </body>
+<script type="text/javascript" src="javascript/navigation.js"></script>
+
 </html>

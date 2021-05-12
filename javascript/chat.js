@@ -53,7 +53,7 @@ setInterval(() =>{
     }
   }
   xhr.send();
-}, 500);
+}, 100);
 
 //http://localhost/SocialNetwork/chat.php?user_id=58
 setInterval(() =>{
@@ -73,17 +73,15 @@ setInterval(() =>{
         if(xhml.readyState === XMLHttpRequest.DONE){
             if(xhml.status === 200){
               let data = xhml.response;
-              chatBox.innerHTML = data;
-              if(!chatBox.classList.contains("active")){
-                  scrollToBottom();
-                }
+              console.log(data);
+              chatBox.innerHTML = data;  
             }
         }
-      }
+     }
     let formData = new FormData(form);
     xhml.send(formData);
     }    
-}, 200);
+}, 100);
 
 
 form.onsubmit = (e)=>{

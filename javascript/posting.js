@@ -18,6 +18,8 @@ $(document).ready(function(){
                    return false;  
               }  
               else{
+                document.getElementById("image").width = "400";
+                document.getElementById("image").height = "400";
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "php/posting.php", true);
                 xhr.onload = ()=>{

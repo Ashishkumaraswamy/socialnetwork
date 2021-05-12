@@ -17,7 +17,8 @@
 	<link rel="icon" type="image/png" href="images/logoicon.ico"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <meta name="robots" content="noindex, follow">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="robots" content="noindex, follow">
     
 <style>
 body {
@@ -50,7 +51,7 @@ body {
                      
                          <!--Heading: Profile Pic with Handle and Location Sub-->
                          <div style="margin-left:-5px">
-                           <a href=""><img src="data:image/jpeg;base64,'.base64_encode($row['propic']).'" alt="" style="border-radius: 50%; flex-grow: 0; height: 20px; width:20px;"></a>
+                           <a href="user.php"><img src="data:image/jpeg;base64,'.base64_encode($row['propic']).'" alt="" style="border-radius: 50%; flex-grow: 0; height: 20px; width:20px;"></a>
                          </div>
                      
                          <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;margin-left: 8px;">
@@ -60,10 +61,8 @@ body {
                      
                          <!--Heading Dots Section-->
                          <div style="text-align: right;">
-                           <div style="height: 4px;width: 4px;background-color: black;border-radius: 50%;display: inline-block;"></div>
-                           <div style="height: 4px;width: 4px;background-color: black;border-radius: 50%;display: inline-block;"></div>
-                           <div style="height: 4px;width: 4px;background-color: black;border-radius: 50%;display: inline-block;"></div>
-                         </div>
+                         <i class="fas fa-trash" onclick="del(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
+                          </div>
                          <!--End Heading Dots Section-->
                      
                        </div>
@@ -81,10 +80,10 @@ body {
                          <!--Heart (Like)-->
                      
                            <div>
-                             <i class="fas fa-heart"></i>
+                             <i class="fas fa-heart" onclick=" likesoff(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)" ondblclick="yikes(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
                            </div>
 
-                         <input type="hidden" name="'.$row1['postby'].''.$row1['timeset'].'" id="'.$row1['postby'].''.$row1['timeset'].'" value="'.$row1['postby'].''.$row1['timeset'].'">
+                         <input type="hidden" name="'.$row1['postby'].''.$row1['timeset'].'" id="'.$row1['postby'].''.$row1['timeset'].'" value="'.$row1['postby'].''.$row1['timeset'].'"/>
                          <!--End Heart (Like)-->
                      
                          <!--Comment Section-->
@@ -125,9 +124,93 @@ body {
                      <br>
                      <br>
                      <br>
-                     ';    
-                }  
+                     ';                
+                    }  
             ?> 
+            <form action="mainpage.php" id="typing-area" method=post>
+            <input type="hidden" name="temp_postby" value="" id="temp_postby"/>
+            <input type="hidden" name="temp_timeset" value="" id="temp_timeset"/>
+            </form>
+  
   
 </body>
+<script>
+
+  function yikes(x,y,z)
+  {
+    x.style.color = "red";
+    document.getElementById("temp_postby").value = y;
+    document.getElementById("temp_timeset").value = z;
+    const form=document.querySelector("#typing-area");
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/like.php", true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              let data = xhr.response;
+              location.href = "viewpost.php";
+              
+          }
+      }
+    }
+    let formData = new FormData(form);
+    xhr.send(formData);
+  }
+
+  function likesoff(x,y,z)
+  {
+    x.style.color = "black";
+  }
+
+  function del(x,y,z)
+  {
+   
+    if (confirm("Do you want to delete the Post!!")) {
+      document.getElementById("temp_postby").value = y;
+      document.getElementById("temp_timeset").value = z;
+      const form=document.querySelector("#typing-area");
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "php/delete.php", true);
+      xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              let data = xhr.response;
+              location.href = "viewpost.php";
+              
+          }
+          }
+      }
+      let formData = new FormData(form);
+      xhr.send(formData);
+    }else{
+    
+    }
+  }
+
+  
+  // $(".fa-trash").click(function () {
+  //   alert(document.getElementById("temp_postby").value);
+  //   // document.getElementById("temp_postby").value = y;
+  //   // document.getElementById("temp_timeset").value = z;
+  //   if (confirm("Do you want to delete the Post!!")) {
+      
+  //   } else {
+
+  //   }
+  // //let xhr = new XMLHttpRequest();
+  // // xhr.open("POST", "php/logout.php", true);
+  // // xhr.send();
+  // // xhr.onload = ()=>{
+
+  // //   if(xhr.readyState === XMLHttpRequest.DONE){
+  // //       if(xhr.status === 200){
+  // //           location.href = "index.php";
+  // //       }
+  // //   }
+  // // }  
+  // });
+
+
+
+</script>
 </html>
