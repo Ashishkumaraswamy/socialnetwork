@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="images/logoicon.ico"/>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
-<body><div class="navigation">
+<body><div class="navigation" style="background-color: #202020;">
   <div class="logo">
     <a class="no-underline" href="mainpage.php">
       <img src="images/logo1.PNG" alt="IMG" style="width:75px;height:70px;">
@@ -41,8 +41,8 @@
     <a href="user.php" class="navigation-link">
       <i class="fa fa-user-circle"></i>
     </a>
-    <a href="index.php" id="signout" class="navigation-link">
-      <i class="fa fa-sign-out-alt"></i>
+    <a class="navigation-link">
+      <i class="fa fa-sign-out-alt" id="signout" name="signout"></i>
     </a>
   </div>
 </div>

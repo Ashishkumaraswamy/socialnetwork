@@ -122,8 +122,8 @@ body {
                 }  
             ?> 
             <form action="mainpage.php" id="typing-area" method=post>
-            <input type="hidden" name="store_to_id" value="" id="temp_postby"/>
-            <input type="hidden" name="store_to_time" value="" id="temp_timeset"/>
+            <input type="hidden" name="temp_postby" value="" id="temp_postby"/>
+            <input type="hidden" name="temp_timeset" value="" id="temp_timeset"/>
             </form>
   
 </body>
@@ -135,15 +135,6 @@ body {
     x.style.color = "red";
     document.getElementById("temp_postby").value = y;
     document.getElementById("temp_timeset").value = z;
-    likephp();
-  }
-
-  function likesoff(x,y,z)
-  {
-    x.style.color = "black";
-  }
-
-  function likephp(){
     const form=document.querySelector("#typing-area");
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/like.php", true);
@@ -158,7 +149,11 @@ body {
     }
     let formData = new FormData(form);
     xhr.send(formData);
+  }
 
+  function likesoff(x,y,z)
+  {
+    x.style.color = "black";
   }
   
 </script>

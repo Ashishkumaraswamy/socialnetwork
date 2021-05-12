@@ -13,7 +13,24 @@
 
 const searchBar = document.querySelector("#searchinput"),
 searchIcon = document.querySelector("#searchicon"),
+logout = document.querySelector("#signout"),
 usersList = document.querySelector("#searchlist");
+
+
+logout.onclick = ()=>{
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "php/logout.php", true);
+  xhr.onload = ()=>{
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        if(xhr.status === 200){
+            let data = xhr.response;
+            location.href = "index.php";
+        }
+    }
+  }
+
+}
+
 
 searchIcon.onclick = ()=>{
   searchBar.classList.toggle("show");
