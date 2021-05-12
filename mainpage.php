@@ -77,7 +77,7 @@ body {
                              <i class="fas fa-heart" onclick=" likesoff(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)" ondblclick="yikes(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
                            </div>
 
-                         <input type="hidden" name="'.$row1['postby'].''.$row1['timeset'].'" id="'.$row1['postby'].''.$row1['timeset'].'" value="'.$row1['postby'].''.$row1['timeset'].'">
+                         <input type="hidden" name="'.$row1['postby'].''.$row1['timeset'].'" id="'.$row1['postby'].''.$row1['timeset'].'" value="'.$row1['postby'].''.$row1['timeset'].'"/>
                          <!--End Heart (Like)-->
                      
                          <!--Comment Section-->
@@ -121,6 +121,10 @@ body {
                      ';  
                 }  
             ?> 
+            <form action="mainpage.php" id="typing-area" method=post>
+            <input type="hidden" name="store_to_id" value="" id="temp_postby"/>
+            <input type="hidden" name="store_to_time" value="" id="temp_timeset"/>
+            </form>
   
 </body>
 
@@ -129,7 +133,9 @@ body {
   function yikes(x,y,z)
   {
     x.style.color = "red";
-
+    document.getElementById("temp_postby").value = y;
+    document.getElementById("temp_timeset").value = z;
+    likephp();
   }
 
   function likesoff(x,y,z)
@@ -138,27 +144,21 @@ body {
   }
 
   function likephp(){
-    url=window.location.href;
-    user_id = location.search.slice(1).split("=")[1];
-    let xhml = new XMLHttpRequest();
-    if(user_id===undefined)
-    { 
-
-    }
-    else
-    {
-      xhml.open("POST", "php/like.php", true);
-      xhml.onload = ()=>{
-        if(xhml.readyState === XMLHttpRequest.DONE){
-            if(xhml.status === 200){
-              let data = xhml.response;
-              console.log(data);
-            }
-        }
+    const form=document.querySelector("#typing-area");
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/like.php", true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              let data = xhr.response;
+              location.href = "mainpage.php";
+              
+          }
       }
-    let formData = new FormData(form);
-    xhml.send(formData);
     }
+    let formData = new FormData(form);
+    xhr.send(formData);
+
   }
   
 </script>
