@@ -180,35 +180,29 @@
     //     }
 
     // }    
-
-    $(".profile-follow-btn").click(function () {
-        status=document.getElementById("status").value;
-        
-        if(status==="Unfollow")
-        {   
-            alert(status);
+    $(document).ready(function(){
+    $(".profile-follow-btn").click(function (e) {
+        e.preventDefault();
             <?php
-                $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
-                if($delete)
+                $sql2=mysqli_query($conn, "SELECT * FROM friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
+                if(mysqli_num_rows($sql2)>0)
                 {
-                    echo 'location.href = "user.php?user_id='.$click_id.'"';
+                    $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
+                        if($delete)
+                        {
+                        echo 'location.href = "user.php?user_id='.$click_id.'"';
+                        }
                 }
-            ?>
-        }
-        else
-        {
-            alert(status);
-            <?php
-                $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
-                if($insert)
+                else
                 {
-                    echo 'location.href = "user.php?user_id='.$click_id.'"';
-                }
+                    $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
+                    if($insert)
+                    {
+                        echo 'location.href = "user.php?user_id='.$click_id.'"';
+                    }
+                } 
             ?>
-        }
-
-
-    });
+    });});
 
 
 
