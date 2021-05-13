@@ -31,6 +31,13 @@
     <a href="" class="navigation-link">
       <i class="fa fa-compass"></i>
     </a>
+    <?php
+
+    echo'<a href="chat.php?user_id='. $_SESSION['unique_id'] .'" class="navigation-link">
+      <i class="fa fa-paper-plane"></i>
+    </a>'
+    ?>
+    
     <a class="navigation-link notification">
       <i class="far fa-heart">
         <div class="notification-bubble-wrapper">

@@ -8,7 +8,16 @@
         if(!empty($message)){
             $sql = mysqli_query($conn, "INSERT INTO chat (to_id, from_id, msg)
                                         VALUES ({$to_id}, {$from_id}, '{$message}')");
-            echo("sucess");
+            if($sql)
+            {
+                echo("success");
+            }
+            else{
+                echo("Insertion failure");
+            }
+        }
+        else{
+            echo("Entered second if");
         }
     }else{
         echo("Failure");

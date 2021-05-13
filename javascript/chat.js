@@ -1,42 +1,5 @@
-const searchBar = document.querySelector("#searchinput"),
-searchIcon = document.querySelector("#searchicon"),
-usersList = document.querySelector("#userlist");
-const form = document.querySelector("#typing-area"),
-to_id = form.querySelector("#store_to_id").value,
-inputField = form.querySelector("#send-input"),
-sendBtn = form.querySelector("button"),
-chatBox = document.querySelector("#chatbox");
-
-searchIcon.onclick = ()=>{
-  searchBar.classList.toggle("show");
-  searchIcon.classList.toggle("active");
-  searchBar.focus();
-  if(searchBar.classList.contains("active")){
-    searchBar.value = "";
-    searchBar.classList.remove("active");
-  }
-}
-
-searchBar.onkeyup = ()=>{
-  let searchTerm = searchBar.value;
-  if(searchTerm != ""){
-    searchBar.classList.add("active");
-  }else{
-    searchBar.classList.remove("active");
-  }
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", "php/search.php", true);
-  xhr.onload = ()=>{
-    if(xhr.readyState === XMLHttpRequest.DONE){
-        if(xhr.status === 200){
-          let data = xhr.response;
-          usersList.innerHTML = data;
-        }
-    }
-  }
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhr.send("searchTerm=" + searchTerm);
-}
+userList=document.querySelector("#userslist");
+const form=document.querySelector("#formdata");
 
 setInterval(() =>{
   let xhr = new XMLHttpRequest();
@@ -45,15 +8,15 @@ setInterval(() =>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
           let data = xhr.response;
-          if(!searchBar.classList.contains("active"))
-          {
-            usersList.innerHTML = data;
+          if(!searchBar.classList.contains("active")){
+            userList.innerHTML = data;
           }
         }
     }
   }
   xhr.send();
-}, 100);
+}, 1000);
+
 
 //http://localhost/SocialNetwork/chat.php?user_id=58
 setInterval(() =>{
@@ -98,11 +61,25 @@ function like()
   }
 }
 
-//send user input
 function send() {
-  var usermsg = document.getElementById(".send-input").value;
+  var usermsg = document.getElementById("send-input").value;
   var senddiv = document.querySelector(".user-input");
-  senddiv.style.display = "block";
-  senddiv.innerHTML = usermsg; 
+  url=window.location.href;
+  to_id = location.search.slice(1).split("=")[1]; 
+  document.getElementById("to_id").value=to_id;
+  let xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/insert-chat.php", true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              senddiv.style.display = "block";
+              senddiv.innerHTML = usermsg;
+              document.getElementById("send-input").value="";
+              data=xhr.response;
+              console.log(data);
+          }
+      }
+    }
+    let formData = new FormData(form);
+    xhr.send(formData);
 }
-

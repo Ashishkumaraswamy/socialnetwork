@@ -15,7 +15,6 @@
         $row=mysqli_fetch_assoc($sql2);
         if(mysqli_num_rows($query) > 0)
         {   
-            echo("Entered here");
             $output .='<div class="chat-banner">
                             <div>
                             <span id="chat-pic"> 
