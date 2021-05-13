@@ -137,7 +137,9 @@
     }
 
     $(".profile-edit-btn").click(function () {
-        location.href = "edit.php";
+        <?php
+            echo 'location.href = "edit.php?user_id='.$click_id.'"';
+        ?>
 
     });
 
@@ -180,37 +182,87 @@
     //     }
 
     // }    
-
-    $(".profile-follow-btn").click(function () {
+    //$(document).ready(function() {
+    
+    $(".profile-follow-btn").click(function (e) {
         status=document.getElementById("status").value;
-        
+        var count = 0;
+
         if(status==="Unfollow")
         {   
-            alert(status);
-            <?php
-                $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
-                if($delete)
-                {
-                    echo 'location.href = "user.php?user_id='.$click_id.'"';
-                }
-            ?>
+            if(count == 0)
+            {
+                unfollow();
+                count = count +1 ;
+                e.preventDefault();
+            }
+            else
+            {
+                return;
+            }
         }
         else
         {
-            alert(status);
-            <?php
-                $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
-                if($insert)
-                {
-                    echo 'location.href = "user.php?user_id='.$click_id.'"';
-                }
-            ?>
+            if(count == 0)
+            {
+                follow();
+                count = count +1 ;
+                e.preventDefault();
+            }
+            else{
+                return;
+            }
         }
+        return;
 
 
     });
 
+    
+    //});
 
+    function unfollow()
+    {
+        alert(status);
+        <?php
+            $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
+            if($delete)
+            {
+                echo 'location.href = "user.php?user_id='.$click_id.'"';
+            }
+        ?>
+
+    }
+
+    function follow()
+    {
+        alert(status);
+        <?php
+            $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
+            if($insert)
+            {
+                echo 'location.href = "user.php?user_id='.$click_id.'"';
+            }
+        ?>
+
+    }
+
+
+    $(document).ready(function(){
+
+    $('your selector').bind("click",function(){
+       // your statements;
+        });
+
+        // you can use the above or the one shown below
+
+        $('your selector').click(function(e){
+            e.preventDefault();
+            // your statements;
+        });
+
+
+        });
 
 
     </script> 

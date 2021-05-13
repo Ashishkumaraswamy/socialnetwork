@@ -7,7 +7,9 @@ form.onsubmit = (e)=>{
      e.preventDefault();
 }
 back.onclick = ()=>{
-  location.href = "user.php";
+  url=window.location.href;
+  to_id = location.search.slice(1).split("=")[1]; 
+  location.href = "user.php?user_id="+to_id;
 }
 
 continueBtn.onclick = ()=>{
@@ -18,7 +20,9 @@ continueBtn.onclick = ()=>{
           if(xhr.status === 200){
               let data = xhr.response;
               if(data === "success"){
-                location.href = "user.php";
+                url=window.location.href;
+                to_id = location.search.slice(1).split("=")[1]; 
+                location.href = "user.php?user_id="+to_id;
               }else{
                 errorText.textContent = data;
                 errorText.style.height = "65px";
