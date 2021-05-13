@@ -20,6 +20,74 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" type="text/css" href="css/user.css">
+
+<style>
+.profile-image-container{
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    width: 200px;
+    height: 200px;
+    display: block;
+
+}
+.profile-image{
+    width: 200px;
+    height: 200px;
+    background-color: #999999;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    border-radius: 50%;
+    margin: 0px auto;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.profile-image:hover{
+    border-color: #2ca8ff;
+    width: 200px;
+    height: 200px;
+
+}
+.content.ct-wizard-green .profile-image:hover{
+    border-color: #05ae0e;
+    width: 200px;
+    height: 200px;
+}
+.content.ct-wizard-blue .profile-image:hover{
+    border-color: #3472f7;
+    width: 200px;
+    height: 200px;
+}
+.content.ct-wizard-orange .profile-image:hover{
+    border-color: #ff9500;
+    width: 200px;
+    height: 200px;
+}
+.content.ct-wizard-red .profile-image:hover{
+    border-color: #ff3b30;
+    width: 200px;
+    height: 200px;
+}
+.profile-image input[type="file"] {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.profile-image-src{
+    width: 100%;
+    
+}
+
+</style>
     
 </head>
 <body>
@@ -31,18 +99,23 @@
 <div class="container">
 
 <div class="profile">
-  <div class="profile-image">
+  
     	
 	<?php
     $followersql=mysqli_query($conn,"SELECT count(*) AS follower FROM friends WHERE following={$click_id}");
     $follower=mysqli_fetch_assoc($followersql);
     $followingsql=mysqli_query($conn,"SELECT count(*) AS following FROM friends WHERE followers={$click_id}");
     $following=mysqli_fetch_assoc($followingsql);
-    echo '<img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image"></div>';
     
     if($click_id==$_SESSION['unique_id'])
     {    
-    echo '<div class="profile-user-settings">
+    echo '
+        <div class="profile-image">
+            <img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image" class="picture-src">
+            <input type="file" id="wizard-picture" name="image">
+
+        </div>    
+        <div class="profile-user-settings">
 
         <h3 class="profile-user-name">'.$row['user_name'].'</h3>
 
@@ -67,8 +140,10 @@
             $vu = "hidden";
             $v = "sumbit";
         }
-        echo '<div class="profile-user-settings">
-
+        echo '
+        <div class="profile-image">
+        <img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image"></div>
+        <div class="profile-user-settings">
         <h3 class="profile-user-name">'.$row['user_name'].'</h3>
         <input type="hidden" id="status" name="status" value="'.$status.'" >
         <input type="'.$v.'" name="submit" value="'.$status.'" class="btn pro-edit-btn" id="btn">
@@ -84,6 +159,11 @@
         </ul>
 
     </div>
+    <?php
+            echo '<input type="hidden" id="ses" name="ses" value="'.$_SESSION['unique_id'].'" >
+                  <input type="hidden" id="cli" name="cli" value="'.$click_id.'" >';
+    ?>
+    
 
     <div class="profile-bio">
 
@@ -181,6 +261,23 @@
    
     });
 
+    $(".profile-image").click(function (){
+        if( document.getElementById("ses").value === document.getElementById("cli").value){
+
+            if (confirm("Do you want to update your profile pic!!")) {
+        
+            } else {
+                return false;
+
+            }
+   
+        }
+        else{
+            return false;
+        }
+
+    });
+
     
     function unfollow1()
     {
@@ -209,8 +306,10 @@
 
     }
 
+
+
     
-    continueBtn.onclick= ()=>{
+    /*continueBtn.onclick= ()=>{
         follow();
         location.reload();
     }
@@ -219,7 +318,7 @@
         unfollow1();
         location.reload();
     }
-
+    */
 
     </script> 
 

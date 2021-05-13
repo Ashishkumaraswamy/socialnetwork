@@ -223,13 +223,13 @@ return false;
 				      	<div class="error-text"></div>
 				        <br>
 				        <br>
-                <input type="hidden" id="email" name="email" value="">
+                        <input type="hidden" id="email" name="email" value="">
 						 <div class="picture-container">
 					        <div class="picture">
 					        	<img src="images/photoupload.PNG" class="picture-src" id="wizardPicturePreview" title="" >
 					            <input type="file" id="wizard-picture" name="image">
 					        </div>
-					        <br>
+					      <br>
 					        <h5 class="">Choose Picture</h5>
 					    </div>
     					<div class="container-signup100-form-btn" style="padding-bottom:100px; top: 700px">
