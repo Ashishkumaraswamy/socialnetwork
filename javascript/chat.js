@@ -47,6 +47,12 @@ function like()
 function send() {
   var usermsg = document.getElementById("send-input").value;
   var senddiv = document.querySelector(".user-input");
+  var from=document.getElementById("from_id").value;
+  var to=document.getElementById("to_id").value;
+  if(from==to){
+
+  }
+  else{
   url=window.location.href;
   to_id = location.search.slice(1).split("=")[1]; 
   document.getElementById("to_id").value=to_id;
@@ -55,7 +61,6 @@ function send() {
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
-              alert('here');
               senddiv.style.display = "block";
               senddiv.innerHTML = usermsg;
               document.getElementById("send-input").value="";
@@ -66,4 +71,5 @@ function send() {
     }
     let formData = new FormData(document.getElementById("formdata"));
     xhr.send(formData);
+  }
 }

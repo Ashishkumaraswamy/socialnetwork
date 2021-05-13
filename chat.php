@@ -26,6 +26,14 @@
     </div>
     <div class="chats">
     </div>
+    <div class="input-msg" style="margin-left: 500px">
+        <form action="" method="POST" id="formdata">
+          <input type="text" class="from_id" id="from_id" name="from_id" value="'.$to_id.'" hidden>
+          <input type="text" class="to_id" id="to_id" name="to_id" value="'.$to_id.'" hidden>
+          <input type="text" name="message" id="send-input" placeholder="type something" onfocus="this.value='' "/>
+            <i onclick="send()" class="far fa-paper-plane"></i>
+        </form>
+    </div>
   </main>
 <script type="text/javascript" src="javascript/chat.js"></script>
 </body>

@@ -57,25 +57,9 @@
             if($seen['from_id']==$from_id and $seen['seen']==true){
             $output.='<i class="fa fa-eye" style="font-size:24px"></i>';
             } 
-            $output .= '<div class="user-input"></div>
-                        <div class="input-msg">
-                        <form action="" method="POST" id="formdata">
-                          <input type="text" class="from_id" id="from_id" name="from_id" value="'.$to_id.'" hidden>
-                          <input type="text" class="to_id" id="to_id" name="to_id" value="'.$to_id.'" hidden>
-                          <input type="text" name="message" id="send-input" placeholder="type something" onfocus="this.value="""/>
-                            <i onclick="send()" class="far fa-paper-plane"></i>
-                        </form>
-                        </div>';
+            $output .= '<div class="user-input"></div>';
         }else{
-            $output .= '<div class="receiver">No messages are available. Once you send message they will appear here.</div><div class="user-input"></div>
-                        <div class="input-msg">
-                          <form action="" method="POST" id="formdata">
-                          <input type="text" class="from_id" id="from_id" name="from_id" value="'.$to_id.'" hidden>
-                          <input type="text" class="to_id" id="to_id" name="to_id" value="'.$to_id.'" hidden>
-                          <input type="text" name="message" id="send-input" placeholder="type something" onfocus="this.value="""/>
-                            <i onclick="send()" class="far fa-paper-plane"></i>
-                        </form>
-                        </div>';
+            $output .= '<div class="receiver">No messages are available. Once you send message they will appear here.</div><div class="user-input"></div>';
         }
         echo $output;
     }
