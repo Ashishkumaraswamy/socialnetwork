@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,4 +17,238 @@
     top: 40%;
     left: 20%;
 
+} */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+pro);
+@import url(https://markmurray.co/codepen/entypostyle.css);
+/* Display: flex Mixin */
+a, a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  display: block;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: black;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.thin {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+h1, button {
+  width: 100%;
+}
+
+h1 {
+  padding-top: 0.5em;
+  line-height: 1;
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px black, 2px 4px 0 rgba(255, 255, 255, 0.5);
+}
+
+input[type="text"] {
+  padding: 1em 0;
+  margin: 0 auto 0.25em auto;
+  display: inline-block;
+  color: white;
+  width: 90%;
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+#hashtag {
+  display: inline-block;
+  font-size: 1.5em;
+  color: white;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #444;
+  color: white;
+  outline: none;
+  padding: 1em 2em;
+  font-size: 1em;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  cursor: pointer;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  border-color: white;
+  background: white;
+  color: black;
+}
+
+#instafeed {
+  margin: 0 0.5em 2em 0.5em;
+}
+#instafeed a {
+  margin: 0.5em 0.5em;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: calc(100%/4 - 1em);
+}
+#instafeed #filter {
+  background: #1abc9c;
+  color: white;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 0.5em 0;
+  position: absolute;
+  top: 1em;
+  width: 100%;
+  left: -42%;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#instafeed .info {
+  background: #222;
+  padding: 1.5em;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+#instafeed .info p {
+  font-size: 0.8em;
+  line-height: 1.45;
+  font-weight: bolder;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 1em;
+  font-weight: lighter;
+}
+#instafeed .info .location {
+  color: #777;
+  font-weight: 400;
+}
+#instafeed .info .user {
+  color: #3498db;
+}
+#instafeed .info [class*="icon-heart"]:before {
+  color: hotpink;
+}
+#instafeed .info [class*="icon-chat"]:before {
+  color: #3498db;
+}
+#instafeed .info [class*="icon-comment"]:before {
+  color: #ccc;
+}
+#instafeed .info [class*="icon-location"]:before {
+  color: #ccc;
+}
+#instafeed .info [class*="icon-"]:before {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+#instafeed .info ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#instafeed .info ul li {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  width: calc(100% / 2 - 2em);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 1em 0;
+  border-top: 1px solid #333;
+}
+#instafeed .info ul li:hover {
+  background: #555;
+}
+#instafeed .info ul li:first-child {
+  border-right: 1px solid #333;
+}
+#instafeed img {
+  display: inline;
+  background: url(https://www.markmurray.co/images/black-ajax-loader.gif) no-repeat 50%;
+  margin-bottom: -3px;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+input.clearable {
+  color: black;
+  font-size: 0.7em;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  background: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+input.clearable:hover {
+  opacity: 1;
+}
+
+#load-more {
+  background: #10d7af;
+  color: white;
+  width: 100%;
+  padding: 2em;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1400px) {
+  #instafeed a {
+    width: calc(100%/5 - 1em);
+  }
+}
+@media screen and (max-width: 1200px) {
+  #instafeed a {
+    width: calc(100%/3 - 1em);
+  }
+}
+@media screen and (max-width: 800px) {
+  #instafeed a {
+    width: calc(100%/2 - 1em);
+  }
+}
+@media screen and (max-width: 480px) {
+  #instafeed a {
+    width: calc(100% - 1em);
+  }
 }

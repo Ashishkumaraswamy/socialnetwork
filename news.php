@@ -28,7 +28,7 @@
 <br>
 
 		
-			
+			<!--
 				<div class="box">
 					<form id="form" method="post" autocomplete="off">
 						
@@ -47,10 +47,30 @@
 				</div>
     <div class="container">
         <ul class="news-list" id="main">
-        </ul>
+        </ul>-->
 
     </div>
 
+
+    <form id="form" method="post" autocomplete="off">
+    <div class='container' ng-app="root">
+	<div ng-controller="index">
+    <div class="thin">
+        <h1>Search</h1>
+        <span id="hashtag">#</span>
+      	<input ng-if="search" ng-click="clear()" type="text"  id="name" name="username" class="clearable" style="width: 97%;">
+          <br>
+          <br>
+      	<button ng-click="searchTag()" ng-enter="search" id="btn" value="Submit">Search</button>
+    </div>
+    </form>
+    
+        <div class="container">
+        <ul class="news-list" id="main">
+        </ul>
+    </div>
+    </div>
+    </div>
 
 
     <script type="text/javascript">
