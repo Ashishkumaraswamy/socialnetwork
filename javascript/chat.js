@@ -16,7 +16,7 @@ setInterval(() =>{
       }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("to_id="+to_id);
-}, 10000);
+}, 5000);
 
 setInterval(() =>{
   let xhr = new XMLHttpRequest();
@@ -32,7 +32,7 @@ setInterval(() =>{
     }
   }
   xhr.send();
-}, 10000);
+}, 5000);
 
 //onclick like
 function like() 
@@ -55,7 +55,6 @@ function send() {
   else{
   url=window.location.href;
   to_id = location.search.slice(1).split("=")[1]; 
-  document.getElementById("to_id").value=to_id;
   let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/insert-chat.php", true);
     xhr.onload = ()=>{
