@@ -31,11 +31,11 @@
         if($to_id==$_SESSION['unique_id']){
         echo '<div class="chat-banner">
             <div>
-            <span id="chat-pic"> 
+            <span id="chat-pic" style="align-items:center;font-size:25px">      Chat Section
           </span>
         </div>
         <div><i class="fas fa-info"></i></div>
-      </div>';
+      </div><p>Select an user to chat</p>';
         }
         else{
           echo '<div class="chat-banner">
