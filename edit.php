@@ -71,21 +71,17 @@
 						<span class="signup100-form-title p-b-70" style="font-family: Georgia, serif; font-weight: bold; font-size: 30px; text-align: center;padding-top: 20px; color: #666">
 							USER INFO
 						</span>
-						 
+			
                     	<!-- fieldsets -->
 				      	<div class="error-text"></div>
+						<br>
+
 						<input type="hidden" id="email" name="email" value="">
-						<div class="wrap-input100 validate-input" data-validate = "Valid name is required: mathan" style="margin-top: 20px ;width:49%">
-							<input class="input100" type="text" name="username" placeholder="User name" value="<?php echo $row['user_name'] ?>">
-							<span class="focus-input100"></span>
-							<span class="symbol-input100">
-								<i class='fa fa-user-alt' style='font-size:17px'></i>
-							</span>
-						</div>
+						<input type="hidden" type="text" id="username" name="username" value="<?php echo $row['user_name'] ?>">
 						
 						<div class="name-details" style="display: flex">
 							<div class="wrap-input100 validate-input">
-								<input class="input100" type="text" name="country" placeholder="Country" value="<?php echo $row['country'] ?>">
+								<input class="input100" type="text" id="country" name="country" placeholder="Country" value="<?php echo $row['country'] ?>">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fas fa-globe-asia" style='font-size:17px; margin-top:15px'></i>
@@ -127,7 +123,12 @@
   						</div>
   						<br>
 						<div class="container-signup100-form-btn">
-							<input type="submit" name="submit" value="NEXT" class="signup100-form-btn" id="btn">
+							<input type="submit" name="submit" value="SUMBIT" class="signup100-form-btn" id="btn">
+						</div>
+
+						<br>
+						<div class="container-signup100-form-btn">
+							<input type="submit" name="submit" value="BACK" class="signup100-form-btn" id="back">
 						</div>
 					</form>
 				</div>

@@ -11,6 +11,6 @@
             echo("sucess");
         }
     }else{
-        echo("Failure")
+        echo("Failure");
     }    
 ?>

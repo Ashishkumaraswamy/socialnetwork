@@ -1,16 +1,18 @@
 const form=document.querySelector("#form"),
 continueBtn = form.querySelector("#btn"),
+back = form.querySelector("#back"),
 errorText = form.querySelector(".error-text");
-
-document.getElementById("email").value=localStorage.getItem("email");
 
 form.onsubmit = (e)=>{
      e.preventDefault();
 }
+back.onclick = ()=>{
+  location.href = "user.php";
+}
 
 continueBtn.onclick = ()=>{
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/signup1.php", true);
+    xhr.open("POST", "php/edit.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
@@ -19,7 +21,7 @@ continueBtn.onclick = ()=>{
                 location.href = "user.php";
               }else{
                 errorText.textContent = data;
-                errorText.style.height = "45px";
+                errorText.style.height = "65px";
               }
           }
       }

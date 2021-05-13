@@ -10,7 +10,7 @@
 <body><div class="navigation" style="background-color: #202020;">
   <div class="logo">
     <a class="no-underline" href="mainpage.php">
-      <img src="images/logo1.PNG" alt="IMG" style="width:75px;height:70px;">
+      <img src="images/name.PNG" alt="IMG" style="width:120px;height:45px;">
     </a>
   </div>
   <div class="navigation-search-container" style="width: 500px; margin-bottom: 13px">
