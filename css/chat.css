@@ -50,8 +50,9 @@ nav i {
     color: var(--strong-grey);
 }
 #user {
-    height: 25px;
-    width: 25px;
+    right: 400px;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
 }
 #user img, #profile-pic img {
@@ -94,11 +95,12 @@ main {
   align-items: flex-start;
   height: 80vh;
   width: 60%;
+  overflow-y: scroll;
   overflow-x: none;
 }
 .chat-banner {
   width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -107,7 +109,6 @@ main {
 }
 .chat-banner>div {
   padding: 10px;
-  overflow-y: scroll;
 }
 #user-name {
   min-height: 60px;
@@ -116,7 +117,7 @@ main {
   align-items: center;
   font-weight: 400;
   font-size: 1.5em;
-  border-bottom: 1px solid var(--medium-grey);
+   border-bottom: 1px solid var(--medium-grey);
 }
 #user-name i {
   font-size: 1em;
@@ -182,12 +183,15 @@ main {
 }
 .input-msg {
   display: flex;
+  align-items: center;
+  position: absolute;
   flex-direction: row;
   justify-content: space-around;
   height: 50px;
-  width: 100%;
+  width: 730px;
   padding-top: 10px;
   border-top: 1px solid var(--medium-grey);
+  bottom: 50px;
 }
 .input-msg i {
   color: var(--grey);
