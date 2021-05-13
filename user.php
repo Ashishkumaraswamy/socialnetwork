@@ -34,6 +34,10 @@
   <div class="profile-image">
     	
 	<?php
+    $followersql=mysqli_query($conn,"SELECT count(*) AS follower FROM friends WHERE following={$click_id}");
+    $follower=mysqli_fetch_assoc($followersql);
+    $followingsql=mysqli_query($conn,"SELECT count(*) AS following FROM friends WHERE followers={$click_id}");
+    $following=mysqli_fetch_assoc($followingsql);
     echo '<img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image"></div>';
     
     if($click_id==$_SESSION['unique_id'])
@@ -75,8 +79,8 @@
     <div class="profile-stats">
         <ul>
             <li><span class="profile-stat-count"><?php echo $row['postcnt'] ?></span> posts</li>
-            <li><span class="profile-stat-count"><?php echo $row['followers'] ?></span> followers</li>
-            <li><span class="profile-stat-count"><?php echo $row['following'] ?></span> following</li>
+            <li><span class="profile-stat-count"><?php echo $follower['follower'] ?></span> followers</li>
+            <li><span class="profile-stat-count"><?php echo $following['following'] ?></span> following</li>
         </ul>
 
     </div>

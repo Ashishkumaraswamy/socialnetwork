@@ -48,7 +48,7 @@
         <div><i class="fas fa-info"></i></div>
       </div>';     
         $from_id = $_SESSION['unique_id'];
-
+        $update=mysqli_query($conn,"UPDATE chat set seen=true WHERE from_id={$to_id}");
         $sql3 = "SELECT * FROM chat LEFT JOIN users ON users.user_id = chat.from_id
                 WHERE (from_id = {$from_id} AND to_id = {$to_id})
                 OR (from_id = {$to_id} AND to_id = {$from_id}) ORDER BY msg_id";
@@ -63,14 +63,21 @@
                     $output .= '<div class="receiver">
                                     <p>'. $row['msg'] .'</p>
                                 </div>                          
-                                <p style="font-size:10px;float:right;margin-left:20px;margin-bottom:15px">'. $row['time'] .'<p>';
+                                <p>'. $row['time'] .'<p>';
                 }else{
                     $output .= '<div class="sender" onclick="like()">
                                     '. $row['msg'] .'
                                 </div><div id="heart">❤️</div>
-                                <p style="font-size:10px;text-align:right;margin-left:20px;margin-bottom:15px">'. $row['time'] .'<p>';
+                                <span>'. $row['time'] .'</span>';
                 }
             }
+            $seenquery = mysqli_query($conn,"SELECT * FROM chat LEFT JOIN users ON users.user_id = chat.from_id
+                WHERE (from_id = {$from_id} AND to_id = {$to_id})
+                OR (from_id = {$to_id} AND to_id = {$from_id}) ORDER BY msg_id DESC LIMIT 1");
+            $seen=mysqli_fetch_assoc($seenquery);
+            if($seen['from_id']==$from_id and $seen['seen']==true){
+            $output.='<i class="fa fa-eye" style="font-size:24px"></i>';
+            } 
             $output .= '<div class="user-input"></div>
                         <div class="input-msg">
                         <form action="" method="POST" id="formdata">
