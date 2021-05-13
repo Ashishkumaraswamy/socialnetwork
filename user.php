@@ -12,7 +12,7 @@
 <head>
 	<title><?php echo $row['user_name'] ?></title>
 	<meta charset="UTF-8">
-    <meta http-equiv="refresh" content="10" />
+    
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/navigation.css">
 	<link rel="icon" type="image/png" href="images/logoicon.ico"/>
@@ -75,12 +75,10 @@
 .profile-image input[type="file"] {
     cursor: pointer;
     display: block;
-    height: 100%;
     left: 0;
     opacity: 0 !important;
     position: absolute;
     top: 0;
-    width: 100%;
 }
 
 .profile-image-src{
@@ -294,7 +292,7 @@
 
 
 
-    
+    /*    
     continueBtn.onclick= ()=>{
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "php/friend.php", true);
@@ -327,6 +325,7 @@
         }
         
     }
+    */
 
     </script> 
 
