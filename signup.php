@@ -218,7 +218,7 @@ return false;
 							<input type="submit" name="submit" value="NEXT" class="signup100-form-btn" id="btn">
 						</div>
 						<br>
-						<hr style="width:100%;text-align:left;margin-left:0;margin-top-top: 15px;color: black;">
+						<hr style="width:100%;text-align:left;margin-left:0;margin-top: 15px;color: black;">
 						<div class="container-signup100-form-btn">
 							<button class="signup100-form-btn">
 								<a href="otpverify.php" class="fa fa-facebook"></a>

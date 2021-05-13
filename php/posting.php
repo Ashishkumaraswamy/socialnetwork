@@ -9,7 +9,8 @@
             if($_FILES['image']['name'] != "")  
             {  
                 $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
-                $query = "INSERT INTO posts (post,postby,descp) VALUES ('{$file}','{$username}','{$caption}')";  
+                $query = "INSERT INTO posts (post,postby,descp) VALUES ('{$file}','{$username}','{$caption}')"; 
+                $sql2 = mysqli_query($conn,"update users set postcnt = postcnt + 1 WHERE user_id='{$_SESSION['unique_id']}'"); 
                 if(mysqli_query($conn, $query))  
                 {  
                     echo "success";  

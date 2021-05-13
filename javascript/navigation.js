@@ -3,17 +3,33 @@
 //   $(".notification-bubble").show(400);
 // });
 
-// $(document).on("scroll", function () {
-//   if ($(document).scrollTop() > 50) {
-//     $(".navigation").addClass("shrink");
-//   } else {
-//     $(".navigation").removeClass("shrink");
-//   }
-// });
+$(document).on("scroll", function () {
+  if ($(document).scrollTop() > 70) {
+         $(".navigation").addClass("shrink");
+   } else {
+     $(".navigation").removeClass("shrink");
+   }
+});
+
+$(".fa-sign-out-alt").click(function () {
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "php/logout.php", true);
+  xhr.send();
+  xhr.onload = ()=>{
+
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        if(xhr.status === 200){
+            location.href = "index.php";
+        }
+    }
+  }  
+});
+
 
 const searchBar = document.querySelector("#searchinput"),
 searchIcon = document.querySelector("#searchicon"),
 usersList = document.querySelector("#searchlist");
+
 
 searchIcon.onclick = ()=>{
   searchBar.classList.toggle("show");

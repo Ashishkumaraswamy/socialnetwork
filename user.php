@@ -16,6 +16,7 @@
 	<link rel="icon" type="image/png" href="images/logoicon.ico"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" type="text/css" href="css/user.css">
     
@@ -40,7 +41,7 @@
 
         <button class="btn profile-edit-btn">Edit Profile</button>
 
-        <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+        <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-trash" aria-hidden="true"></i></button>
 
     </div>
 
@@ -113,6 +114,40 @@
     foo.onclick = ()=>{
         location.href = "viewpost.php";
     }
+
+    $(".profile-edit-btn").click(function () {
+        location.href = "edit.php";
+
+    });
+
+
+    $(".fa-trash").click(function () {
+    if (confirm("Do you want to delete your account!!")) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/deleteacnt.php", true);
+        xhr.send();
+        xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                console.log(data);
+                location.href = "index.php";
+                
+            }
+            }
+        }
+        
+      
+    } else {
+
+    }
+   
+    });
+
+
+
+
+
     </script> 
 
 

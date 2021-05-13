@@ -17,6 +17,40 @@ setInterval(() =>{
   xhr.send();
 }, 1000);
 
+
+//http://localhost/SocialNetwork/chat.php?user_id=58
+setInterval(() =>{
+    url=window.location.href;
+    user_id = location.search.slice(1).split("=")[1];
+    document.getElementById("store_to_id").value = user_id;
+    
+    let xhml = new XMLHttpRequest();
+    if(user_id===undefined)
+    {
+      chatBox.innerHTML='<p style="text-align:center">Select an user to chat</p>';
+    }
+    else
+    {
+      xhml.open("POST", "php/get-chat.php", true);
+      xhml.onload = ()=>{
+        if(xhml.readyState === XMLHttpRequest.DONE){
+            if(xhml.status === 200){
+              let data = xhml.response;
+              console.log(data);
+              chatBox.innerHTML = data;  
+            }
+        }
+     }
+    let formData = new FormData(form);
+    xhml.send(formData);
+    }    
+}, 100);
+
+
+form.onsubmit = (e)=>{
+    e.preventDefault();
+}
+
 //onclick like
 function like() 
 {
@@ -40,8 +74,6 @@ function send() {
           if(xhr.status === 200){
               senddiv.style.display = "block";
               senddiv.innerHTML = usermsg;
-              alert(document.getElementById("to_id").value);
-              alert(document.getElementById("from_id").value);
               document.getElementById("send-input").value="";
               data=xhr.response;
               console.log(data);

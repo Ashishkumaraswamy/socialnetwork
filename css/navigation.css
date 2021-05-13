@@ -1,9 +1,9 @@
-@import url('http://fonts.cdnfonts.com/css/billabong');
+@import url('https://fonts.cdnfonts.com/css/billabong');
 
 /* start header */
 
 .navigation {
-  /*background-color: #ffffff;*/
+  background-color: #262626;
   height: 80px;
   position: fixed;
   width: 100%;
