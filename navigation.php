@@ -28,7 +28,7 @@
     <a href="posting.php" class="navigation-link">
       <i class="fas fa-plus"></i>
     </a>
-    <a href="" class="navigation-link">
+    <a href="news.php" class="navigation-link">
       <i class="fa fa-compass"></i>
     </a>
     <?php
