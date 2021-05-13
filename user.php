@@ -1,10 +1,11 @@
 <?php 
     session_start();
     include_once "php/config.php";
-	$sql=mysqli_query($conn, "select * from users where user_id='{$_SESSION['unique_id']}'");
-	if(mysqli_num_rows($sql) > 0){
-			$row = mysqli_fetch_assoc($sql);
-	}
+    $click_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+    $sql=mysqli_query($conn, "select * from users where user_id={$click_id}");
+    if(mysqli_num_rows($sql) > 0){
+            $row = mysqli_fetch_assoc($sql);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,19 +33,37 @@
 <div class="profile">
   <div class="profile-image">
     	
-	<?php echo '<img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image">';?>
-    </div>
+	<?php
+    echo '<img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image"></div>';
+    
+    if($click_id==$_SESSION['unique_id'])
+    {    
+    echo '<div class="profile-user-settings">
 
-    <div class="profile-user-settings">
-
-        <h3 class="profile-user-name"><?php echo $row['user_name'] ?></h3>
+        <h3 class="profile-user-name">'.$row['user_name'].'</h3>
 
         <button class="btn profile-edit-btn">Edit Profile</button>
 
         <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-trash" aria-hidden="true"></i></button>
 
-    </div>
+    </div>';
+    }
+    else
+    {
+        $sql2=mysqli_query($conn, "SELECT * FROM friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
+        if(mysqli_num_rows($sql2)>0)
+            $status="Unfollow";
+        else
+            $status="Follow";
+        echo '<div class="profile-user-settings">
 
+        <h3 class="profile-user-name">'.$row['user_name'].'</h3>
+        <input type="text" id="status" name="status" value="'.$status.'" hidden>
+        <button class="btn profile-follow-btn">'.$status.'</button>
+
+    </div>';
+    }       
+    ?>
     <div class="profile-stats">
         <ul>
             <li><span class="profile-stat-count"><?php echo $row['postcnt'] ?></span> posts</li>
@@ -104,7 +123,6 @@
 		</div>
 		<!-- End of gallery -->
 
-
 	</div>
 	<!-- End of container -->
 
@@ -112,7 +130,10 @@
         foo = document.querySelector(".gallery");
 
     foo.onclick = ()=>{
-        location.href = "viewpost.php";
+        <?php
+
+        echo 'location.href = "viewpost.php?user_id='.$click_id.'"';
+        ?>
     }
 
     $(".profile-edit-btn").click(function () {
@@ -143,7 +164,51 @@
     }
    
     });
+    // function follow(){
+    //     var status=document.getElementById("status").value;
+    //     if(status==="Follow")
+    //     {
+    //         <?php
+    //             $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
+    //         ?>
+    //     }
+    //     else
+    //     {
+    //         <?php
+    //             $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
+    //         ?>
+    //     }
 
+    // }    
+
+    $(".profile-follow-btn").click(function () {
+        status=document.getElementById("status").value;
+        
+        if(status==="Unfollow")
+        {   
+            alert(status);
+            <?php
+                $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
+                if($delete)
+                {
+                    echo 'location.href = "user.php?user_id='.$click_id.'"';
+                }
+            ?>
+        }
+        else
+        {
+            alert(status);
+            <?php
+                $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
+                if($insert)
+                {
+                    echo 'location.href = "user.php?user_id='.$click_id.'"';
+                }
+            ?>
+        }
+
+
+    });
 
 
 

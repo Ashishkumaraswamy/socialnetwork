@@ -35,7 +35,7 @@
 
     echo'<a href="chat.php?user_id='. $_SESSION['unique_id'] .'" class="navigation-link">
       <i class="fa fa-paper-plane"></i>
-    </a>'
+    </a>';
     ?>
     
     <a class="navigation-link notification">
@@ -47,9 +47,11 @@
         </div>
       </i>
     </a>
-    <a href="user.php" class="navigation-link">
+    <?php
+    echo '<a href="user.php?user_id='. $_SESSION['unique_id'] .'" class="navigation-link">
       <i class="fa fa-user-circle"></i>
-    </a>
+    </a>';
+    ?>
     <a href="" class="navigation-link">
       <i class="fa fa-sign-out-alt"></i>
     </a>

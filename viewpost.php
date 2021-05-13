@@ -1,7 +1,8 @@
 <?php 
     session_start();
     include_once "php/config.php";
-	$sql=mysqli_query($conn, "select * from users where user_id='{$_SESSION['unique_id']}'");
+  $click_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+	$sql=mysqli_query($conn, "select * from users where user_id={$click_id}");
 	if(mysqli_num_rows($sql) > 0){
 			$row = mysqli_fetch_assoc($sql);
 
@@ -56,16 +57,15 @@ body {
                      
                          <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;margin-left: 8px;">
                            <p style="font-family: Proxima Nova, Helvetica, Arial;font-size: 12px;color: black;font-weight: bold;">'.$row1['postby'].'</p>
-                           <!-- Subtitle <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>-->
-                         </div>
-                     
+                         </div>       
                          <!--Heading Dots Section-->
-                         <div style="text-align: right;">
-                         <i class="fas fa-trash" onclick="del(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
-                          </div>
-                         <!--End Heading Dots Section-->
-                     
-                       </div>
+                    ';
+                         if($_SESSION['unique_id']==$click_id)
+                          {
+                         echo '<div style="text-align: right;"><i class="fas fa-trash" onclick="del(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
+                          </div><!--End Heading Dots Section-->';
+                          }
+                       echo '</div>
                        <!--End Heading-->
                      </div>
                      
@@ -148,7 +148,9 @@ body {
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
               let data = xhr.response;
-              location.href = "viewpost.php";
+              <?php
+                echo 'location.href = "viewpost.php?user_id='.$click_id.'"';
+              ?>
               
           }
       }
@@ -175,7 +177,9 @@ body {
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
               let data = xhr.response;
-              location.href = "viewpost.php";
+              <?php
+                 echo 'location.href = "viewpost.php?user_id='.$click_id.'"';
+              ?>
               
           }
           }
