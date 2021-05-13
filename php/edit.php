@@ -12,7 +12,7 @@
 
     if(!empty($country) && !empty($state) && !empty($bio) && !empty($aoi1)){
         
-            $insert_query = mysqli_query($conn,"update users set country ='{$country}',state = '{$state}' bio = '{$bio}' aoi1= '{$aoi1}' aoi2='{$aoi2}' aoi3='{$aoi3}' WHERE user_id = {$_SESSION['unique_id']} ");
+            $insert_query = mysqli_query($conn,"update users set country ='{$country}',state = '{$state}',bio = '{$bio}',aoi1= '{$aoi1}',aoi2='{$aoi2}',aoi3='{$aoi3}' WHERE user_id = {$_SESSION['unique_id']} ");
 
             if($insert_query){
                 echo "success";
