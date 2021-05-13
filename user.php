@@ -112,8 +112,6 @@
     echo '
         <div class="profile-image">
             <img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image" class="picture-src">
-            <input type="file" id="wizard-picture" name="image">
-
         </div>    
         <div class="profile-user-settings">
 

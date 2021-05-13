@@ -126,10 +126,17 @@
 							<input type="submit" name="submit" value="SUMBIT" class="signup100-form-btn" id="btn">
 						</div>
 
+						<div class="container-signup100-form-btn">
+							<input type="submit" name="propic" value="UPDATE PROFILE PIC" class="signup100-form-btn" id="pro">
+						</div>
+
 						<br>
 						<div class="container-signup100-form-btn">
 							<input type="submit" name="submit" value="BACK" class="signup100-form-btn" id="back">
 						</div>
+
+
+						
 					</form>
 				</div>
 		</div>

@@ -1,6 +1,7 @@
 const form=document.querySelector("#form"),
 continueBtn = form.querySelector("#btn"),
 back = form.querySelector("#back"),
+pro = form.querySelector("#pro");
 errorText = form.querySelector(".error-text");
 
 form.onsubmit = (e)=>{
@@ -10,6 +11,10 @@ back.onclick = ()=>{
   url=window.location.href;
   to_id = location.search.slice(1).split("=")[1]; 
   location.href = "user.php?user_id="+to_id;
+}
+
+pro.onclick = ()=>{ 
+  location.href = "editpropic.php";
 }
 
 continueBtn.onclick = ()=>{
