@@ -12,6 +12,7 @@
 <head>
 	<title><?php echo $row['user_name'] ?></title>
 	<meta charset="UTF-8">
+    <meta http-equiv="refresh" content="10" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/navigation.css">
 	<link rel="icon" type="image/png" href="images/logoicon.ico"/>
