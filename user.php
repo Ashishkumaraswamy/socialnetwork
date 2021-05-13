@@ -160,8 +160,11 @@
 
     </div>
     <?php
-            echo '<input type="hidden" id="ses" name="ses" value="'.$_SESSION['unique_id'].'" >
-                  <input type="hidden" id="cli" name="cli" value="'.$click_id.'" >';
+            echo '<form validate-form" id="form" method="post" >
+                  <input type="hidden" id="ses" name="ses" value="'.$_SESSION['unique_id'].'" >
+                  <input type="hidden" id="cli" name="cli" value="'.$click_id.'" >
+                  </form>
+                  ';
     ?>
     
 
@@ -220,6 +223,7 @@
 
     <script>
     foo = document.querySelector(".gallery");
+
     continueBtn=document.querySelector("#btn");
     continueBtn1=document.querySelector("#btn2");
 
@@ -261,23 +265,6 @@
    
     });
 
-    $(".profile-image").click(function (){
-        if( document.getElementById("ses").value === document.getElementById("cli").value){
-
-            if (confirm("Do you want to update your profile pic!!")) {
-        
-            } else {
-                return false;
-
-            }
-   
-        }
-        else{
-            return false;
-        }
-
-    });
-
     
     function unfollow1()
     {
@@ -309,16 +296,38 @@
 
 
     
-    /*continueBtn.onclick= ()=>{
-        follow();
-        location.reload();
+    continueBtn.onclick= ()=>{
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/friend.php", true);
+        xhr.send();
+        xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                console.log(data);
+                location.href = "index.php";
+                
+            }
+            }
+        }
     }
 
     continueBtn1.onclick= ()=>{
-        unfollow1();
-        location.reload();
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/unfriend.php", true);
+        xhr.send();
+        xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                console.log(data);
+                location.href = "index.php";
+                
+            }
+            }
+        }
+        
     }
-    */
 
     </script> 
 
