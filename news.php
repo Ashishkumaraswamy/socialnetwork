@@ -58,7 +58,7 @@
     <div class="thin">
         <h1>Search</h1>
         <span id="hashtag">#</span>
-      	<input ng-if="search" ng-click="clear()" type="text"  id="name" name="username" class="clearable" style="width: 97%;">
+      	<input type="text"  id="name" name="username" class="clearable" style="width: 97%;">
           <br>
           <br>
       	<button ng-click="searchTag()" ng-enter="search" id="btn" value="Submit">Search</button>
