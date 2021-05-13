@@ -1,5 +1,22 @@
 userList=document.querySelector("#userslist");
 const form=document.querySelector("#formdata");
+chatlist=document.querySelector('.chats')
+
+setInterval(() =>{
+    to_id = location.search.slice(1).split("=")[1];
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/get-chat.php", true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+            let data = xhr.response;
+            chatlist.innerHTML = data;
+              }
+          }
+      }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("to_id="+to_id);
+}, 10000);
 
 setInterval(() =>{
   let xhr = new XMLHttpRequest();
@@ -38,16 +55,15 @@ function send() {
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
+              alert('here');
               senddiv.style.display = "block";
               senddiv.innerHTML = usermsg;
-              alert(document.getElementById("to_id").value);
-              alert(document.getElementById("from_id").value);
               document.getElementById("send-input").value="";
               data=xhr.response;
               console.log(data);
           }
       }
     }
-    let formData = new FormData(form);
+    let formData = new FormData(document.getElementById("formdata"));
     xhr.send(formData);
 }
