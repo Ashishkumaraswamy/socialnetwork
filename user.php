@@ -50,18 +50,26 @@
     }
     else
     {
-        $sql2=mysqli_query($conn, "SELECT * FROM friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
+        $sql2 =mysqli_query($conn, "SELECT * FROM friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
         if(mysqli_num_rows($sql2)>0)
+        {
             $status="Unfollow";
+            $v = "hidden";
+            $vu = "sumbit";
+        }
         else
+        {
             $status="Follow";
+            $vu = "hidden";
+            $v = "sumbit";
+        }
         echo '<div class="profile-user-settings">
 
         <h3 class="profile-user-name">'.$row['user_name'].'</h3>
-        <input type="text" id="status" name="status" value="'.$status.'" hidden>
-        <button class="btn profile-follow-btn">'.$status.'</button>
-
-    </div>';
+        <input type="hidden" id="status" name="status" value="'.$status.'" >
+        <input type="'.$v.'" name="submit" value="'.$status.'" class="btn pro-edit-btn" id="btn">
+        <input type="'.$vu.'" name="submit" value="'.$status.'" class="btn pro-edit-btn" id="btn2">
+        </div>';
     }       
     ?>
     <div class="profile-stats">
@@ -127,7 +135,9 @@
 	<!-- End of container -->
 
     <script>
-        foo = document.querySelector(".gallery");
+    foo = document.querySelector(".gallery");
+    continueBtn=document.querySelector("#btn");
+    continueBtn1=document.querySelector("#btn2");
 
     foo.onclick = ()=>{
         <?php
@@ -166,103 +176,45 @@
     }
    
     });
-    // function follow(){
-    //     var status=document.getElementById("status").value;
-    //     if(status==="Follow")
-    //     {
-    //         <?php
-    //             $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
-    //         ?>
-    //     }
-    //     else
-    //     {
-    //         <?php
-    //             $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
-    //         ?>
-    //     }
-
-    // }    
-    //$(document).ready(function() {
-    
-    $(".profile-follow-btn").click(function (e) {
-        status=document.getElementById("status").value;
-        var count = 0;
-
-        if(status==="Unfollow")
-        {   
-            if(count == 0)
-            {
-                unfollow();
-                count = count +1 ;
-                e.preventDefault();
-            }
-            else
-            {
-                return;
-            }
-        }
-        else
-        {
-            if(count == 0)
-            {
-                follow();
-                count = count +1 ;
-                e.preventDefault();
-            }
-            else{
-                return;
-            }
-        }
-        return;
-
-
-    });
 
     
-    //});
-
-    function unfollow()
+    function unfollow1()
     {
-        alert(status);
+        alert(document.getElementById("status").value);
         <?php
-            $delete=mysqli_query($conn,"DELETE from friends WHERE followers={$_SESSION['unique_id']} and following={$click_id}");
+
+            $delete = mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
             if($delete)
             {
-                echo 'location.href = "user.php?user_id='.$click_id.'"';
+                //echo 'location.href = "user.php?user_id='.$click_id.'";';
             }
         ?>
 
     }
-
-    function follow()
+    function follow1()
     {
-        alert(status);
+        alert(document.getElementById("status").value);
         <?php
+
             $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
             if($insert)
             {
-                echo 'location.href = "user.php?user_id='.$click_id.'"';
+                //echo 'location.href = "user.php?user_id='.$click_id.'"';
             }
         ?>
 
     }
 
+    
+    continueBtn.onclick= ()=>{
+        follow();
+        location.reload();
+    }
 
-    $(document).ready(function(){
-
-    $('your selector').bind("click",function(){
-       // your statements;
-        });
-
-        // you can use the above or the one shown below
-
-        $('your selector').click(function(e){
-            e.preventDefault();
-            // your statements;
-        });
-
-
-        });
+    continueBtn1.onclick= ()=>{
+        unfollow1();
+        location.reload();
+    }
 
 
     </script> 
