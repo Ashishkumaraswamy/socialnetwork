@@ -25,9 +25,12 @@
     </div>
   </div>
   <div class="navigation-icons">
-    <a href="posting.php" class="navigation-link">
-      <i class="fas fa-plus"></i>
-    </a>
+      <?php
+        echo'<a href="posting.php?user_id='. $_SESSION['unique_id'] .'" class="navigation-link">
+        <i class="fas fa-plus"></i>
+        </a>';
+      ?>
+      
     <a href="news.php" class="navigation-link">
       <i class="fa fa-compass"></i>
     </a>
