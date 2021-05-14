@@ -125,7 +125,7 @@
     else
     {
         $sql2 =mysqli_query($conn, "SELECT * FROM friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
-        if(mysqli_num_rows($sql2)==1)
+        if(mysqli_num_rows($sql2) > 0)
         {
             $status="Unfollow";
             $type1="hidden";
@@ -142,16 +142,17 @@
         <img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image"></div>
         <div class="profile-user-settings">
         <h3 class="profile-user-name">'.$row['user_name'].'</h3>
+        
         <form id="formdata">
-        <input type="hidden" id="follower" name="status" value="'.$_SESSION['unique_id'].'" >
-        <input type="hidden" id="following" name="status" value="'.$click_id.'" >
-        <input type="hidden" id="status" name="status" value="'.$status.'" >
-        <input type="hidden" id="status" name="status" value="'.$status.'" >
-        <div class="follow">
-            <input type="'.$type1.'" id="follow" name="follow" value="'.$status.'">
-            <input type="'.$type2.'" id="unfollow" name="unfollow" value="'.$status.'" >
+
+        <input type="hidden" id="clickid" name="clickid" value="'.$click_id.'" >
+
+        <input type="hidden" id="status" name="sta" value="'.$status.'" >
+
+        <input type="submit" class="btn profile-edit-btn" name="submit" value="'.$status.'"  id="btn">
+        
         </form>
-        </div>';
+        ';
     }       
     ?>
     <div class="profile-stats">
@@ -162,13 +163,6 @@
         </ul>
 
     </div>
-    <?php
-            echo '<form validate-form" id="form" method="post" >
-                  <input type="hidden" id="ses" name="ses" value="'.$_SESSION['unique_id'].'" >
-                  <input type="hidden" id="cli" name="cli" value="'.$click_id.'" >
-                  </form>
-                  ';
-    ?>
     
 
     <div class="profile-bio">
@@ -227,9 +221,52 @@
     <script>
 
     const form=document.querySelector("#formdata");
+    continueBtn=form.querySelector("#btn");
 
-    continueBtn=document.querySelector("#btn");
-    continueBtn1=document.querySelector("#btn2");
+    form.onsubmit = (e)=>{
+        e.preventDefault();
+    }
+
+    continueBtn.onclick = ()=>{ 
+
+        if(document.getElementById("status").value=="Follow"){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/friend.php?user_id="+document.getElementById("clickid").value, true);
+            xhr.send();
+            xhr.onload = ()=>{
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    console.log(data);
+                    location.href = "user.php?user_id="+document.getElementById("clickid").value;
+                }
+                }
+            }
+            return;
+        }
+        else{
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/unfriend.php?user_id="+document.getElementById("clickid").value, true);
+            xhr.send();
+            xhr.onload = ()=>{
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    console.log(data);
+                    location.href = "user.php?user_id="+document.getElementById("clickid").value;
+                }
+                }
+            }
+            return;
+        }
+
+    }
+    
+
+
+
+
+
 
     $(".profile-edit-btn").click(function () {
         <?php

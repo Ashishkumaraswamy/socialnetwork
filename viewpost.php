@@ -130,6 +130,9 @@ body {
 </body>
 <script>
 
+
+   
+
   function yikes(x,y,z)
   {
     x.style.color = "red";
@@ -184,6 +187,11 @@ body {
     
     }
   }
+
+
+
+
+
 
   
   // $(".fa-trash").click(function () {
