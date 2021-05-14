@@ -92,9 +92,11 @@
 
             document.getElementById("main").innerHTML='';
             
-            const apikey = 'f9a31fee2b844b599adb8890c6de19ac';
+            // const apikey = 'f9a31fee2b844b599adb8890c6de19ac';
+            const apikey = 'c42746d3e769c778ea2ececd7a47a9b8';
             let topic = document.getElementById("name").value;
-            let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
+            // let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
+            let url = `http://api.mediastack.com/v1/news?access_key=${apikey}`;
             //let url = `http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
             //{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})}
 
@@ -104,15 +106,15 @@
                 return res.json()
             }).then((data)=>{
                 console.log(data);
-                data.articles.forEach(article => {
-                    let li = document.createElement('li');
-                    let a = document.createElement('a');
-                    a.setAttribute('href',article.url);
-                    a.setAttribute('target','_blank');
-                    a.textContent = article.title;
-                    li.append(a);
-                    document.getElementById("main").appendChild(li);
-                });
+                // data.articles.forEach(article => {
+                //     let li = document.createElement('li');
+                //     let a = document.createElement('a');
+                //     a.setAttribute('href',article.url);
+                //     a.setAttribute('target','_blank');
+                //     a.textContent = article.title;
+                //     li.append(a);
+                //     document.getElementById("main").appendChild(li);
+                
             }).catch((error)=>{
                 console.log(error);
             })
