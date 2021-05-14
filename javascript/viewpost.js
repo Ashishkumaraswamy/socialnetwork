@@ -1,8 +1,12 @@
 commentsection=document.querySelector('commentsection')
 
 setInterval(() =>{
-    post_id = location.search.slice(1).split("=")[1];
+    post_id = location.search.slice(1).split("&")[0].split("=")[0];
+    user_id= location.search.slice(1).split("&")[0].split("=")[1];
+    alert(post_id);
+    alert(user_id);
     let xhr = new XMLHttpRequest();
+    
     xhr.open("POST", "php/get-comments.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){

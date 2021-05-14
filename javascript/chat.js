@@ -11,6 +11,7 @@ setInterval(() =>{
           if(xhr.status === 200){
             let data = xhr.response;
             chatlist.innerHTML = data;
+            scrollToBottom();
               }
           }
       }
@@ -72,3 +73,7 @@ function send() {
     xhr.send(formData);
   }
 }
+
+function scrollToBottom(){
+    chatlist.scrollTop = chatlist.scrollHeight;
+  }

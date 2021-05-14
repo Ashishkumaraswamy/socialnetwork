@@ -94,8 +94,12 @@ main {
   align-items: flex-start;
   height: 80vh;
   width: 60%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: none;
+  white-space: nowrap;
+}
+.chats::-webkit-scrollbar {
+    display: none;
 }
 .chat-banner {
   width: 100%;
@@ -161,6 +165,7 @@ main {
   border-radius: 20px;
   border: 1px solid var(--medium-grey);
   transition: all .2s ease;
+  word-wrap: break-word;
 }
 .sender:hover {
   background-color: pink;
@@ -191,6 +196,7 @@ main {
   padding-top: 10px;
   border-top: 1px solid var(--medium-grey);
   bottom: 50px;
+  word-wrap: break-word;
 }
 .input-msg i {
   color: var(--grey);
