@@ -47,6 +47,10 @@ body {
                 $result = mysqli_query($conn, $query);  
                 while($row1 = mysqli_fetch_array($result))  
                 {  
+                    $cmtcount=mysqli_query($conn,"SELECT count(*) as cmtcount from comment WHERE postid={$row1['postid']}");
+                    $lastcmt=mysqli_query($conn,"SELECT * from comment WHERE postid={$row1['postid']} ORDER BY time DESC LIMIT 1");
+                    $result1=mysqli_fetch_assoc($cmtcount);
+                    $result2=mysqli_fetch_assoc($lastcmt);
                      echo '   
                      <article class="instapost">
                   <header class="instapost__header">
@@ -99,11 +103,32 @@ body {
                     <a class="user instalink" href="https://www.instagram.com/gabormolnar92/" target="_blank">
                         '.$row1['postby'].'
                       </a> '.$row1['descp'].'
-                  </section>
+                  </section>';
+
+                  if($result1['cmtcount']!=0)
+                  {
+                  $sql=mysqli_query($conn,"SELECT * FROM users WHERE user_name='{$result2['commentby']}'");
+                  $result3=mysqli_fetch_assoc($sql);
+                  echo '
+                  <div class="commentsection" id="commentsection">
                   <a class="instapost__comment-list" href="#">
-                    View all 817 comments
+                    View all '.$result1['cmtcount'].' comments
                   </a>
-                  <section class="instapost__timestamp">
+                  <section class="instapost__description">
+                    <a class="user instalink" href="user.php?user_id='.$result3['user_id'].'" target="_blank">
+                        '.$result2['commentby'].'
+                      </a> '.$result2['msg'].'
+                  </section>
+                  </div>';
+                  <>
+                  }
+                  else
+                  {
+                    echo'<a class="instapost__comment-list" href="#">
+                    No comments available
+                  </a>';
+                  }
+                  echo '<section class="instapost__timestamp">
                     '.$row1['timeset'].'
                   </section>
                   <section class="instapost__add-comment">
