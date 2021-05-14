@@ -14,9 +14,31 @@ commentInput.addEventListener("input", function (e) {
 	}
 });
 
-likeBtn.addEventListener("click", function (e) {
-	this.classList.toggle("dislike");
-});
+function yikes(x,y,z)
+  {
+    x.style.color = "red";
+    document.getElementById("temp_postby").value = y;
+    document.getElementById("temp_timeset").value = z;
+    const form=document.querySelector("#typing-area");
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/like.php", true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              let data = xhr.response;
+              location.href = "mainpage.php";
+              
+          }
+      }
+    }
+    let formData = new FormData(form);
+    xhr.send(formData);
+  }
+
+  function likesoff(x,y,z)
+  {
+    x.style.color = "black";
+  }
 
 imageSection.addEventListener("dblclick", function (e) {
 	likeHeart.classList.add("show");
@@ -24,43 +46,5 @@ imageSection.addEventListener("dblclick", function (e) {
 	setTimeout(() => likeHeart.classList.remove("show"), 1000);
 });
 
-let nextIndex = 1;
 const imgList = imageSection.querySelectorAll('img');
-function chageImage(direction) {
-	return function (e) {
-		e.preventDefault();
-		
-		console.log(nextIndex);
-		
-		imgList.forEach(item => item.classList.remove('show'));
-		const img = imageSection.querySelector(`.img-${nextIndex}`);
-		img.classList.add('show')
-		
-		if (nextIndex === 0) {
-			ctrlLeft.classList.add("hide");
-		} else {
-			ctrlLeft.classList.remove("hide");
-		}
 
-		if (nextIndex === imgList.length - 1) {
-			ctrlRight.classList.add("hide");
-		} else {
-			ctrlRight.classList.remove("hide");
-		}
-
-		if (direction === 0) {
-			--nextIndex;
-			if (nextIndex < 0) {
-				nextIndex = 1;
-			}
-		} else if (direction === 1) {
-			++nextIndex;
-			if (nextIndex > imgList.length - 1) {
-				nextIndex = imgList.length - 2;
-			}
-		}
-	};
-}
-
-ctrlRight.addEventListener("click", chageImage(1));
-ctrlLeft.addEventListener("click", chageImage(0));

@@ -199,8 +199,8 @@
                 {  
                      echo '   
 					 		<div class="gallery-item" tabindex="0">
-                                <img src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" class="gallery-image" alt=""/>
-								
+                                <a href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$click_id.'"><img src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" class="gallery-image" alt=""/>
+								</a>
 								
 								<div class="gallery-item-info">
 
@@ -228,17 +228,8 @@
 
     const form=document.querySelector("#formdata");
 
-    foo = document.querySelector(".gallery");
-
     continueBtn=document.querySelector("#btn");
     continueBtn1=document.querySelector("#btn2");
-
-    foo.onclick = ()=>{
-        <?php
-
-        echo 'location.href = "viewpost.php?user_id='.$click_id.'"';
-        ?>
-    }
 
     $(".profile-edit-btn").click(function () {
         <?php
@@ -299,83 +290,83 @@
 
     // }
 
-    $('#followbtn').click(function() 
-    {
-          var status=document.getElementById("status").value;
-          var follower=document.getElementById("follower").value;
-          var following=document.getElementById("following").value;
-          alert(follower);
-          alert(following);
-          alert(status);
-          if(status==="Unfollow")
-          {
-                <?php
-                $sql2=mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) AND (following={$click_id})");
-                ?>
-          }
-          else if(status=="follow")
-          {
-            alert("inside");
-            <?php
-            $sql3=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
-            ?>
-          }
-          $(this).text(function(_, text) {
-            return text === "Follow" ? "Unfollow" : "Follow";
-          });
-          if($(this).text() == "Follow") {
-            $(this).removeClass('unfollow');
-          } else if($(this).text() == "Unfollow") {
-            $(this).addClass('unfollow');
-          }
-          if(status==="Unfollow")
-          {
-            document.getElementById("status").value="Follow";
-            alert("deleted");
-            return;
-          }
-          else{
-            document.getElementById("status").value="Unfollow";
-            alert("Inserted");
-            return;
-          }
-    });
+    // $('#followbtn').click(function() 
+    // {
+    //       var status=document.getElementById("status").value;
+    //       var follower=document.getElementById("follower").value;
+    //       var following=document.getElementById("following").value;
+    //       alert(follower);
+    //       alert(following);
+    //       alert(status);
+    //       if(status==="Unfollow")
+    //       {
+    //             <?php
+    //             $sql2=mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) AND (following={$click_id})");
+    //             ?>
+    //       }
+    //       else if(status=="follow")
+    //       {
+    //         alert("inside");
+    //         <?php
+    //         $sql3=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
+    //         ?>
+    //       }
+    //       $(this).text(function(_, text) {
+    //         return text === "Follow" ? "Unfollow" : "Follow";
+    //       });
+    //       if($(this).text() == "Follow") {
+    //         $(this).removeClass('unfollow');
+    //       } else if($(this).text() == "Unfollow") {
+    //         $(this).addClass('unfollow');
+    //       }
+    //       if(status==="Unfollow")
+    //       {
+    //         document.getElementById("status").value="Follow";
+    //         alert("deleted");
+    //         return;
+    //       }
+    //       else{
+    //         document.getElementById("status").value="Unfollow";
+    //         alert("Inserted");
+    //         return;
+    //       }
+    // });
 
 
-    continueBtn.onclick= ()=>{
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/friend.php", true);
-        xhr.send();
-        xhr.onload = ()=>{
-        if(xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status === 200){
-                let data = xhr.response;
-                console.log(data);
-                location.href = "index.php";
-            }
-            }
-        }
-        let formData = new FormData(document.getElementById("formdata"));
-        xhr.send(formData);
-    }
+    // continueBtn.onclick= ()=>{
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.open("POST", "php/friend.php", true);
+    //     xhr.send();
+    //     xhr.onload = ()=>{
+    //     if(xhr.readyState === XMLHttpRequest.DONE){
+    //         if(xhr.status === 200){
+    //             let data = xhr.response;
+    //             console.log(data);
+    //             location.href = "index.php";
+    //         }
+    //         }
+    //     }
+    //     let formData = new FormData(document.getElementById("formdata"));
+    //     xhr.send(formData);
+    // }
 
-    continueBtn1.onclick= ()=>{
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/unfriend.php", true);
-        xhr.send();
-        xhr.onload = ()=>{
-        if(xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status === 200){
-                let data = xhr.response;
-                console.log(data);
-                location.href = "index.php";
+    // continueBtn1.onclick= ()=>{
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.open("POST", "php/unfriend.php", true);
+    //     xhr.send();
+    //     xhr.onload = ()=>{
+    //     if(xhr.readyState === XMLHttpRequest.DONE){
+    //         if(xhr.status === 200){
+    //             let data = xhr.response;
+    //             console.log(data);
+    //             location.href = "index.php";
                 
-            }
-            }
-        }
-        let formData = new FormData(document.getElementById("formdata"));
-        xhr.send(formData);
-    }
+    //         }
+    //         }
+    //     }
+    //     let formData = new FormData(document.getElementById("formdata"));
+    //     xhr.send(formData);
+    // }
    
     </script> 
 </main>

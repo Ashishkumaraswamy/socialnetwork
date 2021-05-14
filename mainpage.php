@@ -65,6 +65,10 @@ body {
                 $result = mysqli_query($conn, $query);  
                 while($row1 = mysqli_fetch_array($result))  
                 {  
+                    $cmtcount=mysqli_query($conn,"SELECT count(*) as cmtcount from comment WHERE postid={$row1['postid']}");
+                    $lastcmt=mysqli_query($conn,"SELECT * from comment WHERE postid={$row1['postid']} ORDER BY time DESC LIMIT 1");
+                    $result1=mysqli_fetch_assoc($cmtcount);
+                    $result2=mysqli_fetch_assoc($lastcmt);
                     echo'
                   <article class="instapost">
                   <header class="instapost__header">
@@ -79,7 +83,7 @@ body {
                     </div>
                   </header>
                   <section class="instapost__image">
-                    <img class="img img-0 show" src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" alt="image" />
+                    <a href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$row1['user_id'].'"><img class="img img-0 show" src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" alt="image" /></a>
                     
                   </section>
                   <section class="instapost__action">
@@ -106,11 +110,27 @@ body {
                     <a class="user instalink" href="https://www.instagram.com/gabormolnar92/" target="_blank">
                         '.$row1['postby'].'
                       </a> '.$row1['descp'].'
-                  </section>
-                  <a class="instapost__comment-list" href="#">
-                    View all 817 comments
+                  </section>';
+                  if($result1['cmtcount']!=0)
+                  {
+                  $sql=mysqli_query($conn,"SELECT * FROM users WHERE user_name='{$result2['commentby']}'");
+                  $result3=mysqli_fetch_assoc($sql);
+                  echo '<a class="instapost__comment-list" href="#">
+                    View all '.$result1['cmtcount'].' comments
                   </a>
-                  <section class="instapost__timestamp">
+                  <section class="instapost__description">
+                    <a class="user instalink" href="user.php?user_id='.$result3['user_id'].'" target="_blank">
+                        '.$result2['commentby'].'
+                      </a> '.$result2['msg'].'
+                  </section>';
+                  }
+                  else
+                  {
+                    echo'<a class="instapost__comment-list" href="#">
+                    No comments available
+                  </a>';
+                  }
+                  echo'<section class="instapost__timestamp">
                     '.$row1['timeset'].'
                   </section>
                   <section class="instapost__add-comment">
@@ -131,37 +151,7 @@ body {
             <input type="hidden" name="temp_postby" value="" id="temp_postby"/>
             <input type="hidden" name="temp_timeset" value="" id="temp_timeset"/>
             </form>
-  
+            <script src="javascript/mainpage.js"></script> 
 </body>
-
-<script>
-
-  function yikes(x,y,z)
-  {
-    x.style.color = "red";
-    document.getElementById("temp_postby").value = y;
-    document.getElementById("temp_timeset").value = z;
-    const form=document.querySelector("#typing-area");
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/like.php", true);
-    xhr.onload = ()=>{
-      if(xhr.readyState === XMLHttpRequest.DONE){
-          if(xhr.status === 200){
-              let data = xhr.response;
-              location.href = "mainpage.php";
-              
-          }
-      }
-    }
-    let formData = new FormData(form);
-    xhr.send(formData);
-  }
-
-  function likesoff(x,y,z)
-  {
-    x.style.color = "black";
-  }
-
-</script>
  
 </html>
