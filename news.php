@@ -94,9 +94,10 @@
             
             const apikey = 'f9a31fee2b844b599adb8890c6de19ac';
             let topic = document.getElementById("name").value;
-            let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
+            //let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
+            let url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
 
-            fetch(url).then((res)=>{
+            fetch(url,{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})}).then((res)=>{
                 return res.json()
             }).then((data)=>{
                 console.log(data);
