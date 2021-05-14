@@ -7,6 +7,8 @@
 <html lang="en">
 <head>
     <title>Home</title>
+    <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/logoicon.ico"/>
     <script src="https://fonts.cdnfonts.com/css/billabong"></script>
     <link rel="stylesheet" type="text/css" href="css/navigation.css">
