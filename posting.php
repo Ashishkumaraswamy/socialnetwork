@@ -177,7 +177,7 @@ button {
 
 
 <body>
-        <form method="post" name="form" id="form" enctype="multipart/form-data" autocomplete="off" action="user.php">
+        <form method="post" name="form" id="form" enctype="multipart/form-data" autocomplete="off" action="user.php?user_id='.$_SESSION['unique_id'].'">
         
         <br>
         <br>
@@ -208,6 +208,7 @@ button {
         <br>        
         <div class="form-group">
             <input type="submit" name="insert" id="insert" value = "POST"></input>
+            <input type="hidden" id="sessionid" name="status" value="'.$_SESSION['unique_id'].'">
         </div>
         <div class="error-text"></div>
         

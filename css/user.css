@@ -62,6 +62,35 @@ img {
     clip: rect(1px, 1px, 1px, 1px);
 }
 
+.follow {
+  flex: 1;
+  margin: 10px;
+  align-self: center;
+}
+
+#followbtn {
+  background: blue;
+  border: none;
+  padding: 5px 10px;
+  color: whitesmoke;
+  width: 120px;
+  border-radius: 5px;
+  transition: all .3s ease-in;
+}
+
+#followbtn:active {
+  outline: none;
+}
+
+#followbtn:visited {
+  outline: none;
+}
+
+.unfollow {
+  background: red;
+  color: white;
+}
+
 /* Profile Section */
 
 .profile {

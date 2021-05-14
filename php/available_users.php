@@ -2,7 +2,7 @@
     session_start();
     include_once "config.php";
     $user_id = $_SESSION['unique_id'];
-    $sql = "SELECT * FROM friends WHERE NOT followers = {$user_id} ORDER BY following DESC";
+    $sql = "SELECT * FROM friends WHERE NOT (following = {$user_id}) AND (followers={$user_id}) ORDER BY following DESC";
     $query = mysqli_query($conn, $sql);
     $output = "";
     if(mysqli_num_rows($query) == 0){

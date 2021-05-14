@@ -27,7 +27,7 @@
     </div>
     <div class="chats">
     </div>
-    <div class="input-msg" style="margin-left: 500px">
+    <div class="input-msg" style="margin-left: 300px">
         <form action="" method="POST" id="formdata">
           <input type="text" class="from_id" id="from_id" name="from_id" value="<?php echo $from_id; ?>" hidden>
           <input type="text" class="to_id" id="to_id" name="to_id" value="<?php echo $to_id; ?>" hidden>
@@ -37,5 +37,6 @@
     </div>
   </main>
 <script type="text/javascript" src="javascript/chat.js"></script>
+<script src="javascript/mainpage.js"></script>>
 </body>
 </html>

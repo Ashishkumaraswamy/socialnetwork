@@ -125,26 +125,32 @@
     else
     {
         $sql2 =mysqli_query($conn, "SELECT * FROM friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
-        if(mysqli_num_rows($sql2)>0)
+        if(mysqli_num_rows($sql2)==1)
         {
             $status="Unfollow";
-            $v = "hidden";
-            $vu = "sumbit";
+            $type1="hidden";
+            $type2="submit";
         }
         else
         {
             $status="Follow";
-            $vu = "hidden";
-            $v = "sumbit";
+            $type2="hidden";
+            $type1="submit";
         }
         echo '
         <div class="profile-image">
         <img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image"></div>
         <div class="profile-user-settings">
         <h3 class="profile-user-name">'.$row['user_name'].'</h3>
+        <form id="formdata">
+        <input type="hidden" id="follower" name="status" value="'.$_SESSION['unique_id'].'" >
+        <input type="hidden" id="following" name="status" value="'.$click_id.'" >
         <input type="hidden" id="status" name="status" value="'.$status.'" >
-        <input type="'.$v.'" name="submit" value="'.$status.'" class="btn pro-edit-btn" id="btn">
-        <input type="'.$vu.'" name="submit" value="'.$status.'" class="btn pro-edit-btn" id="btn2">
+        <input type="hidden" id="status" name="status" value="'.$status.'" >
+        <div class="follow">
+            <input type="'.$type1.'" id="follow" name="follow" value="'.$status.'">
+            <input type="'.$type2.'" id="unfollow" name="unfollow" value="'.$status.'" >
+        </form>
         </div>';
     }       
     ?>
@@ -219,6 +225,9 @@
 	<!-- End of container -->
 
     <script>
+
+    const form=document.querySelector("#formdata");
+
     foo = document.querySelector(".gallery");
 
     continueBtn=document.querySelector("#btn");
@@ -263,36 +272,76 @@
     });
 
     
-    function unfollow1()
+    // function unfollow1()
+    // {
+    //     alert(document.getElementById("status").value);
+    //     <?php
+
+    //         $delete = mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
+    //         if($delete)
+    //         {
+    //             //echo 'location.href = "user.php?user_id='.$click_id.'";';
+    //         }
+    //     ?>
+
+    // }
+    // function follow1()
+    // {
+    //     alert(document.getElementById("status").value);
+    //     <?php
+
+    //         $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
+    //         if($insert)
+    //         {
+    //             //echo 'location.href = "user.php?user_id='.$click_id.'"';
+    //         }
+    //     ?>
+
+    // }
+
+    $('#followbtn').click(function() 
     {
-        alert(document.getElementById("status").value);
-        <?php
+          var status=document.getElementById("status").value;
+          var follower=document.getElementById("follower").value;
+          var following=document.getElementById("following").value;
+          alert(follower);
+          alert(following);
+          alert(status);
+          if(status==="Unfollow")
+          {
+                <?php
+                $sql2=mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) AND (following={$click_id})");
+                ?>
+          }
+          else if(status=="follow")
+          {
+            alert("inside");
+            <?php
+            $sql3=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
+            ?>
+          }
+          $(this).text(function(_, text) {
+            return text === "Follow" ? "Unfollow" : "Follow";
+          });
+          if($(this).text() == "Follow") {
+            $(this).removeClass('unfollow');
+          } else if($(this).text() == "Unfollow") {
+            $(this).addClass('unfollow');
+          }
+          if(status==="Unfollow")
+          {
+            document.getElementById("status").value="Follow";
+            alert("deleted");
+            return;
+          }
+          else{
+            document.getElementById("status").value="Unfollow";
+            alert("Inserted");
+            return;
+          }
+    });
 
-            $delete = mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
-            if($delete)
-            {
-                //echo 'location.href = "user.php?user_id='.$click_id.'";';
-            }
-        ?>
 
-    }
-    function follow1()
-    {
-        alert(document.getElementById("status").value);
-        <?php
-
-            $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
-            if($insert)
-            {
-                //echo 'location.href = "user.php?user_id='.$click_id.'"';
-            }
-        ?>
-
-    }
-
-
-
-    /*    
     continueBtn.onclick= ()=>{
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "php/friend.php", true);
@@ -303,10 +352,11 @@
                 let data = xhr.response;
                 console.log(data);
                 location.href = "index.php";
-                
             }
             }
         }
+        let formData = new FormData(document.getElementById("formdata"));
+        xhr.send(formData);
     }
 
     continueBtn1.onclick= ()=>{
@@ -323,15 +373,11 @@
             }
             }
         }
-        
+        let formData = new FormData(document.getElementById("formdata"));
+        xhr.send(formData);
     }
-    */
-
+   
     </script> 
-
-
-
-
 </main>
 </body>
 </html>

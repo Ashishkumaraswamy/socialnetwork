@@ -18,6 +18,7 @@ $(document).ready(function(){
                    return false;  
               }  
               else{
+                var id=document.getElementById('sessionid').value;
                 document.getElementById("image").width = "400";
                 document.getElementById("image").height = "400";
                 let xhr = new XMLHttpRequest();
@@ -26,8 +27,7 @@ $(document).ready(function(){
                   if(xhr.readyState === XMLHttpRequest.DONE){
                       if(xhr.status === 200){
                           let data = xhr.response;
-                          
-                          document.getElementById("form").action = "user.php";
+                          document.getElementById("form").action = "user.php?user_id="+id;
                       }
                   }
                 }
