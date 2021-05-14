@@ -76,7 +76,7 @@
     <script type="text/javascript">
         const form=document.querySelector("#form"),
         continueBtn = form.querySelector("#btn");
-        //const newslist = document.querySelector('news-list');
+        const newslist = document.querySelector('news-list');
         
         form.onsubmit = (e)=>{
             e.preventDefault();
@@ -94,8 +94,8 @@
             
             const apikey = 'f9a31fee2b844b599adb8890c6de19ac';
             let topic = document.getElementById("name").value;
-            //let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
-            let url = `http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
+            let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
+            //let url = `http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
             //{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})}
 
             //let url = `https://inshortsapi.vercel.app/news?category=${topic}`; 
@@ -116,7 +116,6 @@
             }).catch((error)=>{
                 console.log(error);
             })
-
         }   
     </script>
 </body>
