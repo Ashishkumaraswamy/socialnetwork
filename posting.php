@@ -177,7 +177,7 @@ button {
 
 
 <body>
-        <form method="post" name="form" id="form" enctype="multipart/form-data" autocomplete="off" action="user.php?user_id='.$_SESSION['unique_id'].'">
+        <form method="post" name="form" id="form" enctype="multipart/form-data" autocomplete="off" action="user.php">
         
         <br>
         <br>

@@ -26,10 +26,6 @@ body {
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
   <div class="hidden">
   <svg id="dots" viewBox="0 0 48 48">
     <circle clip-rule="evenodd" cx="8" cy="24" fill-rule="evenodd" r="4.5"></circle>
