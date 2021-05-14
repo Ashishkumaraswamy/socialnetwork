@@ -96,8 +96,8 @@
             let topic = document.getElementById("name").value;
             //let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
             let url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
-
-            fetch(url,{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})}).then((res)=>{
+            //{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})} 
+            fetch(url).then((res)=>{
                 return res.json()
             }).then((data)=>{
                 console.log(data);
