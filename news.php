@@ -95,8 +95,11 @@
             const apikey = 'f9a31fee2b844b599adb8890c6de19ac';
             let topic = document.getElementById("name").value;
             //let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
-            let url = `https://cors.bridged.cc/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
-            //{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})} 
+            let url = `http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
+            //{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})}
+
+            //let url = `https://inshortsapi.vercel.app/news?category=${topic}`; 
+            //let url = `https://opensourcepyapi.herokuapp.com:443/news`;
             fetch(url).then((res)=>{
                 return res.json()
             }).then((data)=>{
