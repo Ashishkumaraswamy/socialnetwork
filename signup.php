@@ -12,8 +12,7 @@
 	<link rel="icon" type="image/png" href="images/logoicon.ico"/>
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>  
-
-<meta name="robots" content="noindex, follow">
+	<meta name="robots" content="noindex, follow">
 <style>
  .box {
   background: white;

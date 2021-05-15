@@ -82,18 +82,7 @@ body {
   color: #fff;
   font-size: 16px;
   overflow: hidden;
-  background: -moz-linear-gradient(top, #053777 0%, #00659b 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #053777), color-stop(100%, #00659b));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #053777 0%, #00659b 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #053777 0%, #00659b 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #053777 0%, #00659b 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #053777 0%, #00659b 100%);
-  /* W3C */
+  background-color: #262626;
 }
 
 h1 {
@@ -134,7 +123,7 @@ label span {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-button {
+.button {
   padding: 8px 30px;
   background: rgba(255, 255, 255, 0.8);
   color: #053777;
@@ -187,8 +176,6 @@ button {
         <br>
         <br> 
         <br>
-        <br>
-        <br>
         <div class="form-group file-area">
                 <label for="images">Images <span>Your images should be at least 400x300 wide</span></label>
             <input type="file" name="image" id="image" required="required" multiple="multiple"/>
@@ -206,7 +193,7 @@ button {
         <br>
         <br>        
         <div class="form-group">
-            <input type="submit" name="insert" id="insert" value = "POST"></input>
+            <input type="submit" class="button" name="insert" id="insert" value = "POST"></input>
         </div>
         <div class="error-text"></div>
         

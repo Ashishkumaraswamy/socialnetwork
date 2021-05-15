@@ -79,7 +79,7 @@ body {
                       <a class="user instalink" href="user.php?user_id='. $row1['user_id'] .'">
                         '.$row1['postby'].'
                       </a>
-                      <a class="location" href="https://www.instagram.com/explore/locations/55389054/debrecen/" target="_blank">'.$row1['country'].','.$row1['state'].'</a>
+                      <a class="location" href="" target="_blank">'.$row1['country'].','.$row1['state'].'</a>
                     </div>
                   </header>
                   <section class="instapost__image">
