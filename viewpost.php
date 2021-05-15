@@ -285,30 +285,5 @@ commentInput.addEventListener("input", function (e) {
   }
 });
   
-
-  // $(".fa-trash").click(function () {
-  //   alert(document.getElementById("temp_postby").value);
-  //   // document.getElementById("temp_postby").value = y;
-  //   // document.getElementById("temp_timeset").value = z;
-  //   if (confirm("Do you want to delete the Post!!")) {
-      
-  //   } else {
-
-  //   }
-  // //let xhr = new XMLHttpRequest();
-  // // xhr.open("POST", "php/logout.php", true);
-  // // xhr.send();
-  // // xhr.onload = ()=>{
-
-  // //   if(xhr.readyState === XMLHttpRequest.DONE){
-  // //       if(xhr.status === 200){
-  // //           location.href = "index.php";
-  // //       }
-  // //   }
-  // // }  
-  // });
-
-
-
 </script>
 </html>

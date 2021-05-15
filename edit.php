@@ -129,8 +129,6 @@
 						<div class="container-signup100-form-btn">
 							<input type="submit" name="propic" value="UPDATE PROFILE PIC" class="signup100-form-btn" id="pro">
 						</div>
-
-						<br>
 						<div class="container-signup100-form-btn">
 							<input type="submit" name="submit" value="BACK" class="signup100-form-btn" id="back">
 						</div>
