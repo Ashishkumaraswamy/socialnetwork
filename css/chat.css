@@ -77,7 +77,7 @@ main {
   justify-content: flex-start;
   color:white;
   height: 100%;
-  width: 40%;
+  width: 36%;
   border: 1px solid var(--medium-grey);
 }
 .preview>div{

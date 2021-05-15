@@ -6,6 +6,7 @@
 <html>
 <head>
   <title>Chat Page</title>
+  <link rel="icon" type="image/png" href="images/logoicon.ico"/>
   <link rel="stylesheet" type="text/css" href="css/chat.css">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>

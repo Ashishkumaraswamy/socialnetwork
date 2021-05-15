@@ -37,7 +37,6 @@ $(document).ready(function(){
                           to_id = location.search.slice(1).split("=")[1]; 
                           // document.getElementById("form").action = "user.php?user_id="+to_id;
                           window.location.href="user.php?user_id="+to_id;
-                          alert('Here');
                       }
                   }
                 }

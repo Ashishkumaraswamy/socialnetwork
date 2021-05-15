@@ -99,6 +99,7 @@ body {
                          if($_SESSION['unique_id']==$click_id)
                           {
                          echo '
+                            <input type="text" class="postid" id="postid" name="postid" value="'.$post_id.'" hidden>
                             <button class="btn btn-more">
                             <i class="fas fa-trash" onclick="del(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)" style="font-size:20px"></i>
                           </button>
@@ -199,37 +200,14 @@ body {
     x.style.color = "black";
   }
 
-  function del(x,y,z)
-  {
-   
-    if (confirm("Do you want to delete the Post!!")) {
-      document.getElementById("temp_postby").value = y;
-      document.getElementById("temp_timeset").value = z;
-      const form=document.querySelector("#typing-area");
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "php/delete.php", true);
-      xhr.onload = ()=>{
-      if(xhr.readyState === XMLHttpRequest.DONE){
-          if(xhr.status === 200){
-              let data = xhr.response;
-              <?php
-                 echo 'location.href = "viewpost.php?post_id='.$post_id.'&user_id='.$click_id.'"';
-              ?>
-              
-          }
-          }
-      }
-      let formData = new FormData(form);
-      xhr.send(formData);
-    }else{
-    
-    }
-  }
 
 
 commentsection=document.querySelector('#commentsection');
 
-setInterval(() =>{
+
+var myVar=setInterval(getcomments,3000);
+
+function getcomments(){
     post_id = location.search.slice(1).split("&")[0].split("=")[1];
     user_id= location.search.slice(1).split("&")[1].split("=")[1];
     cmtcnt=document.getElementById('cmtcnt').value;
@@ -248,13 +226,36 @@ setInterval(() =>{
     // formData.append('post_id', post_id);
     // formData.append('user_id',user_id);
     xhr.send();
-}, 3000);
+}
 
+function del(x,y,z)
+  {
+   
+    if (confirm("Do you want to delete the Post!!")) {
+      clearInterval(myVar);
+      document.getElementById("temp_postby").value = y;
+      document.getElementById("temp_timeset").value = z;
+      const form=document.querySelector("#typing-area");
+      post_id = location.search.slice(1).split("&")[0].split("=")[1];
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "php/delete.php?post_id="+post_id, true);
+      xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              let data = xhr.response;
+              <?php
+                 echo 'location.href = "mainpage.php"';
+              ?>   
+          }
+          }
+      }
+      let formData = new FormData(form);
+      xhr.send();
+    }else{
+    
+    }
+  }
 
-// document.getElementById("sendbutton").onclick = function(){
-//     var message=document.getElementById('sendcomment').value;
-//     alert(message);
-//   };
 
 function send()
 {
