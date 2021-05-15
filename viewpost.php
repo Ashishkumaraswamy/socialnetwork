@@ -183,7 +183,7 @@ body {
 
    
 
-  function yikes(x,y,z)
+  function likes(x,y,z)
   {
     x.style.color = "red";
     document.getElementById("temp_postby").value = y;
@@ -264,7 +264,7 @@ setInterval(() =>{
     // formData.append('user_id',user_id);
     xhr.send();
 }
-}, 2000);
+}, 5000);
 
 
 // document.getElementById("sendbutton").onclick = function(){
