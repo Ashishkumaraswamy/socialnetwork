@@ -37,6 +37,5 @@
     </div>
   </main>
 <script type="text/javascript" src="javascript/chat.js"></script>
-<script src="javascript/mainpage.js"></script>>
 </body>
 </html>
