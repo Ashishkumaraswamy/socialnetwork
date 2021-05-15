@@ -171,7 +171,7 @@
 <script>
      setTimeout(function(){
         location.href = "mainpage.php";
-         }, 5000);
+         }, 3500);
 </script>
 </html>
 

@@ -66,8 +66,8 @@
     </form>
     
         <div class="container">
-        <ul class="news-list" id="main">
-        </ul>
+            <br>
+        <ul class="news-list" id="main" style="color: white;"></ul>
     </div>
     </div>
     </div>
@@ -107,18 +107,22 @@
                 return res.json()
             }).then((data)=>{
                 console.log(data);
-                // data.articles.forEach(article => {
-                //     let li = document.createElement('li');
-                //     let a = document.createElement('a');
-                //     a.setAttribute('href',article.url);
-                //     a.setAttribute('target','_blank');
-                //     a.textContent = article.title;
-                //     li.append(a);
-                //     document.getElementById("main").appendChild(li);
-                
+                data.data.forEach(article => {
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href',article.url);
+                    a.setAttribute('target','_blank');
+                    a.textContent = article.title;
+                    a.style.color = "white";
+                    li.append(a);
+                    li.style.color = "white";
+                    document.getElementById("main").appendChild(li);
+                });
             }).catch((error)=>{
                 console.log(error);
             })
+
         }   
+            
     </script>
-</body>
+</body></html>
