@@ -120,7 +120,7 @@
 
         <button class="btn profile-edit-btn">Edit Profile</button>
 
-        <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-trash" aria-hidden="true"></i></button>
+        <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-trash" aria-hidden="true" id="trash"></i></button>
 
     </div>';
     }
@@ -223,6 +223,40 @@
 
     <script>
 
+
+    $(".profile-edit-btn").click(function () {
+        <?php
+            echo 'location.href = "edit.php?user_id='.$click_id.'"';
+        ?>
+
+    });
+
+
+    $("#trash").click(function () {
+    if (confirm("Do you want to delete your account!!")) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/deleteacnt.php", true);
+        xhr.send();
+        xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                console.log(data);
+                alert('success');
+                location.href = "index.php";
+                
+            }
+            }
+        }
+        
+      
+    } else {
+
+    }
+   
+    });
+
+
     const form=document.querySelector("#formdata");
     continueBtn=form.querySelector("#btn");
 
@@ -264,44 +298,6 @@
         }
 
     }
-    
-
-
-
-
-
-
-    $(".profile-edit-btn").click(function () {
-        <?php
-            echo 'location.href = "edit.php?user_id='.$click_id.'"';
-        ?>
-
-    });
-
-
-    $(".fa-trash").click(function () {
-    if (confirm("Do you want to delete your account!!")) {
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/deleteacnt.php", true);
-        xhr.send();
-        xhr.onload = ()=>{
-        if(xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status === 200){
-                let data = xhr.response;
-                console.log(data);
-                location.href = "index.php";
-                
-            }
-            }
-        }
-        
-      
-    } else {
-
-    }
-   
-    });
-
 
     </script> 
 </main>
