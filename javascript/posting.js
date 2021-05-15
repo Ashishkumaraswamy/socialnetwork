@@ -18,7 +18,7 @@ $(document).ready(function(){
                    return false;  
               }  
               else{
-                alert(this.files[0].size);
+                //alert(this.files[0].size);
                 alert("hello");
                 document.getElementById("image").width = "400";
                 document.getElementById("image").height = "400";
