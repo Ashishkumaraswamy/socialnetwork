@@ -15,7 +15,7 @@
   </div>
   <div class="navigation-search-container" style="width: 500px; margin-bottom: 13px">
     <i class="fa fa-search" id="searchicon"></i>
-    <input class="search-field" type="text" placeholder="Search" id="searchinput" style="width: 500px">
+    <input class="search-field" type="text" placeholder="Search" id="searchinput" style="width: 500px" autocomplete="off">
     <div class="search-container">
       <div class="search-container-box">
         <div class="search-results" id="searchlist" style="margin-top: 20px; margin-bottom: 20px">

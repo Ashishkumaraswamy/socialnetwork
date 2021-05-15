@@ -141,10 +141,11 @@ img {
     padding: 0 2.4rem;
     margin-left: 2rem;
 }
-.pro-edit-btn {
+.profile-follow-btn {
+    background-color: blue;
     font-size: 1.4rem;
     line-height: 1.8;
-    border: 0.1rem solid #dbdbdb;
+    border: 0.1rem solid blue;
     border-radius: 0.3rem;
     padding: 0 2.4rem;
     margin-left: 2rem;
@@ -372,8 +373,8 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
     .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-        grid-gap: 2rem;
+        grid-template-columns: repeat(3, minmax(22rem, 1fr));
+        grid-gap: 4rem;
     }
 
     .profile-image,

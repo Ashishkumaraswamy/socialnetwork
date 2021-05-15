@@ -227,7 +227,7 @@ body {
   }
 
 
-commentsection=document.querySelector('#commentsection')
+commentsection=document.querySelector('#commentsection');
 
 setInterval(() =>{
     post_id = location.search.slice(1).split("&")[0].split("=")[1];
