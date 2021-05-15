@@ -1,6 +1,6 @@
 <?php
     $output .='<div id="user-name">Messages
-      </div><div>';
+      </div><div style="padding-top:30px;"><br>';
     while($row = mysqli_fetch_assoc($query)){
         $sql2 = "SELECT * FROM chat WHERE (to_id = {$row['following']}
                 OR from_id = {$row['following']}) AND (from_id = {$user_id} 
@@ -19,25 +19,27 @@
         $row3=mysqli_fetch_assoc($query3);
         $query4=mysqli_query($conn,"SELECT * from login where user_id={$row['following']}");
         $row4=mysqli_fetch_assoc($query4);
-        $output .= '<br>   
-                    <a href="chat.php?user_id='. $row3['user_id'] .'" style="text-decoration:none;color:black"> 
+        $output .= '
+                    <br>
                         <span id="pic-div">
-                          <img id="pic" src="data:image/png;base64,'.base64_encode($row3['propic']).'" alt="image">';
+                          <img id="pic" src="data:image/png;base64,'.base64_encode($row3['propic']).'" alt="image">
+                        </span>';
         if($row4['status']==false)
         {
-            $output.= '<span style="float:right"><i class="fa fa-circle" style="font-size:10px;color:red"></i>
-            </span>';
-        }
-        else{
-            $output.= '<span style="float:right"><i class="fa fa-circle" style="font-size:10px;color:green"></i>
-            </span>';
-        }
-        $output.= '</span>
+            $output.= '
                     <div id="chat-username">
-                      <span id="name">'. $row3['user_name'] . '</span>
+                      <span id="name">'. $row3['user_name'] . '<i class="fa fa-circle" style="font-size:10px;color:red;position:relative;left:30px"></i></span>
                       <span id="msg">'. $you . $msg .'</span>
                     </div>
-                </a>
                 </div>';
+        }
+        else{
+            $output.= '
+                    <div id="chat-username">
+                      <span id="name">'. $row3['user_name'] . '<i class="fa fa-circle" style="font-size:10px;color:green;position:relative;left:30px"></i></span>
+                      <span id="msg">'. $you . $msg .'</span>
+                    </div>
+                </div>';
+        }
     }
 ?>

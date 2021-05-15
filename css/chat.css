@@ -15,7 +15,7 @@ body {
     padding:0;
     margin:0;
     overflow-x: hidden;
-    background-color: var(--white);
+    background-color: #151414;
 }
 header {
     position: fixed;
@@ -67,19 +67,20 @@ main {
   align-items: center;
   justify-content: flex-start;
   height: 80vh;
-  width: 70vw;
-  background-color: var(--white);
+  width:  70vw;
+  background-color: black;
 }
 .preview {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  color:white;
   height: 100%;
   width: 40%;
   border: 1px solid var(--medium-grey);
 }
-.preview>div {
+.preview>div{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -87,22 +88,37 @@ main {
   height: 70px;
   width: 100%;
 }
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 700px;
+  position: fixed;
+  left: 51vh;
+  right: 0;
+  bottom: 0;
+  top: 15vh;
+}
 .chats {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 75vh;
-  width: 60%;
-  overflow-y: scroll;
+  height: 74vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
   border: 1px solid var(--medium-grey);
   margin-bottom: 40px;
 }
+.chats::-webkit-scrollbar {
+    display: none;
+}
 .chat-banner {
   width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   flex-direction: row;
+  color:white;
   align-items: center;
   border: 1px solid var(--medium-grey);
   justify-content: space-between;
@@ -152,7 +168,7 @@ main {
   font-size: 1em;
 }
 #msg {
-  color:var(--grey);
+  color:#B0AEAD;
   font-size: 13px;
 }
 .sender, .receiver, .user-input {
@@ -162,12 +178,16 @@ main {
   width: auto;
   max-width: 140px;
   border-radius: 20px;
-  border: 1px solid var(--medium-grey);
   transition: all .2s ease;
 }
 .sender:hover {
   background-color: pink;
   cursor: pointer;
+}
+.sender
+{
+  background-color: #72706F;
+  color: white;
 }
 .receiver, .user-input {
   margin-left: 22vw;
@@ -186,12 +206,12 @@ main {
 .input-msg {
   display: flex;
   flex-direction: row;
+  position: absolute;
   justify-content: space-around;
-  top: 90vh
-  height: 5vh;
-  width: 45vh;
-  padding-top: 10px;
-  border-top: 1px solid var(--medium-grey);
+  height: 50px;
+  width: 100%;
+  bottom: 45px;
+  border: 1px solid var(--medium-grey);
 }
 .input-msg i {
   color: var(--grey);
@@ -200,6 +220,7 @@ main {
   font-size: 1.5em;
 }
 #send-input {
+  padding-top: 5px;
   height: 30px;
   border-radius: 20px;
   border: 1px solid var(--grey);

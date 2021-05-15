@@ -19,21 +19,24 @@
     echo '<div id="user" style="position:absolute;top:25px;left:450px;z-index:1">
       <img id="pic" src="data:image/jpeg;base64,'.base64_encode($row['propic']).'" alt=""/>
     </div>';
+      $sql2=mysqli_query($conn,"SELECT * FROM users WHERE user_id={$to_id}");
+      $row2=mysqli_fetch_assoc($sql2);
     ?>
   <main>
     <div class="preview" id="userslist">
       <div id="user-name">Messages</div>
 
     </div>
+    <div class="container">
     <div class="chats">
     </div>
-  
     <div class="input-msg">
           <input type="text" class="from_id" id="from_id" name="from_id" value="<?php echo $from_id; ?>" hidden>
           <input type="text" class="to_id" id="to_id" name="to_id" value="<?php echo $to_id; ?>" hidden>
           <input type="text" name="message" id="send-input" placeholder="type something" onfocus="this.value='' "/>
             <i onclick="send()" class="far fa-paper-plane"></i>
     </div>
+  </div>
   </main>
 <script type="text/javascript" src="javascript/chat.js"></script>
 </body>
