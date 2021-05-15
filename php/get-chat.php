@@ -39,13 +39,11 @@
                 if($row['from_id'] === $from_id){
                     $output .= '<div class="receiver">
                                     '. $row['msg'] .'
-                                </div>                          
-                                <p>'. $row['time'] .'<p>';
+                                </div>';
                 }else{
                     $output .= '<div class="sender" onclick="like()">
                                     '. $row['msg'] .'
-                                </div><div id="heart">❤️</div>
-                                <span>'. $row['time'] .'</span>';
+                                </div><div id="heart">❤️</div>';
                 }
             }
             $seenquery = mysqli_query($conn,"SELECT * FROM chat LEFT JOIN users ON users.user_id = chat.from_id

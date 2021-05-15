@@ -75,6 +75,7 @@ function send() {
     }
     xhr.send();
   }
+  scrollToBottom();
 }
 
 function scrollToBottom(){

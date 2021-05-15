@@ -2,7 +2,8 @@ const form=document.querySelector("#form");
 
 $(document).ready(function(){  
     $('#insert').click(function(){  
-         var image_name = $('#image').val();  
+         var image_name = $('#image').val();
+         var caption=document.getElementById("caption").value; 
          if(image_name == '')  
          {  
               alert("Please Select Image");  
@@ -18,20 +19,25 @@ $(document).ready(function(){
                    return false;  
               }  
               else{
-                //alert(this.files[0].size);
-                alert("hello");
+                // alert(this.files[0].size);
+                // alert("hello");
                 document.getElementById("image").width = "400";
                 document.getElementById("image").height = "400";
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "php/posting.php", true);
-                xhr.send();
+                let formdata=new FormData(form);
+                  xhr.send(formdata);
                 xhr.onload = ()=>{
                   if(xhr.readyState === XMLHttpRequest.DONE){
                       if(xhr.status === 200){
+                          
                           let data = xhr.response;
+                          console.log(data);
                           url=window.location.href;
                           to_id = location.search.slice(1).split("=")[1]; 
-                          document.getElementById("form").action = "user.php?user_id="+to_id;
+                          // document.getElementById("form").action = "user.php?user_id="+to_id;
+                          window.location.href="user.php?user_id="+to_id;
+                          alert('Here');
                       }
                   }
                 }
@@ -40,7 +46,7 @@ $(document).ready(function(){
          }  
     });
 
-});  
+});
 
 
 /*
