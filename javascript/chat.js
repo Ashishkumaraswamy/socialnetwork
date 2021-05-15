@@ -81,3 +81,13 @@ function send() {
 function scrollToBottom(){
     chatlist.scrollTop = chatlist.scrollHeight;
   }
+
+const commentSendBtn = document.querySelector("#sendbtn");
+const commentInput = document.querySelector("#message");
+commentInput.addEventListener("input", function (e) {
+  if (e.target.value.length > 0) {
+    commentSendBtn.style.backgroundColor="white";
+  } else {
+    commentSendBtn.style.backgroundColor="grey";
+  }
+});

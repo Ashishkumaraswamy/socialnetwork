@@ -34,7 +34,7 @@
           <input type="text" class="from_id" id="from_id" name="from_id" value="<?php echo $from_id; ?>" hidden>
           <input type="text" class="to_id" id="to_id" name="to_id" value="<?php echo $to_id; ?>" hidden>
           <input type="text" name="message" id="send-input" placeholder="type something" onfocus="this.value='' "/>
-            <i onclick="send()" class="far fa-paper-plane"></i>
+            <i onclick="send()" id="senbtn" class="far fa-paper-plane"></i>
     </div>
   </div>
   </main>
