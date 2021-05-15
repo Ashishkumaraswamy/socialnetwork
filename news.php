@@ -23,52 +23,40 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-
-		
-			<!--
-				<div class="box">
-					<form id="form" method="post" autocomplete="off">
-						
-							      	
-						<input type="hidden" id="email" name="email" value="">
-						<div style="margin-top: 20px ;width:49%">
-							<input class="input100" type="text" id="name" name="username">
-						</div>
-						
-						
-  						<br>
-						<div class="container-signup100-form-btn">
-							<input type="submit" name="submit" value="NEXT" class="signup100-form-btn" id="btn">
-						</div>
-					</form>
-				</div>
-    <div class="container">
-        <ul class="news-list" id="main">
-        </ul>-->
 
     </div>
-
-
     <form id="form" method="post" autocomplete="off">
     <div class='container' ng-app="root">
 	<div ng-controller="index">
     <div class="thin">
-        <h1>Search</h1>
+        <h1>Search News</h1>
         <span id="hashtag">#</span>
-      	<input type="text"  id="name" name="username" class="clearable" style="width: 97%;">
-          <br>
-          <br>
+      	<!-- <input type="text"  id="name" name="username" class="clearable" style="width: 97%;"> -->
+          <select id="name" name="username" class="clearable" style="width: 97%;">
+                <option value="national">Indian National News</option>
+                <option value="business">Business</option>
+                <option value="sports">Sports</option>
+                <option value="world">World News</option>
+                <option value="politics">Politics</option>
+                <option value="national">Indian National News</option>
+                <option value="technology">Technology</option>
+                <option value="startup">Startup</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="politics">Politics</option>
+                <option value="miscellaneous">Miscellaneous</option>
+                <option value="hatke">Hatke</option>
+                <option value="science">Science</option>
+                <option value="Automobile">Automobile</option>
+            </select>
       	<button ng-click="searchTag()" ng-enter="search" id="btn" value="Submit">Search</button>
     </div>
     </form>
-    
+          <br>
+          <br>
         <div class="container">
-        <ul class="news-list" id="main">
-        </ul>
-    </div>
+            <br>
+                <ul class="news-list" id="main" style="color: white;"></ul>
+        </div>
     </div>
     </div>
 
@@ -96,7 +84,8 @@
             const apikey = 'c42746d3e769c778ea2ececd7a47a9b8';
             let topic = document.getElementById("name").value;
             // let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
-            let url = `https://api.mediastack.com/v1/news?access_key=${apikey}`;
+            //let url = `https://api.mediastack.com/v1/news?access_key=${apikey}`;
+            let url = `https://inshortsapi.vercel.app/news?category=${topic}`;
             //let url = `http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
             //{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})}
 
@@ -106,18 +95,22 @@
                 return res.json()
             }).then((data)=>{
                 console.log(data);
-                // data.articles.forEach(article => {
-                //     let li = document.createElement('li');
-                //     let a = document.createElement('a');
-                //     a.setAttribute('href',article.url);
-                //     a.setAttribute('target','_blank');
-                //     a.textContent = article.title;
-                //     li.append(a);
-                //     document.getElementById("main").appendChild(li);
-                
+                data.data.forEach(article => {
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href',article.url);
+                    a.setAttribute('target','_blank');
+                    a.textContent = article.title;
+                    a.style.color = "white";
+                    li.append(a);
+                    li.style.color = "white";
+                    document.getElementById("main").appendChild(li);
+                });
             }).catch((error)=>{
                 console.log(error);
             })
+
         }   
+            
     </script>
-</body>
+</body></html>

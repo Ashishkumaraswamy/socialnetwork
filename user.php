@@ -193,11 +193,11 @@
                 while($row1 = mysqli_fetch_array($result))  
                 {  
                      echo '   
+                            <a href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$click_id.'">
+                                
 					 		<div class="gallery-item" tabindex="0" href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$click_id.'">
-                                <a href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$click_id.'">
                                 <img src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" class="gallery-image" alt=""/>
-                                </a>
-								
+                                
 								<div class="gallery-item-info">
 
 								<ul>
@@ -207,6 +207,7 @@
 
 								</div>  
 							</div>  
+                            </a>
                      ';  
                 }  
             ?> 
@@ -230,6 +231,15 @@
         ?>
 
     });
+
+    // $(".gallery-item").click(function () {
+    //     // <?php
+    //     //     echo 'location.href = "viewpost.php?post_id='.$row1['postid'].'&user_id='.$click_id.'"';
+    //     // ?>
+
+    // });
+
+
 
 
     $("#trash").click(function () {
