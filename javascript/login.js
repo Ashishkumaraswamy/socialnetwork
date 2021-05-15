@@ -15,7 +15,7 @@ continueBtn.onclick = ()=>{
               let data = xhr.response;
               console.log(data);
               if(data === "success"){
-                location.href = "mainpage.php";
+                location.href = "loading.php";
               }else{
                 errorText.textContent = data;
                 errorText.style.height = "45px";
