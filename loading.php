@@ -30,10 +30,17 @@
 }
 
 .letter {
+  display: flex;
+  text-align: center;
   float: left;
-  font-size: 50px;
-  color: #777;
-  padding-left:90px;
+  font-size: 40px;
+  color: black;
+  position: relative;
+  margin-top: 21%;
+  left:35%;
+  padding-right:24px;
+  padding-top :20px;
+  
 
 }
 
@@ -144,7 +151,7 @@
 </head>
 
 <body style="background-color: #808080;">
-                <div class="load-wrapp">
+                
                 <div class="load-6">
                     <div class="letter-holder">
                     <div class="l-1 letter">L</div>
@@ -158,7 +165,7 @@
                     <div class="l-9 letter">.</div>
                     <div class="l-10 letter">.</div>
                     </div>
-                </div>
+              
                 </div>
 </body>
 <script>

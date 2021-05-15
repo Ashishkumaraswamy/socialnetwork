@@ -96,7 +96,8 @@
             const apikey = 'c42746d3e769c778ea2ececd7a47a9b8';
             let topic = document.getElementById("name").value;
             // let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
-            let url = `https://api.mediastack.com/v1/news?access_key=${apikey}`;
+            //let url = `https://api.mediastack.com/v1/news?access_key=${apikey}`;
+            let url = `https://inshortsapi.vercel.app/news?category=${topic}`;
             //let url = `http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${topic}&apiKey=${apikey}`;
             //{headers:new Headers({"X-Requested-With":"asdadasdadadsqasda"})}
 
