@@ -10,10 +10,9 @@
         if($to_id==$_SESSION['unique_id']){
         echo '<div class="chat-banner">
             <div>
-            <span id="chat-pic" style="align-items:center;font-size:25px">      Chat Section
+            <span id="chat-pic">Chat Section
           </span>
         </div>
-        <div><i class="fas fa-info"></i></div>
       </div><p>Select an user to chat</p>';
         }
         else{
@@ -24,7 +23,6 @@
           </span>
           <span>'.$row2['user_name'].'</span>
         </div>
-        <div><i class="fas fa-info"></i></div>
       </div>';     
         $from_id = $_SESSION['unique_id'];
         $update=mysqli_query($conn,"UPDATE chat set seen=true WHERE from_id={$to_id}");
@@ -40,7 +38,7 @@
             while($row = mysqli_fetch_assoc($query)){
                 if($row['from_id'] === $from_id){
                     $output .= '<div class="receiver">
-                                    <p>'. $row['msg'] .'</p>
+                                    '. $row['msg'] .'
                                 </div>                          
                                 <p>'. $row['time'] .'<p>';
                 }else{

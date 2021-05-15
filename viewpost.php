@@ -101,10 +101,10 @@ body {
                          echo '
                             <button class="btn btn-more">
                             <i class="fas fa-trash" onclick="del(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)" style="font-size:20px"></i>
-                          </button></header>
+                          </button>
                           <!--End Heading Dots Section-->';
                           }
-                       echo '
+                       echo '</header>
                      <!--Main picture-->
                      <section class="instapost__image">
                     <a href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$click_id.'"><img class="img img-0 show" src="data:image/jpeg;base64,'.base64_encode($row1['post'] ).'" alt="image" /></a>
@@ -137,22 +137,10 @@ body {
                   </section>
                   <br><br>
                   <input type="text" class="cmtcnt" id="cmtcnt" name="cmtcnt" value="'.$result1['cmtcount'].'" hidden>';
-
-                  if($result1['cmtcount']!=0)
-                  {
-                  $sql=mysqli_query($conn,"SELECT * FROM users WHERE user_name='{$result2['commentby']}'");
-                  $result3=mysqli_fetch_assoc($sql);
                   echo '
                   <div class="commentsection" id="commentsection">
-                  
+                    
                   </div>';
-                  }
-                  else
-                  {
-                    echo'<a class="instapost__comment-list" href="#">
-                    No comments available
-                  </a>';
-                  }
                   echo '<section class="instapost__timestamp">
                     '.$row1['timeset'].'
                   </section>
@@ -245,9 +233,6 @@ setInterval(() =>{
     post_id = location.search.slice(1).split("&")[0].split("=")[1];
     user_id= location.search.slice(1).split("&")[1].split("=")[1];
     cmtcnt=document.getElementById('cmtcnt').value;
-    if(cmtcnt==0)
-    {}
-    else{
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "php/get-comments.php?post_id="+post_id+"&user_id="+user_id, true);
     xhr.onload = ()=>{
@@ -263,8 +248,7 @@ setInterval(() =>{
     // formData.append('post_id', post_id);
     // formData.append('user_id',user_id);
     xhr.send();
-}
-}, 5000);
+}, 3000);
 
 
 // document.getElementById("sendbutton").onclick = function(){

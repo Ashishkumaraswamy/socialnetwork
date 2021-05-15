@@ -1,5 +1,4 @@
 userList=document.querySelector("#userslist");
-const form=document.querySelector("#formdata");
 chatlist=document.querySelector('.chats')
 
 setInterval(() =>{
@@ -57,7 +56,7 @@ function send() {
   url=window.location.href;
   to_id = location.search.slice(1).split("=")[1]; 
   let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/insert-chat.php", true);
+    xhr.open("GET", "php/insert-chat.php?to_id="+to+"&message="+usermsg,true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
@@ -69,8 +68,7 @@ function send() {
           }
       }
     }
-    let formData = new FormData(document.getElementById("formdata"));
-    xhr.send(formData);
+    xhr.send();
   }
 }
 

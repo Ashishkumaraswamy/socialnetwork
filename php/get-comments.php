@@ -13,7 +13,7 @@
                     $cmtcount=mysqli_query($conn,"SELECT count(*) as cmtcount from comment WHERE postid={$row1['postid']}");
                     $lastcmt=mysqli_query($conn,"SELECT * from comment WHERE postid={$row1['postid']} ORDER BY time");
                     $result1=mysqli_fetch_assoc($cmtcount);
-                    if($result1['cmtcount']!=0)
+                    if($result1['cmtcount']>0)
                   	{
                   		echo '<a class="instapost__comment-list" href="#">
                     		'.$result1['cmtcount'].' comments
@@ -32,5 +32,12 @@
                   			</section>
                   			';
                   		}
-                	}
+                  	}
+              		else
+              		{
+	                    echo'<a class="instapost__comment-list" href="#">
+	                    No comments available
+	                  </a>';
+	                 }
+                	
 ?>

@@ -22,18 +22,17 @@
     ?>
   <main>
     <div class="preview" id="userslist">
-      <div id="user-name">Messages<i class='fas fa-angle-down'></i></div>
+      <div id="user-name">Messages</div>
 
     </div>
     <div class="chats">
     </div>
-    <div class="input-msg" style="margin-left: 300px">
-        <form action="" method="POST" id="formdata">
+  
+    <div class="input-msg">
           <input type="text" class="from_id" id="from_id" name="from_id" value="<?php echo $from_id; ?>" hidden>
           <input type="text" class="to_id" id="to_id" name="to_id" value="<?php echo $to_id; ?>" hidden>
           <input type="text" name="message" id="send-input" placeholder="type something" onfocus="this.value='' "/>
             <i onclick="send()" class="far fa-paper-plane"></i>
-        </form>
     </div>
   </main>
 <script type="text/javascript" src="javascript/chat.js"></script>
