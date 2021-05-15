@@ -95,6 +95,8 @@
 <br>
 <br>
 <br>
+<br>
+<form id="formdata">
 <div class="container">
 
 <div class="profile">
@@ -139,19 +141,18 @@
         }
         echo '
         <div class="profile-image">
-        <img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image"></div>
+            <img src="data:image/png;base64,'.base64_encode($row['propic']).'" alt="image" class="picture-src"></div>
         <div class="profile-user-settings">
+        
         <h3 class="profile-user-name">'.$row['user_name'].'</h3>
         
-        <form id="formdata">
-
-        <input type="hidden" id="clickid" name="clickid" value="'.$click_id.'" >
-
-        <input type="hidden" id="status" name="sta" value="'.$status.'" >
-
-        <input type="submit" class="btn profile-edit-btn" name="submit" value="'.$status.'"  id="btn">
-        
+        <button type="submit" class="btn profile-edit-btn" name="submit" id="btn">'.$status.'</button>
+        </div>
+        <input type="hidden" id="clickid" name="clickid" value='.$click_id.' >
+        <input type="hidden" id="status" name="sta" value='.$status.'>
         </form>
+    
+
         ';
     }       
     ?>
@@ -218,6 +219,7 @@
 
 	</div>
 	<!-- End of container -->
+        
 
     <script>
 
@@ -300,112 +302,7 @@
    
     });
 
-    
-    // function unfollow1()
-    // {
-    //     alert(document.getElementById("status").value);
-    //     <?php
 
-    //         $delete = mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
-    //         if($delete)
-    //         {
-    //             //echo 'location.href = "user.php?user_id='.$click_id.'";';
-    //         }
-    //     ?>
-
-    // }
-    // function follow1()
-    // {
-    //     alert(document.getElementById("status").value);
-    //     <?php
-
-    //         $insert=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
-    //         if($insert)
-    //         {
-    //             //echo 'location.href = "user.php?user_id='.$click_id.'"';
-    //         }
-    //     ?>
-
-    // }
-
-    // $('#followbtn').click(function() 
-    // {
-    //       var status=document.getElementById("status").value;
-    //       var follower=document.getElementById("follower").value;
-    //       var following=document.getElementById("following").value;
-    //       alert(follower);
-    //       alert(following);
-    //       alert(status);
-    //       if(status==="Unfollow")
-    //       {
-    //             <?php
-    //             $sql2=mysqli_query($conn,"DELETE from friends WHERE (followers={$_SESSION['unique_id']}) AND (following={$click_id})");
-    //             ?>
-    //       }
-    //       else if(status=="follow")
-    //       {
-    //         alert("inside");
-    //         <?php
-    //         $sql3=mysqli_query($conn,"INSERT INTO friends(followers,following) VALUES({$_SESSION['unique_id']},{$click_id})");
-    //         ?>
-    //       }
-    //       $(this).text(function(_, text) {
-    //         return text === "Follow" ? "Unfollow" : "Follow";
-    //       });
-    //       if($(this).text() == "Follow") {
-    //         $(this).removeClass('unfollow');
-    //       } else if($(this).text() == "Unfollow") {
-    //         $(this).addClass('unfollow');
-    //       }
-    //       if(status==="Unfollow")
-    //       {
-    //         document.getElementById("status").value="Follow";
-    //         alert("deleted");
-    //         return;
-    //       }
-    //       else{
-    //         document.getElementById("status").value="Unfollow";
-    //         alert("Inserted");
-    //         return;
-    //       }
-    // });
-
-
-    // continueBtn.onclick= ()=>{
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open("POST", "php/friend.php", true);
-    //     xhr.send();
-    //     xhr.onload = ()=>{
-    //     if(xhr.readyState === XMLHttpRequest.DONE){
-    //         if(xhr.status === 200){
-    //             let data = xhr.response;
-    //             console.log(data);
-    //             location.href = "index.php";
-    //         }
-    //         }
-    //     }
-    //     let formData = new FormData(document.getElementById("formdata"));
-    //     xhr.send(formData);
-    // }
-
-    // continueBtn1.onclick= ()=>{
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open("POST", "php/unfriend.php", true);
-    //     xhr.send();
-    //     xhr.onload = ()=>{
-    //     if(xhr.readyState === XMLHttpRequest.DONE){
-    //         if(xhr.status === 200){
-    //             let data = xhr.response;
-    //             console.log(data);
-    //             location.href = "index.php";
-                
-    //         }
-    //         }
-    //     }
-    //     let formData = new FormData(document.getElementById("formdata"));
-    //     xhr.send(formData);
-    // }
-   
     </script> 
 </main>
 </body>
