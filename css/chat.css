@@ -106,6 +106,10 @@ main {
 }
 
 @media screen and (max-width: 18in) {
+  .container{
+    margin-top: 20px;
+  }
+
   .chats
   {
     margin-bottom: 70px;
@@ -115,7 +119,7 @@ main {
 @media screen and (max-width: 13in) {
    .chats {
       margin-bottom: 50px;
-   }
+    }
 }
 
 .chats::-webkit-scrollbar {
