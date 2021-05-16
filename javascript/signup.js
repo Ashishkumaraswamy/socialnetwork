@@ -55,7 +55,7 @@ function sendEmail() {
     Password : "Qwerty123@",
     To : to,
     From : "socialmediaatwork123@gmail.com",
-    Subject : "Hi",
+    Subject : "Social Media - OTP",
     Body : "Message from Social Network.\nThe OTP is " + otp,
   });
   localStorage.setItem("email", to);
