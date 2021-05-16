@@ -92,7 +92,7 @@ body {
                       <a class="user instalink" href="user.php?user_id='. $click_id .'">
                         '.$row1['postby'].'
                       </a>
-                      <a class="location" href="https://www.instagram.com/explore/locations/55389054/debrecen/" target="_blank">'.$row['country'].','.$row['state'].'</a>
+                      <a class="location" href="">'.$row['country'].','.$row['state'].'</a>
                     </div>       
                          <!--Heading Dots Section-->
                     ';
@@ -132,7 +132,7 @@ body {
                     Liked by '.$row1['likecount'].'<a class="instalink" href="" target="_blank"> others</a>
                   </section>
                   <section class="instapost__description">
-                    <a class="user instalink" href="https://www.instagram.com/gabormolnar92/" target="_blank">
+                    <a class="user instalink" href="" target="_blank">
                         '.$row1['postby'].'
                       </a> '.$row1['descp'].'
                   </section>
