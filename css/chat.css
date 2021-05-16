@@ -104,16 +104,37 @@ main {
   border: 1px solid var(--medium-grey);
   margin-bottom: 50px;
 }
+.input-msg {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-around;
+  height: 50px;
+  width: 700px;
+  bottom: 45px;
+
+}
+
 
 @media screen and (max-width: 18in) {
   .container{
-    margin-top: 20px;
+    margin-top: 35px;
+    width: 500px;
+  }
+  .main{
+    height: 78vh;
   }
 
   .chats
   {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+    height: 70vh;
   }
+  .input-msg{
+    height: 40px;
+
+  }
+
 }
 
 @media screen and (max-width: 13in) {
@@ -215,16 +236,6 @@ main {
   margin-left: 1em;
   visibility: hidden;
 }
-.input-msg {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  justify-content: space-around;
-  height: 50px;
-  width: 700px;
-  bottom: 45px;
-  border: 1px solid var(--medium-grey);
-}
 .input-msg i {
   color: var(--grey);
   padding: 10px;
@@ -242,7 +253,7 @@ main {
 @media screen and (min-width: 900px)
 {
   .receiver, .user-input {
-    margin-left: 28vw;
+    margin-left: 500px;
   }
   .sender, .receiver, .user-input {
     min-width: 140px;
