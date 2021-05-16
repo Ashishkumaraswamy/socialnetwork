@@ -225,7 +225,7 @@ return false;
                         <input type="hidden" id="email" name="email" value="">
 						 <div class="picture-container">
 					        <div class="picture">
-					        	<img src="images/photoupload.PNG" class="picture-src" id="wizardPicturePreview" title="" >
+					        	<img src="images/photoupload.png" class="picture-src" id="wizardPicturePreview" title="" >
 					            <input type="file" id="wizard-picture" name="image">
 					        </div>
 					      <br>
