@@ -10,10 +10,10 @@
         if($to_id==$_SESSION['unique_id']){
         echo '<div class="chat-banner">
             <div>
-            <span id="chat-pic">Chat Section
+            <span id="chat-pic" style="font-size:20px;text-align:center">Chat Section
           </span>
         </div>
-      </div><p>Select an user to chat</p>';
+      </div><div style="padding-top:30px;"><p style="text-align:center;font-size:18px;">Click on an user to chat</p>';
         }
         else{
           echo '<div class="chat-banner">
