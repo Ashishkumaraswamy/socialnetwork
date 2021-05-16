@@ -241,9 +241,6 @@ main {
 
 @media screen and (min-width: 900px)
 {
-  .container{
-    left: 53vh;
-  }
   .receiver, .user-input {
     margin-left: 28vw;
   }
@@ -255,9 +252,6 @@ main {
 @media screen and (max-width: 600px)
 {
   
-  .container{
-    left: 55vh;
-  }
   main {
     height: 100vh;
     width: 100vw;
