@@ -103,6 +103,8 @@
   
     	
 	<?php
+    $postcntsql=mysqli_query($conn,"SELECT count(*) AS postcnt FROM posts WHERE postby='{$row['user_name']}'");
+    $postcnt=mysqli_fetch_assoc($postcntsql);
     $followersql=mysqli_query($conn,"SELECT count(*) AS follower FROM friends WHERE following={$click_id}");
     $follower=mysqli_fetch_assoc($followersql);
     $followingsql=mysqli_query($conn,"SELECT count(*) AS following FROM friends WHERE followers={$click_id}");
@@ -158,7 +160,7 @@
     ?>
     <div class="profile-stats">
         <ul>
-            <li><span class="profile-stat-count"><?php echo $row['postcnt'] ?></span> posts</li>
+            <li><span class="profile-stat-count"><?php echo $postcnt['postcnt']?></span> posts</li>
             <li><span class="profile-stat-count"><?php echo $follower['follower'] ?></span> followers</li>
             <li><span class="profile-stat-count"><?php echo $following['following'] ?></span> following</li>
         </ul>

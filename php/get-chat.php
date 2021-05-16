@@ -51,7 +51,7 @@
                 OR (from_id = {$to_id} AND to_id = {$from_id}) ORDER BY msg_id DESC LIMIT 1");
             $seen=mysqli_fetch_assoc($seenquery);
             if($seen['from_id']==$from_id and $seen['seen']==true){
-            $output.='<i class="fa fa-eye" style="font-size:24px;color:white"></i>';
+            $output.='<div style="width:700px;text-align:right"><i class="fa fa-eye" style="font-size:24px;color:white;float:right"></i></div>';
             } 
             $output .= '<div class="user-input"></div>';
         }else{
