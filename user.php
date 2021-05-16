@@ -225,22 +225,15 @@
     <script>
 
 
+    
+    $(document).ready(function(){  
+
     $(".profile-edit-btn").click(function () {
         <?php
             echo 'location.href = "edit.php?user_id='.$click_id.'"';
         ?>
 
     });
-
-    // $(".gallery-item").click(function () {
-    //     // <?php
-    //     //     echo 'location.href = "viewpost.php?post_id='.$row1['postid'].'&user_id='.$click_id.'"';
-    //     // ?>
-
-    // });
-
-
-
 
     $("#trash").click(function () {
     if (confirm("Do you want to delete your account!!")) {
@@ -265,7 +258,6 @@
     }
    
     });
-
 
     const form=document.querySelector("#formdata");
     continueBtn=form.querySelector("#btn");
@@ -308,6 +300,9 @@
         }
 
     }
+
+    });
+
 
     </script> 
 </main>

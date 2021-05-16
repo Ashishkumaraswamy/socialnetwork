@@ -8,11 +8,12 @@
 <head>
     <title>Home</title>
     <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/logoicon.ico"/>
     <script src="https://fonts.cdnfonts.com/css/billabong"></script>
     <link rel="stylesheet" type="text/css" href="css/navigation.css">
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style>
 body {
   max-width: 420px;
@@ -90,11 +91,15 @@ body {
                     <button class="btn btn-like">
                       <i class="fa fa-heart" style="font-size:20px" onclick=" likesoff(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)" ondblclick="yikes(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
                     </button>
+                    <a href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$row1['user_id'].'">
+
                     <button class="btn btn-comment">
-                      <svg>
+                      <svg style="font-size:20px">
                         <use xlink:href="#comment" />
                       </svg>
                     </button>
+
+                    </a>
                     <button class="btn btn-send">
                       <a href="chat.php?user_id='. $row1['user_id'].'">
                       <svg>
@@ -107,7 +112,7 @@ body {
                     Liked by '.$row1['likecount'].'<a class="instalink" href="" target="_blank"> others</a>
                   </section>
                   <section class="instapost__description">
-                    <a class="user instalink" href="https://www.instagram.com/gabormolnar92/" target="_blank">
+                    <a class="user instalink" href="" target="_blank">
                         '.$row1['postby'].'
                       </a> '.$row1['descp'].'
                   </section>';
@@ -152,6 +157,27 @@ body {
             <input type="hidden" name="temp_timeset" value="" id="temp_timeset"/>
             </form>
             <script src="javascript/mainpage.js"></script> 
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="color:white">© 2021 Copyright:
+    <a href="mainpage.php"> Social Media</a>
+    <a href="https://github.com/Ashishkumaraswamy/socialnetwork"><h6>Developed by Ashish & Mathan</h6></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+  
+
+
 </body>
+
+
  
 </html>
