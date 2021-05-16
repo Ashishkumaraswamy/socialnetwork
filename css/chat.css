@@ -90,7 +90,7 @@ main {
 }
 .container {
   display: table-cell;
-  max-width: 700px;
+  max-width: 60%;
 }
 .chats {
   display: flex;
@@ -106,15 +106,15 @@ main {
 }
 
 @media screen and (max-width: 18in) {
-  .container
+  .chats
   {
-    left:51vh;
+    margin-bottom: 70px;
   }
 }
 
 @media screen and (max-width: 13in) {
-   .container {
-      left:51vh;
+   .chats {
+      margin-bottom: 50px;
    }
 }
 
