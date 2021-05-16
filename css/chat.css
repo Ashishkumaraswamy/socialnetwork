@@ -89,13 +89,8 @@ main {
   width: 100%;
 }
 .container {
-  width: 100%;
-  margin: 0 auto;
+  display: table-cell;
   max-width: 700px;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  top: 15vh;
 }
 .chats {
   display: flex;
@@ -103,11 +98,11 @@ main {
   align-items: flex-start;
   justify-content: flex-start;
   height: 74vh;
-  width: 100%;
+  width: 700px;
   overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid var(--medium-grey);
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 18in) {
@@ -222,7 +217,7 @@ main {
   position: absolute;
   justify-content: space-around;
   height: 50px;
-  width: 100%;
+  width: 700px;
   bottom: 45px;
   border: 1px solid var(--medium-grey);
 }
