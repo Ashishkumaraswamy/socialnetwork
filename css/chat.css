@@ -112,7 +112,7 @@ main {
   height: 50px;
   width: 700px;
   bottom: 45px;
-
+  border: 1px solid var(--medium-grey);
 }
 
 
@@ -132,7 +132,7 @@ main {
   }
   .input-msg{
     height: 40px;
-
+    border:none;
   }
 
 }
