@@ -16,14 +16,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+
 </head>
 <body>
 <?php include_once "navigation.php"; ?>
 <br>
 <br>
 <br>
-<br>
-
     </div>
     <form id="form" method="post" autocomplete="off">
     <div class='container' ng-app="root">
@@ -113,4 +112,24 @@
         }   
             
     </script>
-</body></html>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="footer-copyright text-center py-3" style="color:white ;text-align:center">
+
+    <a href="https://inshorts.com/"><h6>Powered by Inshorts News</h6></a>
+    </div>
+    <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    
+</body
+></html>

@@ -41,15 +41,6 @@
     </a>';
     ?>
     
-    <a class="navigation-link notification">
-      <i class="far fa-heart">
-        <div class="notification-bubble-wrapper">
-          <div class="notification-bubble">
-            <span class="notifications-count">99</span>
-          </div>
-        </div>
-      </i>
-    </a>
     <?php
     echo '<a href="user.php?user_id='. $_SESSION['unique_id'] .'" class="navigation-link">
       <i class="fa fa-user-circle"></i>

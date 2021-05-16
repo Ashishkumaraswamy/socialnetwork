@@ -120,7 +120,7 @@ body {
                   {
                   $sql=mysqli_query($conn,"SELECT * FROM users WHERE user_name='{$result2['commentby']}'");
                   $result3=mysqli_fetch_assoc($sql);
-                  echo '<a class="instapost__comment-list" href="#">
+                  echo '<a class="instapost__comment-list" >
                     View all '.$result1['cmtcount'].' comments
                   </a>
                   <section class="instapost__description">
@@ -131,24 +131,30 @@ body {
                   }
                   else
                   {
-                    echo'<a class="instapost__comment-list" href="#">
+                    echo'<a class="instapost__comment-list">
                     No comments available
                   </a>';
                   }
                   echo'<section class="instapost__timestamp">
                     '.$row1['timeset'].'
                   </section>
+
+                  <a href="viewpost.php?post_id='.$row1['postid'].'&user_id='.$row1['user_id'].'">
                   <section class="instapost__add-comment">
                     <button class="btn btn-smiley">
                       <svg>
                         <use xlink:href="#smiley" />
                       </svg>
+                      
                     </button>
+                    
                     <textarea class="comment-input" placeholder="Add a comment..." rows="1"></textarea>
+        
                     <button class="btn btn-send-comment" disabled="disabled">
-                      Send
+                        Send
                     </button>
                   </section>
+                  </a>
                 </article>';
                 }  
             ?>  

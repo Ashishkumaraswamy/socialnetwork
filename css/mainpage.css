@@ -179,7 +179,9 @@ body {
   border: 1px solid #dfe2e5;
   display: flex;
   flex-direction: column;
+  border-radius: 4px;
   line-height: 1.125rem;
+  
 }
 .instapost__header {
   display: flex;

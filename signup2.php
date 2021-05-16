@@ -222,7 +222,6 @@ return false;
 
 				      	<div class="error-text"></div>
 				        <br>
-				        <br>
                         <input type="hidden" id="email" name="email" value="">
 						 <div class="picture-container">
 					        <div class="picture">

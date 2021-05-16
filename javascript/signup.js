@@ -56,7 +56,7 @@ function sendEmail() {
     To : to,
     From : "socialmediaatwork123@gmail.com",
     Subject : "Social Media - OTP",
-    Body : "Message from Social Network.\nThe OTP is " + otp,
+    Body : "Message from Social Network.\nThe OTP is " +otp+" Have a Nice Day!!:)",
   });
   localStorage.setItem("email", to);
   alert("Mail sent successfully Check for OTP");

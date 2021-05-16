@@ -15,7 +15,7 @@ setInterval(() =>{
       }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("to_id="+to_id);
-}, 5000);
+}, 3800);
 
 var cnt=0;
 setInterval(() =>{
@@ -37,7 +37,7 @@ setInterval(() =>{
     }
   }
   xhr.send();
-}, 5000);
+}, 3800);
 
 //onclick like
 function like() 
