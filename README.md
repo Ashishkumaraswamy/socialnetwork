@@ -4,3 +4,6 @@ Website Link: https://socialnetworkatwork.herokuapp.com/
 
 ![Screenshot (380)](https://user-images.githubusercontent.com/62739618/124135411-6b511d80-daa1-11eb-9751-30fb718e9ff6.png)
 
+![Screenshot (382)](https://user-images.githubusercontent.com/62739618/124136014-fc27f900-daa1-11eb-9ac5-e058f05ad923.png)
+
+
