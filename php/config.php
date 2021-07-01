@@ -1,8 +1,8 @@
 <?php
-  $hostname = "remotemysql.com";
-  $username = "cp8gnJjhXH";
-  $password = "z01Puey8Fb";
-  $dbname = "cp8gnJjhXH";
+  $hostname = "";
+  $username = "";
+  $password = "";
+  $dbname = "";
 
   $conn = mysqli_connect($hostname, $username, $password, $dbname);
 
