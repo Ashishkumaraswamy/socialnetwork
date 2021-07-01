@@ -24,19 +24,34 @@
 
 <style>
 .profile-image-container{
-    position: relative;
+    /* position: relative;
     cursor: pointer;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 70px;
     width: 200px;
     height: 200px;
-    display: block;
+    display: block; */
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 170px;
+    margin-bottom: 70px;
 
 }
 .profile-image{
-    width: 200px;
+    /* width: 200px;
     height: 200px;
+    background-color: #999999;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    border-radius: 50%;
+    margin: 0px auto;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s; */
+    width: 250px;
+    height: 250px;
     background-color: #999999;
     border: 1px solid #CCCCCC;
     color: #FFFFFF;
@@ -48,37 +63,45 @@
 }
 .profile-image:hover{
     border-color: #2ca8ff;
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
 
 }
 .content.ct-wizard-green .profile-image:hover{
     border-color: #05ae0e;
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
 }
 .content.ct-wizard-blue .profile-image:hover{
     border-color: #3472f7;
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
 }
 .content.ct-wizard-orange .profile-image:hover{
     border-color: #ff9500;
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
 }
 .content.ct-wizard-red .profile-image:hover{
     border-color: #ff3b30;
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
 }
 .profile-image input[type="file"] {
-    cursor: pointer;
+    /* cursor: pointer;
     display: block;
     left: 0;
     opacity: 0 !important;
     position: absolute;
+    top: 0; */
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
     top: 0;
+    width: 100%;
 }
 
 .profile-image-src{
